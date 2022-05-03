@@ -129,7 +129,19 @@
 
         <script>
             var fade = 2;
-            var rooms = {}
+            var rooms = (function () {
+                var json = null;
+                $.ajax({
+                    'async': false,
+                    'global': false,
+                    'url': 'assets/Levels/L1.json',
+                    'dataType': "json",
+                    'success': function (data) {
+                        json = data;
+                    }
+                });
+                return json;
+            })()
 
             function loadmap(level) {
                 window.rooms = (function () {
@@ -168,8 +180,6 @@
                         break;
                 };
             };
-
-            loadmap('L1');
 
             // x = 0
             // while (x != 4) {
