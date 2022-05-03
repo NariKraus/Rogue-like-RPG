@@ -1,0 +1,182 @@
+{
+    "2-5": {
+        "paths": ["right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "3-3": {
+        "paths": ["right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "3-4": {
+        "paths": ["right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "3-5": {
+        "paths": ["left","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "3-6": {
+        "paths": ["right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "3-7": {
+        "paths": ["right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "4-2": {
+        "paths": ["down","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "4-3": {
+        "paths": ["up","left"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "4-4": {
+        "paths": ["left","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "4-5": {
+        "paths": ["down","left","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "4-6": {
+        "paths": ["up","down","left"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "4-7": {
+        "paths": ["up","left","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "5-2": {
+        "paths": ["down","left"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "5-3": {
+        "paths": ["up","down"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "5-4": {
+        "paths": ["up","down","left","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "5-5": {
+        "paths": ["up","down","left","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "5-6": {
+        "paths": ["up"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "5-7": {
+        "paths": ["down","left"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "5-8": {
+        "paths": ["up"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "6-3": {
+        "paths": ["down","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "6-4": {
+        "paths": ["up","left"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "6-5": {
+        "paths": ["down","left","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "6-6": {
+        "paths": ["up","down","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "6-7": {
+        "paths": ["up","down"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "6-8": {
+        "paths": ["up"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "7-3": {
+        "paths": ["left"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "7-5": {
+        "paths": ["left","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "7-6": {
+        "paths": ["left"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "8-5": {
+        "paths": ["left","right"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    },
+    "9-5": {
+        "paths": ["left"],
+        "shops": [],
+        "shop prices": [],
+        "enemies": []
+    }
+}

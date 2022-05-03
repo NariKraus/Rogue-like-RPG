@@ -1,0 +1,212 @@
+{
+    "x2y5": {
+        "paths": ["right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x3y3": {
+        "paths": ["down"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x3y4": {
+        "paths": ["up","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x3y5": {
+        "paths": ["left","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x3y6": {
+        "paths": ["down","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x3y7": {
+        "paths": ["up"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x4y4": {
+        "paths": ["down","left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x4y5": {
+        "paths": ["up","down","left","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x4y6": {
+        "paths": ["up","left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x4y7": {
+        "paths": ["right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x5y3": {
+        "paths": ["right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x5y4": {
+        "paths": ["down"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x5y5": {
+        "paths": ["up","down","left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x5y6": {
+        "paths": ["up","down","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x5y7": {
+        "paths": ["up","down","left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x5y8": {
+        "paths": ["up","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x6y2": {
+        "paths": ["down"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x6y3": {
+        "paths": ["up","down","left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x6y4": {
+        "paths": ["up","down"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x6y5": {
+        "paths": ["up","down","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x6y6": {
+        "paths": ["up","down","left","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x6y7": {
+        "paths": ["up"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x6y8": {
+        "paths": ["left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x7y4": {
+        "paths": ["down","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x7y5": {
+        "paths": ["up","left","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x7y6": {
+        "paths": ["down","left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x7y7": {
+        "paths": ["up","right"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x8y4": {
+        "paths": ["left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x8y5": {
+        "paths": ["left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    },
+    "x8y7": {
+        "paths": ["left"],
+        "shop": [],
+        "item": [],
+        "shop price": [],
+        "enemy": []
+    }
+}
