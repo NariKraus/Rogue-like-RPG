@@ -97,7 +97,6 @@ function go(room, direction) {
                 break;
         };
     };
-    console.log(fade)
     switch (window.fade) {
         case 0:
             $('.title').html(window.room);
