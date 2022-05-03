@@ -1,9 +1,9 @@
 body {
-    background-color: black;
+    background-color: white;
     overflow-x: hidden;
 }
 body.black{
-    background-color: white;
+    background-color: black;
     pointer-events:none
 }
 body.tag1 {
@@ -18,12 +18,12 @@ body.tag2 {
     line-height: 100px;
 }
 
-div, h2 {
-    color: white;
+div, h2, button {
+    color: black;
 }
 
 .pixel {
-    background-color: white;
+    background-color: black;
     height: 100px;
     width: 100px;
     border: none;
