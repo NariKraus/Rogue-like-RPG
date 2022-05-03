@@ -128,9 +128,11 @@
         <script src="assets/js/main.js"></script>
 
         <script>
-            fade = 2;
+            var fade = 2;
+            var rooms = {}
+            
             function loadmap(level) {
-                var rooms = (function () {
+                window.rooms = (function () {
                     var json = null;
                     $.ajax({
                         'async': false,
