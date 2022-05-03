@@ -129,6 +129,7 @@
 
         <script>
             var fade = 2;
+            var room = "5-5";
             var rooms = (function () {
                 var json = null;
                 $.ajax({
@@ -157,7 +158,9 @@
                     });
                     return json;
                 })();
+
                 room = "5-5";
+
                 switch (window.fade) {
                     case 0:
                         $('.title').html(window.room);
