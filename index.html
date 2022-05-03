@@ -130,7 +130,7 @@
         <script>
             var fade = 2;
             var rooms = {}
-            
+
             function loadmap(level) {
                 window.rooms = (function () {
                     var json = null;
@@ -146,7 +146,25 @@
                     return json;
                 })();
                 room = "5-5";
+                switch (window.fade) {
+        case 0:
+            $('.title').html(window.room);
+            canGo(window.room);
+            checkRoom(window.room);
+            break;
+        case 1:
+            blink();
+            setTimeout(() => {
                 checkRoom(window.room);
+            }, 250);
+            break;
+        case 2:
+            blink();
+            setTimeout(() => {
+                checkRoom(window.room);
+            }, 500);
+            break;
+    };
             };
 
             loadmap('L1');
