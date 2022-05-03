@@ -1,4 +1,5 @@
 function canGo(room) {
+    console.log(rooms[room]['paths'])
     if (rooms[room]['paths'].includes('up')) {
         $('#button-up').prop('disabled', false);
         $('.up').addClass('active');
@@ -47,6 +48,7 @@ function blink() {
 };
 
 function checkRoom(room) {
+    console.log(rooms[room]['shop'])
     // Shops
     if (rooms[room]['shop'].length != 0) {
         $('#shop').prop('disabled', false);
