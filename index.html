@@ -5,9 +5,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <base href="https://narikraus.github.io/Rogue-like-RPG/" target="_blank">
+
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="/assets/css/style.css" rel="stylesheet">
 
         <title>Hello, world!</title>
     </head>
@@ -123,11 +125,21 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
         <script>
-            names = ['Benjamin','Kevin','Anthony','Keith','Matt','Blake','Neil','Dominic','Leonard','Jacob','Adam','Stephen','Max','Alexander','Justin']
-            rooms = {"2-5": {"paths": ["right"],"shop": [],"item": [],"shop price": [],"enemy": []},"3-3": {"paths": ["down"],"shop": [],"item": [],"shop price": [],"enemy": []},"3-4": {"paths": ["up","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"3-5": {"paths": ["left","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"3-6": {"paths": ["down","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"3-7": {"paths": ["up"],"shop": [],"item": [],"shop price": [],"enemy": []},"4-4": {"paths": ["down","left"],"shop": [],"item": [],"shop price": [],"enemy": []},"4-5": {"paths": ["up","down","left","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"4-6": {"paths": ["up","left"],"shop": [],"item": [],"shop price": [],"enemy": []},"4-7": {"paths": ["right"],"shop": [],"item": [],"shop price": [],"enemy": []},"5-3": {"paths": ["right"],"shop": [],"item": [],"shop price": [],"enemy": []},"5-4": {"paths": ["down"],"shop": ['gold'],"item": ['cheese'],"shop price": [4],"enemy": ['Phil']},"5-5": {"paths": ["up","down","left"],"shop": [],"item": [],"shop price": [],"enemy": []},"5-6": {"paths": ["up","down","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"5-7": {"paths": ["up","down","left"],"shop": [],"item": [],"shop price": [],"enemy": []},"5-8": {"paths": ["up","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"6-2": {"paths": ["down"],"shop": [],"item": [],"shop price": [],"enemy": []},"6-3": {"paths": ["up","down","left"],"shop": [],"item": [],"shop price": [],"enemy": []},"6-4": {"paths": ["up","down"],"shop": [],"item": [],"shop price": [],"enemy": []},"6-5": {"paths": ["up","down","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"6-6": {"paths": ["up","down","left","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"6-7": {"paths": ["up"],"shop": [],"item": [],"shop price": [],"enemy": []},"6-8": {"paths": ["left"],"shop": [],"item": [],"shop price": [],"enemy": []},"7-4": {"paths": ["down","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"7-5": {"paths": ["up","left","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"7-6": {"paths": ["down","left"],"shop": [],"item": [],"shop price": [],"enemy": []},"7-7": {"paths": ["up","right"],"shop": [],"item": [],"shop price": [],"enemy": []},"8-4": {"paths": ["left"],"shop": [],"item": [],"shop price": [],"enemy": []},"8-5": {"paths": ["left"],"shop": [],"item": [],"shop price": [],"enemy": []},"8-7": {"paths": ["left"],"shop": [],"item": [],"shop price": [],"enemy": []}}
-        </script>
-        <script>
+            var rooms = (function () {
+                var json = null;
+                $.ajax({
+                    'async': false,
+                    'global': false,
+                    'url': 'assets/Levels/L1.json',
+                    'dataType': "json",
+                    'success': function (data) {
+                        json = data;
+                    }
+                });
+                return json;
+            })();
             room = "5-5";
             fade = 2;
 
