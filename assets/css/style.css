@@ -3,7 +3,7 @@ body {
     overflow-x: hidden;
 }
 body.black{
-    background-color: black;
+    background-color: black !important;
     pointer-events:none
 }
 body.tag1 {
