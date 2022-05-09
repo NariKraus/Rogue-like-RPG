@@ -196,18 +196,15 @@
             // };
 
             function addDarkmodeWidget() {
-                new Darkmode().showWidget()
-                    .then(
-                        $('.darkmode-toggle').click(function () {
-                            $('.navbar-toggler').toggleClass('bg-white');
-                            $('#navbarDropdown').toggleClass('text-white');
-                            console.log('BOOP!');
-                        })
-                    );
+                new Darkmode
             };
             window.addEventListener('load', addDarkmodeWidget);
 
-                
+            // $('.darkmode-toggle').click(function () {
+            //     $('.navbar-toggler').toggleClass('bg-white');
+            //     $('#navbarDropdown').toggleClass('text-white');
+            //     console.log('BOOP!');
+            // })
         </script>
 
         <script>
