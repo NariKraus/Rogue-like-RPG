@@ -30,9 +30,6 @@
                                 <li><button class="dropdown-item" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=1;$('body').addClass('tag1').removeClass('tag2');">Fast</button></li>
                                 <li><button class="dropdown-item" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=0;$('body').removeClass('tag1').removeClass('tag2');">Off</button></li>
                             </ul>
-                            <a class="nav-link darkmode-toggle">
-                                Dark Mode
-                            </a>
                         </li>
                     </ul>
                 </div>
@@ -199,15 +196,14 @@
             // };
 
             function addDarkmodeWidget() {
-                new Darkmode
+                new Darkmode().showWidget();
             };
             window.addEventListener('load', addDarkmodeWidget);
 
-            // $('.darkmode-toggle').click(function () {
-            //     $('.navbar-toggler').toggleClass('bg-white');
-            //     $('#navbarDropdown').toggleClass('text-white');
-            //     console.log('BOOP!');
-            // })
+            $('.darkmode-toggle').on('click', function () {
+                $('.navbar-toggler').toggleClass('bg-white');
+                $('#navbarDropdown').toggleClass('text-white');
+            });
         </script>
 
         <script>
