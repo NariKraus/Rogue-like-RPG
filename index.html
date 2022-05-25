@@ -13,8 +13,8 @@
 
         <title>Hello, world!</title>
     </head>
-    <body class="light">
-        <nav class="position-absolute navbar navbar-light">
+    <body>
+        <!-- <nav class="position-absolute navbar navbar-light">
             <div class="container-fluid">
                 <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,37 +33,37 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
         <div class="row">
             <div class="col">
                 <div class="container">
                     <div class="align-content-center justify-content-center row" style="height: 100vh;">
-                        <div class="mapContainer light align-content-center justify-content-center row">
+                        <div class="mapContainer align-content-center justify-content-center row">
                                 
-                            <div class="pixel light"></div>
-                            <div class="pixel light"></div>
-                            <button disabled id="button-up" class="pixel light up h4" onclick="go(room, 'up')">up</button>
-                            <div class="pixel light"></div>
-                            <div class="pixel light"></div>
+                            <div class="pixel"></div>
+                            <div class="pixel"></div>
+                            <button disabled id="button-up" class="pixel up h4" onclick="go(room, 'up')">up</button>
+                            <div class="pixel"></div>
+                            <div class="pixel"></div>
                             
                             <div class="w-100"></div>
             
-                            <div class="pixel light"></div>
-                            <button disabled class="pixel light middle" id="shop">
+                            <div class="pixel"></div>
+                            <button disabled class="pixel middle" id="shop">
                                 <div class="h5" id="shop-item"></div>
                                 <div class="h5" id="shop-price"></div>
                             </button>
-                            <div class="pixel light middle"><h2 class="title"></h2></div>
-                            <button disabled class="h5 pixel light middle" id="item">
+                            <div class="pixel middle"><h2 class="title"></h2></div>
+                            <button disabled class="h5 pixel middle" id="item">
                             </button>
-                            <div class="pixel light"></div>
+                            <div class="pixel"></div>
                             
                             <div class="w-100"></div>
             
-                            <button disabled id="button-left" class="pixel light left h4" onclick="go(room, 'left')">left</button>
-                            <div class="pixel light middle"></div>
-                            <button class="pixel light middle" onclick="
+                            <button disabled id="button-left" class="pixel left h4" onclick="go(room, 'left')">left</button>
+                            <div class="pixel middle"></div>
+                            <button class="pixel middle" onclick="
                                 $(this).attr('id', 'enemy').attr('onclick', '').unbind('click').addClass('h4');
                                 $(this).html('');
                                 canGo(room);
@@ -73,24 +73,24 @@
                                 <div class="h2">Start</div>
                                 <div class="h2">Game</div>
                             </button>
-                            <div class="pixel light middle"></div>
-                            <button disabled id="button-right" class="pixel light right h4" onclick="go(room, 'right')">right</button>
+                            <div class="pixel middle"></div>
+                            <button disabled id="button-right" class="pixel right h4" onclick="go(room, 'right')">right</button>
                             
                             <div class="w-100"></div>
             
-                            <div class="pixel light"></div>
-                            <button disabled id="attack-l" class="pixel light middle h5"></button>
-                            <button disabled id="attack-m" class="pixel light middle h5"></button>
-                            <button disabled id="attack-h" class="pixel light middle h5"></button>
-                            <div class="pixel light"></div>
+                            <div class="pixel"></div>
+                            <button disabled id="attack-l" class="pixel middle h5"></button>
+                            <button disabled id="attack-m" class="pixel middle h5"></button>
+                            <button disabled id="attack-h" class="pixel middle h5"></button>
+                            <div class="pixel"></div>
                             
                             <div class="w-100"></div>
             
-                            <div class="pixel light"></div>
-                            <div class="pixel light"></div>
-                            <button disabled id="button-down" class="pixel light down h4" onclick="go(room, 'down')">down</button>
-                            <div class="pixel light"></div>
-                            <div class="pixel light"></div>
+                            <div class="pixel"></div>
+                            <div class="pixel"></div>
+                            <button disabled id="button-down" class="pixel down h4" onclick="go(room, 'down')">down</button>
+                            <div class="pixel"></div>
+                            <div class="pixel"></div>
                         
                         </div>
                     </div>
