@@ -42,9 +42,9 @@ body.light {
     background-color: white;
 }
 
-div.dark, h2.dark, button.dark {
+div.dark, a.dark, h2.dark, button.dark {
     color: white;
 }
-div.light, h2.light, button.light {
+div.light, a.light, h2.light, button.light {
     color: black;
 }
