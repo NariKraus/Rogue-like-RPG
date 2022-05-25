@@ -62,7 +62,7 @@ div.light, a.light, h2.light, button.light {
     color: black !important;
 }
 
-.mapContainer.pixel.dark {
+.mapContainer.dark {
     background-color: var(--surface);
 }
 .mapContainer.light {
