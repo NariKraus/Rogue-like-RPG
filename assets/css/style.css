@@ -29,7 +29,7 @@ body.tag2 {
 
 /* Colour Themes */
 .pixel.dark {
-    background-color: white;
+    background-color: #aaa;
 }
 .pixel.light {
     background-color: black;
@@ -39,11 +39,11 @@ body.dark {
     background-color: black;
 }
 body.light {
-    background-color: white;
+    background-color: #aaa;
 }
 
 div.dark, a.dark, h2.dark, button.dark {
-    color: white !important;
+    color: #aaa !important;
 }
 div.light, a.light, h2.light, button.light {
     color: black !important;
