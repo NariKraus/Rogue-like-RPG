@@ -32,15 +32,15 @@ function canGo(room) {
 function blink() {
     switch (window.fade) {
         case 1:
-            $('body').addClass('black');
+            $('body').toggleClass('light').toggleClass('dark');
             setTimeout(() => {
-                $('body').removeClass('black');
+                $('body').toggleClass('light').toggleClass('dark');
             }, 250);
             break;
         case 2:
-            $('body').addClass('black');
+            $('body').toggleClass('light').toggleClass('dark');
             setTimeout(() => {
-                $('body').removeClass('black');
+                $('body').toggleClass('light').toggleClass('dark');
             }, 500);
             break;
     };
