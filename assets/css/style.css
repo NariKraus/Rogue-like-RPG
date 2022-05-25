@@ -1,3 +1,16 @@
+:root {
+    --name:Discord Dark;
+    --background:#202225;
+    --surface:#36393F;
+    --onSurface:#FFFFFF;
+    --separator:#72767D;
+    --primary:#6D81CF;
+    --onPrimary:#FFFFFF;
+    --primaryVariant:#BDC8F1;
+    --green:#81CE55;
+    --red:#FF7E7E;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -23,21 +36,21 @@ body {
 
 /* Colour Themes */
 .pixel.dark {
-    background-color: white;
+    background-color: var(--onSurface);
 }
 .pixel.light {
     background-color: black;
 }
 
 body.dark {
-    background-color: black;
+    background-color: var(--background);
 }
 body.light {
     background-color: white;
 }
 
 div.dark, a.dark, h2.dark, button.dark {
-    color: white !important;
+    color: var(--onSurface) !important;
 }
 div.light, a.light, h2.light, button.light {
     color: black !important;
