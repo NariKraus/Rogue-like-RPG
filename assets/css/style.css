@@ -13,12 +13,14 @@
 
 body {
     overflow-x: hidden;
+    background-color: var(--background);
 }
 
 .mapContainer {
     height: 600px;
     width: 600px;
     border-radius: 6px;
+    background-color: var(--surface);
 }
 
 .title {
@@ -32,6 +34,7 @@ body {
     border: none;
     margin: 0;
     padding: 0;
+    background-color: var(--onSurface);
 }
 .pixel.middle {
     background-color: unset !important;
@@ -40,31 +43,6 @@ body {
     background-color: unset !important;
 }
 
-/* Colour Themes */
-.pixel.dark {
-    background-color: var(--onSurface);
-}
-.pixel.light {
-    background-color: black;
-}
-
-body.dark {
-    background-color: var(--background);
-}
-body.light {
-    background-color: white;
-}
-
-div.dark, a.dark, h2.dark, button.dark {
+div, a, h2, button {
     color: var(--onSurface) !important;
-}
-div.light, a.light, h2.light, button.light {
-    color: black !important;
-}
-
-.mapContainer.dark {
-    background-color: var(--surface);
-}
-.mapContainer.light {
-    background-color: unset;
 }
