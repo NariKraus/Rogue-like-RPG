@@ -61,8 +61,8 @@ div, a, h2, button {
 }
 
 .item-modal {
-    margin: 100px 0;
-    height: calc(100vh - 200px);
+    margin: 60px 20px;
+    height: calc(100vh - 120px);
     background-color: var(--surface);
 }
 .item-modal .info-content {
