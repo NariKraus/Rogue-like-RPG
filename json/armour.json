@@ -1,6 +1,6 @@
 {
     "Unarmoured" : {
-        "Type" : "Unaroured",
+        "Type" : "Unarmoured",
         "Dodge" : -2,
         "Defence" : 5,
         "Traits" : null
