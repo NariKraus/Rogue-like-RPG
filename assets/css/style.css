@@ -21,10 +21,10 @@ body.tag2 {
     padding: 0;
 }
 .pixel.middle {
-    background-color: unset;
+    background-color: unset !important;
 }
 .pixel.up.active, .pixel.down.active, .pixel.left.active, .pixel.right.active {
-    background-color: unset;
+    background-color: unset !important;
 }
 
 /* Colour Themes */
