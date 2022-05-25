@@ -59,10 +59,10 @@
                         <button disabled id="button-left" class="pixel left h4" onclick="go(room, 'left')">left</button>
                         <div class="pixel middle"></div>
                         <button class="pixel middle" onclick="
-                            $(this).html('');
                             canGo(room);
                             checkRoom(room);
                             $('.title').html(window.room);
+                            $(this).replaceWith(`<div class='pixel middle'></div>`);
                         " id="start">
                             <div class="h2">Start</div>
                             <div class="h2">Game</div>
