@@ -46,3 +46,38 @@ body {
 div, a, h2, button {
     color: var(--onSurface) !important;
 }
+
+.item-modal .info-title {
+    padding: 8px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--onPrimary);
+}
+
+.item-modal .info-content {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+}
+
+.item-modal .info-box {
+    padding: 0;
+    min-height: 44px;
+    display: flex;
+    overflow: hidden;
+}
+.item-modal .info-box:first-child {
+    margin-top: 4px;
+}
+.item-modal .info-box:not(:last-child) {
+    margin-bottom: 16px;
+}
