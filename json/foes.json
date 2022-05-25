@@ -1,0 +1,92 @@
+{
+    "Draconian" : {
+        "Type" : "Draconian",
+        "Health" : 25,
+        "HealthMax" : 25,
+        "Power" : 11,
+        "Accuracy" : -3,
+        "Dodge" : -2,
+        "Defence" : 4,
+        "Traits" : null
+    },
+    "Drake" : {
+        "Type" : "Drake",
+        "Health" : 20,
+        "HealthMax" : 20,
+        "Power" : 6,
+        "Accuracy" : 0,
+        "Dodge" : 2,
+        "Defence" : 2,
+        "Traits" : null
+    },
+    "Goblin" : {
+        "Type" : "Goblin",
+        "Health" : 8,
+        "HealthMax" : 8,
+        "Power" : 2,
+        "Accuracy" : 2,
+        "Dodge" : 0,
+        "Defence" : 0,
+        "Traits" : null
+    },
+    "Kobold" : {
+        "Type" : "Kobold",
+        "Health" : 8,
+        "HealthMax" : 8,
+        "Power" : 2,
+        "Accuracy" : 0,
+        "Dodge" : 2,
+        "Defence" : 2,
+        "Traits" : null
+    },
+    "Ogre" : {
+        "Type" : "Ogre",
+        "Health" : 45,
+        "HealthMax" : 45,
+        "Power" : 8,
+        "Accuracy" : -1,
+        "Dodge" : -4,
+        "Defence" : 0,
+        "Traits" : null
+    },
+    "Orc" : {
+        "Type" : "Orc",
+        "Health" : 30,
+        "HealthMax" : 30,
+        "Power" : 5,
+        "Accuracy" : -1,
+        "Dodge" : -2,
+        "Defence" : 0,
+        "Traits" : null
+    },
+    "Skeleton" : {
+        "Type" : "Skeleton",
+        "Health" : 20,
+        "HealthMax" : 20,
+        "Power" : 4,
+        "Accuracy" : 1,
+        "Dodge" : -4,
+        "Defence" : 4,
+        "Traits" : null
+    },
+    "Vampire" : {
+        "Type" : "Vampire",
+        "Health" : 24,
+        "HealthMax" : 24,
+        "Power" : 6,
+        "Accuracy" : 3,
+        "Dodge" : 2,
+        "Defence" : 0,
+        "Traits" : "Vampiric"
+    },
+    "Zombie" : {
+        "Type" : "Zombie",
+        "Health" : 16,
+        "HealthMax" : 16,
+        "Power" : 6,
+        "Accuracy" : -2,
+        "Dodge" : -3,
+        "Defence" : -2,
+        "Traits" : null
+    }
+}

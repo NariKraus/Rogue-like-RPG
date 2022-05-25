@@ -1,0 +1,20 @@
+{
+    "Unaroured" : {
+        "Type" : "Unaroured",
+        "Dodge" : -2,
+        "Defence" : 5,
+        "Traits" : null
+    },
+    "Plate" : {
+        "Type" : "Plate",
+        "Dodge" : -2,
+        "Defence" : 5,
+        "Traits" : null
+    },
+    "Leather" : {
+        "Type" : "Leather",
+        "Dodge" : 2, 
+        "Defence" : 1,
+        "Traits" : null
+    }
+}

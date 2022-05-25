@@ -202,5 +202,27 @@
                 $('body').css('background-color', $(this).val());
             });
         </script>
+
+        <script>
+            function loadJSON (location) {
+                var json = null;
+                $.ajax({
+                    'async': false,
+                    'global': false,
+                    'url': location,
+                    'dataType': "json",
+                    'success': function (data) {
+                        json = data;
+                    }
+                });
+                return json;
+            };
+            
+            var armour = (loadJSON('json/armour.json'))()
+            var player = (loadJSON('json/player.json'))()
+            var foes = (loadJSON('json/foes.json'))()
+            var weapons = (loadJSON('json/weapons.json'))()
+
+        </script>
     </body>
 </html>
