@@ -30,35 +30,11 @@ function canGo(room) {
 };
 
 function checkRoom(room) {
-    // Shops
-    if (rooms[room]['shop'].length != 0) {
-        $('#shop').prop('disabled', false);
-        $('#shop-item').html(rooms[room]['shop'].join(''));
-        $('#shop-price').html(rooms[room]['shop price'].join('') + 'g');
-    } else {
-        $('#shop').prop('disabled', true);
-        $('#shop-item').html('');
-        $('#shop-price').html('');
-    };
-    // Items
-    if (rooms[room]['item'].length != 0) {
-        $('#item').prop('disabled', false);
-        $('#item').html(rooms[room]['item'].join(''));
-    } else {
-        $('#item').prop('disabled', true);
-        $('#item').html('');
-    };
     // Enemies
     if (rooms[room]['enemy'].length != 0) {
-        $('#enemy').prop('disabled', false).html(rooms[room]['enemy'].join(''));
-        $('#attack-l').prop('disabled', false).html('Light Attack');
-        $('#attack-m').prop('disabled', false).html('Medium Attack');
-        $('#attack-h').prop('disabled', false).html('Heavy Attack');
+        $('#enemy').html(rooms[room]['enemy'].join(''));
     } else {
-        $('#enemy').prop('disabled', true).html('');
-        $('#attack-l').prop('disabled', true).html('');
-        $('#attack-m').prop('disabled', true).html('');
-        $('#attack-h').prop('disabled', true).html('');
+        $('#enemy').html('');
     };
 };
 
