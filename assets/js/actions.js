@@ -52,16 +52,16 @@ function Attack(Offence, Defence) {
         };
 
         // Defence Traits
-        if (Offence.Type == "player") {
-            switch (Offence.Armour.Traits) {
+        if (Defence.Type == "player") {
+            switch (Defence.Armour.Traits) {
                 case "Spiky":
-                    Heal(Offence, Damage_roll/2);
+                    Damage(Offence, 1);
                     break;
             };
         } else {
-            switch (Offence.Traits) {
+            switch (Defence.Traits) {
                 case "Spiky":
-                    Heal(Offence, Damage_roll/2);
+                    Damage(Offence, 1);
                     break;
             };
         };
