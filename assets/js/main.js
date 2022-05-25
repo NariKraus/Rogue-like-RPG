@@ -29,23 +29,6 @@ function canGo(room) {
     };
 };
 
-function blink() {
-    switch (window.fade) {
-        case 1:
-            $('body').toggleClass('light').toggleClass('dark');
-            setTimeout(() => {
-                $('body').toggleClass('light').toggleClass('dark');
-            }, 250);
-            break;
-        case 2:
-            $('body').toggleClass('light').toggleClass('dark');
-            setTimeout(() => {
-                $('body').toggleClass('light').toggleClass('dark');
-            }, 500);
-            break;
-    };
-};
-
 function checkRoom(room) {
     // Shops
     if (rooms[room]['shop'].length != 0) {
