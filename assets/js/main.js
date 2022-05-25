@@ -33,9 +33,10 @@ function checkRoom(room) {
     // Enemies
     if (rooms[room]['enemy'].length != 0) {
         $('#enemy').html(rooms[room]['enemy']);
-        window.enemy = foes[rooms[room]['enemy']]
+        window.enemy = foes[rooms[room]['enemy']];
     } else {
         $('#enemy').html('');
+        window.enemy = null;
     };
 };
 
