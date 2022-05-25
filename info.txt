@@ -6,3 +6,15 @@ Accuracy    :       The chance to hit modifier of a Creature or Item.
 Dodge       :       The chance to dodge modifier of a Creature or Item.
 Defence     :       The amount of flat damage reduction a Creature or Item has.
 Traits      :       The different traits a Creature or Item has. Can not reduce damage below 1.
+
+
+# Fight: 
+
+Accuracy Roll vs Dodge Roll
+Power - Defence
+
+Player First, check if enemy is alive.
+
+
+# Traits
+- Vampiric : Gains health equal to half damage dealt
