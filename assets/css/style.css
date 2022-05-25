@@ -43,8 +43,8 @@ body.light {
 }
 
 div.dark, a.dark, h2.dark, button.dark {
-    color: white;
+    color: white !important;
 }
 div.light, a.light, h2.light, button.light {
-    color: black;
+    color: black !important;
 }
