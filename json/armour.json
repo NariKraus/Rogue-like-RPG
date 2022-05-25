@@ -5,6 +5,12 @@
         "Defence" : 5,
         "Traits" : null
     },
+    "Spiked" : {
+        "Type" : "Spiked",
+        "Dodge" : -2,
+        "Defence" : 2,
+        "Traits" : "Spiky"
+    },
     "Plate" : {
         "Type" : "Plate",
         "Dodge" : -2,
