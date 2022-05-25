@@ -80,27 +80,7 @@ function go(room, direction) {
                 break;
         };
     };
-    switch (window.fade) {
-        case 0:
-            $('.title').html(window.room);
-            canGo(window.room);
-            checkRoom(window.room);
-            break;
-        case 1:
-            blink();
-            setTimeout(() => {
-                $('.title').html(window.room);
-                canGo(window.room);
-                checkRoom(window.room);
-            }, 250);
-            break;
-        case 2:
-            blink();
-            setTimeout(() => {
-                $('.title').html(window.room);
-                canGo(window.room);
-                checkRoom(window.room);
-            }, 500);
-            break;
-    };
+    $('.title').html(window.room);
+    canGo(window.room);
+    checkRoom(window.room);
 };

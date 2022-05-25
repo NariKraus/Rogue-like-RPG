@@ -64,32 +64,10 @@
                         <div class="pixel light middle"></div>
                         <button class="pixel light middle" onclick="
                             $(this).attr('id', 'enemy').attr('onclick', '').unbind('click').addClass('h4');
-                            switch (window.fade) {
-                                case 0:
-                                    $(this).html('');
-                                    canGo(room);
-                                    checkRoom(room);
-                                    $('.title').html(window.room);
-                                    break;
-                                case 1:
-                                    blink();
-                                    setTimeout(() => {
-                                        $(this).html('');
-                                        canGo(room);
-                                        checkRoom(room);
-                                        $('.title').html(window.room);
-                                    }, 250);
-                                    break;
-                                case 2:
-                                blink();
-                                    setTimeout(() => {
-                                        $(this).html('');
-                                        canGo(room);
-                                        checkRoom(room);
-                                        $('.title').html(window.room);
-                                    }, 500);
-                                    break;
-                            };
+                            $(this).html('');
+                            canGo(room);
+                            checkRoom(room);
+                            $('.title').html(window.room);
                         " id="start">
                             <div class="h2">Start</div>
                             <div class="h2">Game</div>
