@@ -2,7 +2,10 @@ function dice(size) {
     return Math.floor( Math.random() * size + 1 );
 };
 
+// Attack
 function Attack(Offence, Defence) {
+
+    // Offence Roll
     switch (Offence.Type) {
         case "player":
         case "Special":
@@ -14,6 +17,7 @@ function Attack(Offence, Defence) {
             Attack_Power = Offence.Power;
     };
 
+    // Defence Roll
     switch (Defence.Type) {
         case "player":
         case "Special":
@@ -25,34 +29,55 @@ function Attack(Offence, Defence) {
             Defence_Power = Defence.Defence;
     };
 
+    // Damage Roll
     Damage_roll = Math.max(Attack_Power - Defence_Power, 1);
 
     if (Attack_roll >= Dodge_roll) {
         console.log("The " + Offence.Type + "'s attack hit the " + Defence.Type + ".");
         Damage(Defence, Damage_roll)
+
+        // Offence Traits
         if (Offence.Type == "player") {
             switch (Offence.Weapon.Traits) {
                 case "Vampiric":
-                    Heal(Offence, Damage_roll)
+                    Heal(Offence, Damage_roll/2);
                     break;
             };
         } else {
             switch (Offence.Traits) {
                 case "Vampiric":
-                    Heal(Offence, Damage_roll)
+                    Heal(Offence, Damage_roll/2);
                     break;
             };
         };
+
+        // Defence Traits
+        if (Offence.Type == "player") {
+            switch (Offence.Armour.Traits) {
+                case "Spiky":
+                    Heal(Offence, Damage_roll/2);
+                    break;
+            };
+        } else {
+            switch (Offence.Traits) {
+                case "Spiky":
+                    Heal(Offence, Damage_roll/2);
+                    break;
+            };
+        };
+
     } else {
         console.log("The " + Offence.Type + "'s attack missed the " + Defence.Type + ".");
     };
 };
 
+// Heal
 function Heal(Target, Healing) {
     Target.Health = Math.min(Target.Health + Healing, Target.HealthMax);
     console.log('The ' + Target.Type + ' was healed up to ' + Target.Health + '.');
 };
 
+// Damage
 function Damage(Target, Damage) {
     Target.Health = Math.max(Target.Health - Damage, 0);
     if (Target.Health > 0) {
