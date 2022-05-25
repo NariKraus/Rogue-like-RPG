@@ -204,24 +204,18 @@
         </script>
 
         <script>
-            function loadJSON (location) {
-                var json = null;
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': location,
-                    'dataType': "json",
-                    'success': function (data) {
-                        json = data;
-                    }
-                });
-                return json;
-            };
-            
-            var armour = (loadJSON('json/armour.json'))()
-            var player = (loadJSON('json/player.json'))()
-            var foes = (loadJSON('json/foes.json'))()
-            var weapons = (loadJSON('json/weapons.json'))()
+            function getData(url, cb) {
+                fetch(url)
+                .then(response => response.json())
+                .then(result => cb(result));
+            }
+
+            // getData(url, (data) => console.log({ data }));
+
+            getData("json/armour.json", (data) => armour = data );
+            getData("json/player.json", (data) => player = data );
+            getData("json/foes.json", (data) => foes = data );
+            getData("json/weapons.json", (data) => weapons = data );
 
         </script>
     </body>
