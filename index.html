@@ -50,7 +50,7 @@
         
                         <div class="pixel"></div>
                         <div class="pixel middle"></div>
-                        <div class="pixel middle h2 title"></div>
+                        <div class="pixel middle h2" id="title"></div>
                         <div class="pixel middle"></div>
                         <div class="pixel"></div>
                         
@@ -61,8 +61,8 @@
                         <button class="pixel middle" onclick="
                             canGo(room);
                             checkRoom(room);
-                            $('.title').html(window.room);
-                            $(this).replaceWith(`<div class='pixel middle enemy h4'></div>`);
+                            $('#title').html(window.room);
+                            $(this).replaceWith(`<div class='pixel middle h4' id='enemy'></div>`);
                         " id="start">
                             <div class="h2">Start</div>
                             <div class="h2">Game</div>
