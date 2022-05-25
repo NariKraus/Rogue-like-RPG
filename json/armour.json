@@ -5,11 +5,12 @@
         "Defence" : 5,
         "Traits" : null
     },
-    "Spiked" : {
-        "Type" : "Spiked",
-        "Dodge" : -2,
-        "Defence" : 2,
-        "Traits" : "Spiky"
+
+    "Leather" : {
+        "Type" : "Leather",
+        "Dodge" : 2, 
+        "Defence" : 1,
+        "Traits" : null
     },
     "Plate" : {
         "Type" : "Plate",
@@ -17,10 +18,10 @@
         "Defence" : 5,
         "Traits" : null
     },
-    "Leather" : {
-        "Type" : "Leather",
-        "Dodge" : 2, 
-        "Defence" : 1,
-        "Traits" : null
+    "Spiked" : {
+        "Type" : "Spiked",
+        "Dodge" : -2,
+        "Defence" : 2,
+        "Traits" : "Spiky"
     }
 }
