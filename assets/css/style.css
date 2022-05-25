@@ -55,11 +55,11 @@ div, a, h2, button {
     border-radius: 0 6px 0 0;
     background-color: green !important;
 }
-.pixel:nth-child(21) {
+.pixel:nth-child(25) {
     border-radius: 0 0 0 6px;
     background-color: green !important;
 }
-.pixel:nth-child(25) {
+.pixel:nth-child(29) {
     border-radius: 0 0 6px 0;
     background-color: green !important;
 }
