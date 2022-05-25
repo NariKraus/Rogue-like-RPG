@@ -129,37 +129,31 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="assets/js/main.js"></script>
 
+        <script src="assets/js/actions.js"></script>
+
+        <script>
+            function getData(url, cb) {
+                fetch(url)
+                .then(response => response.json())
+                .then(result => cb(result));
+            }
+
+            // getData(url, (data) => console.log({ data }));
+
+            getData("json/armour.json", (data) => armour = data );
+            getData("json/player.json", (data) => player = data );
+            getData("json/foes.json", (data) => foes = data );
+            getData("json/weapons.json", (data) => weapons = data );
+            getData("assets/Levels/L1.json", (data) => rooms = data );
+
+        </script>
+
         <script>
             var fade = 2;
             var room = "5-5";
-            var rooms = (function () {
-                var json = null;
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': 'assets/Levels/L1.json',
-                    'dataType': "json",
-                    'success': function (data) {
-                        json = data;
-                    }
-                });
-                return json;
-            })()
 
             function loadmap(level) {
-                window.rooms = (function () {
-                    var json = null;
-                    $.ajax({
-                        'async': false,
-                        'global': false,
-                        'url': 'assets/Levels/' + level + '.json',
-                        'dataType': "json",
-                        'success': function (data) {
-                            json = data;
-                        }
-                    });
-                    return json;
-                })();
+                getData("assets/Levels/" + level + ".json", (data) => window.rooms = data )
 
                 room = "5-5";
 
@@ -201,22 +195,6 @@
             $('#ColorInput').change(function () {
                 $('body').css('background-color', $(this).val());
             });
-        </script>
-
-        <script>
-            function getData(url, cb) {
-                fetch(url)
-                .then(response => response.json())
-                .then(result => cb(result));
-            }
-
-            // getData(url, (data) => console.log({ data }));
-
-            getData("json/armour.json", (data) => armour = data );
-            getData("json/player.json", (data) => player = data );
-            getData("json/foes.json", (data) => foes = data );
-            getData("json/weapons.json", (data) => weapons = data );
-
         </script>
     </body>
 </html>
