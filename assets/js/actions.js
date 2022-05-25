@@ -30,6 +30,19 @@ function Attack(Offence, Defence) {
     if (Attack_roll >= Dodge_roll) {
         console.log("The " + Offence.Type + "'s attack hit the " + Defence.Type + ".");
         Damage(Defence, Damage_roll)
+        if (Offence.Type == "player") {
+            switch (Offence.Weapon.Traits) {
+                case "Vampiric":
+                    Heal(Offence, Damage_roll)
+                    break;
+            };
+        } else {
+            switch (Offence.Traits) {
+                case "Vampiric":
+                    Heal(Offence, Damage_roll)
+                    break;
+            };
+        };
     } else {
         console.log("The " + Offence.Type + "'s attack missed the " + Defence.Type + ".");
     };
