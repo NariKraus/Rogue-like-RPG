@@ -81,7 +81,7 @@
         "shop": [],
         "item": [],
         "shop price": [],
-        "enemy": []
+        "enemy": ["Kobold"]
     },
     "5-5": {
         "paths": ["up","down","left"],
