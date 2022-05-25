@@ -22,20 +22,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="FadeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link light dropdown-toggle" href="#" id="FadeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Fade
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="FadeDropdown">
-                                <li><button class="dropdown-item active" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=2;$('body').removeClass('tag1').addClass('tag2');">Default</button></li>
-                                <li><button class="dropdown-item" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=1;$('body').addClass('tag1').removeClass('tag2');">Fast</button></li>
-                                <li><button class="dropdown-item" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=0;$('body').removeClass('tag1').removeClass('tag2');">Off</button></li>
+                                <li><button class="dropdown-item light active" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=2;$('body').removeClass('tag1').addClass('tag2');">Default</button></li>
+                                <li><button class="dropdown-item light" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=1;$('body').addClass('tag1').removeClass('tag2');">Fast</button></li>
+                                <li><button class="dropdown-item light" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=0;$('body').removeClass('tag1').removeClass('tag2');">Off</button></li>
                             </ul>
-                            <a class="nav-link dropdown-toggle" href="#" id="ColourDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link light dropdown-toggle" href="#" id="ColourDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Colour
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="ColourDropdown">
-                                <li><button class="dropdown-item active" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');$('.dark').removeClass('dark').addClass('light');">Light Mode</button></li>
-                                <li><button class="dropdown-item" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');$('.light').removeClass('light').addClass('dark');">Dark Mode</button></li>
+                                <li><button class="dropdown-item light active" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');$('.dark').removeClass('dark').addClass('light');">Light Mode</button></li>
+                                <li><button class="dropdown-item light" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');$('.light').removeClass('light').addClass('dark');">Dark Mode</button></li>
                             </ul>
                         </li>
                     </ul>
