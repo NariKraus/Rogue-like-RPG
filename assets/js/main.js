@@ -57,7 +57,7 @@ function go(room, direction) {
                 break;
         };
     };
-    $('.title').html(window.room);
+    $('#title').html(window.room);
     canGo(window.room);
     checkRoom(window.room);
 };
