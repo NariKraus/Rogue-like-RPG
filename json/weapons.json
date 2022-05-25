@@ -5,22 +5,23 @@
         "Accuracy" : 0,
         "Traits" : null
     },
+
     "Dagger" : {
         "Type": "Dagger",
         "Power" : 2,
         "Accuracy" : 3,
         "Traits" : null
     },
-    "ShortSword" : {
-        "Type": "Short Sword",
-        "Power" : 4,
-        "Accuracy" : 1,
-        "Traits" : null
-    },
     "Maul" : {
         "Type": "Maul",
         "Power" : 8,
         "Accuracy" : -2,
+        "Traits" : null
+    },
+    "ShortSword" : {
+        "Type": "Short Sword",
+        "Power" : 4,
+        "Accuracy" : 1,
         "Traits" : null
     }
 }
