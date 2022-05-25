@@ -38,61 +38,59 @@
         <div class="row">
             <div class="col">
                 <div class="container">
-                    <div class="align-content-center justify-content-center row" style="height: 100vh;">
-                        <div class="mapContainer border-shadow align-content-center justify-content-center row">
-                                
-                            <div class="pixel" style="border-radius: 6px 0 0 0;"></div>
-                            <div class="pixel"></div>
-                            <button disabled id="button-up" class="pixel up h4" onclick="go(room, 'up')">up</button>
-                            <div class="pixel"></div>
-                            <div class="pixel" style="border-radius: 0 6px 0 0;"></div>
+                    <div class="item-modal border-shadow align-content-center justify-content-center row">
                             
-                            <div class="w-100"></div>
-            
-                            <div class="pixel"></div>
-                            <button disabled class="pixel middle" id="shop">
-                                <div class="h5" id="shop-item"></div>
-                                <div class="h5" id="shop-price"></div>
-                            </button>
-                            <div class="pixel middle"><h2 class="title"></h2></div>
-                            <button disabled class="h5 pixel middle" id="item">
-                            </button>
-                            <div class="pixel"></div>
-                            
-                            <div class="w-100"></div>
-            
-                            <button disabled id="button-left" class="pixel left h4" onclick="go(room, 'left')">left</button>
-                            <div class="pixel middle"></div>
-                            <button class="pixel middle" onclick="
-                                $(this).attr('id', 'enemy').attr('onclick', '').unbind('click').addClass('h4');
-                                $(this).html('');
-                                canGo(room);
-                                checkRoom(room);
-                                $('.title').html(window.room);
-                            " id="start">
-                                <div class="h2">Start</div>
-                                <div class="h2">Game</div>
-                            </button>
-                            <div class="pixel middle"></div>
-                            <button disabled id="button-right" class="pixel right h4" onclick="go(room, 'right')">right</button>
-                            
-                            <div class="w-100"></div>
-            
-                            <div class="pixel"></div>
-                            <button disabled id="attack-l" class="pixel middle h5"></button>
-                            <button disabled id="attack-m" class="pixel middle h5"></button>
-                            <button disabled id="attack-h" class="pixel middle h5"></button>
-                            <div class="pixel"></div>
-                            
-                            <div class="w-100"></div>
-            
-                            <div class="pixel" style="border-radius: 0 0 0 6px;"></div>
-                            <div class="pixel"></div>
-                            <button disabled id="button-down" class="pixel down h4" onclick="go(room, 'down')">down</button>
-                            <div class="pixel"></div>
-                            <div class="pixel" style="border-radius: 0 0 6px 0;"></div>
+                        <div class="pixel" style="border-radius: 6px 0 0 0;"></div>
+                        <div class="pixel"></div>
+                        <button disabled id="button-up" class="pixel up h4" onclick="go(room, 'up')">up</button>
+                        <div class="pixel"></div>
+                        <div class="pixel" style="border-radius: 0 6px 0 0;"></div>
                         
-                        </div>
+                        <div class="w-100"></div>
+        
+                        <div class="pixel"></div>
+                        <button disabled class="pixel middle" id="shop">
+                            <div class="h5" id="shop-item"></div>
+                            <div class="h5" id="shop-price"></div>
+                        </button>
+                        <div class="pixel middle"><h2 class="title"></h2></div>
+                        <button disabled class="h5 pixel middle" id="item">
+                        </button>
+                        <div class="pixel"></div>
+                        
+                        <div class="w-100"></div>
+        
+                        <button disabled id="button-left" class="pixel left h4" onclick="go(room, 'left')">left</button>
+                        <div class="pixel middle"></div>
+                        <button class="pixel middle" onclick="
+                            $(this).attr('id', 'enemy').attr('onclick', '').unbind('click').addClass('h4');
+                            $(this).html('');
+                            canGo(room);
+                            checkRoom(room);
+                            $('.title').html(window.room);
+                        " id="start">
+                            <div class="h2">Start</div>
+                            <div class="h2">Game</div>
+                        </button>
+                        <div class="pixel middle"></div>
+                        <button disabled id="button-right" class="pixel right h4" onclick="go(room, 'right')">right</button>
+                        
+                        <div class="w-100"></div>
+        
+                        <div class="pixel"></div>
+                        <button disabled id="attack-l" class="pixel middle h5"></button>
+                        <button disabled id="attack-m" class="pixel middle h5"></button>
+                        <button disabled id="attack-h" class="pixel middle h5"></button>
+                        <div class="pixel"></div>
+                        
+                        <div class="w-100"></div>
+        
+                        <div class="pixel" style="border-radius: 0 0 0 6px;"></div>
+                        <div class="pixel"></div>
+                        <button disabled id="button-down" class="pixel down h4" onclick="go(room, 'down')">down</button>
+                        <div class="pixel"></div>
+                        <div class="pixel" style="border-radius: 0 0 6px 0;"></div>
+
                     </div>
                 </div>
             </div>
