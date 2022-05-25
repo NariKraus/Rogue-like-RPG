@@ -16,17 +16,6 @@ body {
     background-color: var(--background);
 }
 
-.mapContainer {
-    height: 700px;
-    width: 700px;
-    background-color: var(--surface);
-}
-
-.title {
-    text-align: center;
-    line-height: 100px;
-}
-
 .pixel {
     height: 100px;
     width: 100px;
@@ -34,6 +23,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--onSurface);
+    text-align: center;
 }
 .pixel.middle {
     background-color: unset !important;
