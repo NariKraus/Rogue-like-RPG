@@ -1,16 +1,5 @@
 body {
-    background-color: white;
     overflow-x: hidden;
-}
-body.black{
-    background-color: black !important;
-    pointer-events:none
-}
-body.tag1 {
-    transition: background-color 0.25s ease-in-out;
-}
-body.tag2 {
-    transition: background-color 0.5s ease-in-out;
 }
 
 .title {
@@ -18,12 +7,7 @@ body.tag2 {
     line-height: 100px;
 }
 
-div, h2, button {
-    color: black;
-}
-
 .pixel {
-    background-color: black;
     height: 100px;
     width: 100px;
     border: none;
@@ -35,4 +19,26 @@ div, h2, button {
 }
 .pixel.up.active, .pixel.down.active, .pixel.left.active, .pixel.right.active {
     background-color: unset;
+}
+
+/* Colour Themes */
+.pixel.dark {
+    background-color: white;
+}
+.pixel.light {
+    background-color: black;
+}
+
+body.dark {
+    background-color: black;
+}
+body.light {
+    background-color: white;
+}
+
+div.dark, h2.dark, button.dark {
+    color: white;
+}
+div.light, h2.light, button.light {
+    color: black;
 }
