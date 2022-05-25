@@ -13,7 +13,7 @@
 
         <title>Hello, world!</title>
     </head>
-    <body class="tag2 light">
+    <body class="light">
         <nav class="position-absolute navbar navbar-light">
             <div class="container-fluid">
                 <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,14 +22,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link light dropdown-toggle" href="#" id="FadeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Fade
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="FadeDropdown">
-                                <li><button class="dropdown-item active" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=2;$('body').removeClass('tag1').addClass('tag2');">Default</button></li>
-                                <li><button class="dropdown-item" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=1;$('body').addClass('tag1').removeClass('tag2');">Fast</button></li>
-                                <li><button class="dropdown-item" onclick="$(this).parent().parent().find('.active').removeClass('active');$(this).addClass('active');fade=0;$('body').removeClass('tag1').removeClass('tag2');">Off</button></li>
-                            </ul>
                             <a class="nav-link light dropdown-toggle" href="#" id="ColourDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Colour
                             </a>
@@ -161,29 +153,10 @@
                 getData("assets/Levels/" + level + ".json", (data) => window.rooms = data )
 
                 room = "5-5";
-
-                switch (window.fade) {
-                    case 0:
-                        $('.title').html(window.room);
-                        canGo(window.room);
-                        checkRoom(window.room);
-                        break;
-                    case 1:
-                        blink();
-                        setTimeout(() => {
-                            canGo(window.room)
-                            checkRoom(window.room);
-                        }, 250);
-                        break;
-                    case 2:
-                        blink();
-                        setTimeout(() => {
-                            canGo(window.room)
-                            checkRoom(window.room);
-                        }, 500);
-                        break;
-                };
-            };
+                $('.title').html(window.room);
+                canGo(window.room);
+                checkRoom(window.room);
+            };   
 
             // x = 0
             // while (x != 4) {
