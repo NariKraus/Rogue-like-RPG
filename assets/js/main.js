@@ -64,13 +64,6 @@ function go(room, direction) {
 };
 
 function useItem(itemType) {
-    if (weapons[itemType]) {
-        if (player.Weapon.Type != 'Unarmed') {
-            $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Weapon" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`);
-        };
-        player.Weapon = weapons[itemType];
-        $('#playerWeapon').html(itemType);
-    };
     if (armour[itemType]) {
         if (player.Armour.Type != 'Unarmoured') {
             $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Armour" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`);
@@ -78,11 +71,18 @@ function useItem(itemType) {
         player.Armour = armour[itemType];
         $('#playerArmour').html(itemType);
     };
+    if (weapons[itemType]) {
+        if (player.Weapon.Type != 'Unarmed') {
+            $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Weapon" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`);
+        };
+        player.Weapon = weapons[itemType];
+        $('#playerWeapon').html(itemType);
+    };
     sortInventory();
-    activateInventory();
+    loadButtons();
 };
 
-function activateInventory() {
+function loadButtons() {
     $('.inventory-item').unbind('click').click(function () {
         useItem($(this).attr('itemType'));
         $(this).remove();
@@ -98,5 +98,27 @@ function sortInventory() {
     container.empty().append(alphabeticallyOrderedDivs);
 };
 
+function doffItem(item, type) {
+    if (type == 'Armour') {
+        $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
+        $('#playerArmour').html('Unarmoured');
+    };
+    if (type = 'Weapon') {
+        $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Weapon" itemType="` + item + `">` + item + `</button>`);
+        $('#playerWeapon').html('Unarmed');
+    };
+};
+
+$('#playerArmour').click(function() {
+    if (player.Armour.Type != 'Unarmoured') {
+        doffItem(player.Armour.Type, 'Armour')
+    }
+});
+$('#playerWeapon').click(function() {
+    if (player.Weapon.Type != 'Unarmed') {
+        doffItem(player.Weapon.Type, 'Weapon')
+    }
+});
+
 sortInventory();
-activateInventory();
+loadButtons();
