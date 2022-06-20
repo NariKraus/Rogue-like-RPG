@@ -62,3 +62,11 @@ function go(room, direction) {
     canGo(window.room);
     checkRoom(window.room);
 };
+
+function useItem(itemCatagory, itemType) {
+    if (itemCatagory[itemType]) {
+        console.log('True')
+    } else {
+        console.log('False')
+    };
+}
