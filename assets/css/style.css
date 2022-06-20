@@ -68,7 +68,7 @@ div, a, h2, button {
     flex-wrap: wrap;
 }
 
-.inventory-item {
+.inventory-item, #playerArmour, #playerWeapon {
     padding: 8px;
     margin: 0.5em;
     min-width: 100px;
@@ -80,11 +80,11 @@ div, a, h2, button {
     text-transform: uppercase;
     justify-content: center;
 }
-.inventory-item[itemCatagory="Weapon"] {
-    background-color: var(--red);
-}
-.inventory-item[itemCatagory="Armour"] {
+.inventory-item[itemCatagory="Armour"], #playerArmour {
     background-color: var(--green);
+}
+.inventory-item[itemCatagory="Weapon"], #playerWeapon {
+    background-color: var(--red);
 }
 
 .item-modal .item-wrapper {
