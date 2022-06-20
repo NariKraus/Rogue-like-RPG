@@ -63,14 +63,15 @@ function go(room, direction) {
     checkRoom(window.room);
 };
 
-function useItem(itemCatagory, itemType) {
-    if (itemCatagory[itemType]) {
-        console.log('True');
-    } else {
-        console.log('False');
+function useItem(itemType) {
+    if (weapons[itemType]) {
+        console.log(itemType + ' is a type of Weapon');
+    };
+    if (armour[itemType]) {
+        console.log(itemType + ' is a type of Armour');
     };
 };
 
 $('.inventory-item').click(function () {
-    useItem( $(this).attr('itemCatagory'), $(this).attr('itemType'));
+    useItem($(this).attr('itemType'));
 });
