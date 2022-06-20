@@ -65,8 +65,12 @@ function go(room, direction) {
 
 function useItem(itemCatagory, itemType) {
     if (itemCatagory[itemType]) {
-        console.log('True')
+        console.log('True');
     } else {
-        console.log('False')
+        console.log('False');
     };
-}
+};
+
+$('.inventory-item').click(function () {
+    useItem( $(this).attr('itemCatagory'), $(this).attr('itemType'));
+});
