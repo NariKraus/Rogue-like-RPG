@@ -11,7 +11,7 @@
       "Accuracy": 3,
       "Traits": null
     },
-    "ShortSword" : {
+    "Short Sword" : {
       "Type": "Short Sword",
       "Power": 4,
       "Accuracy": 1,
@@ -23,7 +23,7 @@
       "Accuracy": 1,
       "Traits": null
     },
-    "ShortSpear" : {
+    "Short Spear" : {
       "Type": "Short Spear",
       "Power": 6,
       "Accuracy": 0,
