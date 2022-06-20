@@ -17,5 +17,6 @@ Player First, check if enemy is alive.
 
 
 # Traits
+- Basic : Always hits, but only does 1 damage
 - Vampiric : Gains health equal to half damage dealt.
 - Spiky : Deals 1 point of damage to the attacker.
