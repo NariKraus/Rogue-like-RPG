@@ -65,10 +65,12 @@ function go(room, direction) {
 
 function useItem(itemType) {
     if (weapons[itemType]) {
-        console.log(itemType + ' is a type of Weapon');
+        player['Weapon'] = weapons[itemType];
+        $('#playerWeapon').html(itemType);
     };
     if (armour[itemType]) {
-        console.log(itemType + ' is a type of Armour');
+        player['Armour'] = armour[itemType];
+        $('#playerArmour').html(itemType);
     };
 };
 
