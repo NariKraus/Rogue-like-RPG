@@ -160,15 +160,15 @@
                 checkRoom(window.room);
             };   
 
-            x = 0
-            while (x != 4) {
-                selector = Math.floor(Math.random() * (Object.keys(window.rooms).length - 1));
+            // x = 0
+            // while (x != 4) {
+            //     selector = Math.floor(Math.random() * (Object.keys(window.rooms).length - 1));
                 
-                if (rooms[Object.keys(window.rooms)[selector]]['enemy'].length == 0 && Object.keys(window.rooms)[selector] != '5-5' && Object.keys(window.rooms)[selector] != '5-4') {
-                    x += 1;
-                    rooms[Object.keys(window.rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)]);
-                };
-            };
+            //     if (rooms[Object.keys(window.rooms)[selector]]['enemy'].length == 0 && Object.keys(window.rooms)[selector] != '5-5' && Object.keys(window.rooms)[selector] != '5-4') {
+            //         x += 1;
+            //         rooms[Object.keys(window.rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)]);
+            //     };
+            // };
         </script>
     </body>
 </html>
