@@ -66,21 +66,25 @@ function go(room, direction) {
 function useItem(itemType) {
     if (weapons[itemType]) {
         if (player.Weapon != weapons.Unarmed) {
-            $('#playerInventory').append(`<button class="inventory-item" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`)
+            $('#playerInventory').append(`<button class="inventory-item" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`);
         };
         player.Weapon = weapons[itemType];
         $('#playerWeapon').html(itemType);
     };
     if (armour[itemType]) {
         if (player.Armour != armour.Unarmoured) {
-            $('#playerInventory').append(`<button class="inventory-item" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`)
+            $('#playerInventory').append(`<button class="inventory-item" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`);
         };
         player.Armour = armour[itemType];
         $('#playerArmour').html(itemType);
     };
+    $('.inventory-item').unbind('click').click(function () {
+        useItem($(this).attr('itemType'));
+        $(this).remove();
+    });
 };
 
-$('.inventory-item').click(function () {
+$('.inventory-item').unbind('click').click(function () {
     useItem($(this).attr('itemType'));
     $(this).remove();
 });
