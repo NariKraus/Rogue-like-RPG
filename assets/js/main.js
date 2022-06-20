@@ -66,14 +66,14 @@ function go(room, direction) {
 function useItem(itemType) {
     if (weapons[itemType]) {
         if (player.Weapon.Type != 'Unarmed') {
-            $('#playerInventory').append(`<button class="inventory-item" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`);
+            $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Weapon" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`);
         };
         player.Weapon = weapons[itemType];
         $('#playerWeapon').html(itemType);
     };
     if (armour[itemType]) {
         if (player.Armour.Type != 'Unarmoured') {
-            $('#playerInventory').append(`<button class="inventory-item" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`);
+            $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Armour" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`);
         };
         player.Armour = armour[itemType];
         $('#playerArmour').html(itemType);
