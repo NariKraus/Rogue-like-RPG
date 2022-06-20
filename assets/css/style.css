@@ -78,7 +78,12 @@ div, a, h2, button {
     border-width: 0;
     text-transform: uppercase;
     justify-content: center;
-    background-color: var(--primary);
+}
+.inventory-item[itemCatagory="Weapon"] {
+    background-color: var(--red);
+}
+.inventory-item[itemCatagory="Armour"] {
+    background-color: var(--green);
 }
 
 .item-modal .item-wrapper {
