@@ -63,6 +63,23 @@ div, a, h2, button {
     justify-content: center;
     overflow: auto;
 }
+.info-value {
+    display: flex;
+}
+
+.inventory-item {
+    padding: 8px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    border-radius: 0.25rem!important;
+    border-width: 0;
+    text-transform: uppercase;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--onPrimary);
+}
 
 .item-modal .item-wrapper {
     padding: 0 20px;
