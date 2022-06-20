@@ -78,16 +78,17 @@ function useItem(itemType) {
         player.Armour = armour[itemType];
         $('#playerArmour').html(itemType);
     };
-    activateInventory();
-    sortInventory();
-};
-
-function activateInventory() {
     $('.inventory-item').unbind('click').click(function () {
         useItem($(this).attr('itemType'));
         $(this).remove();
     });
+    sortInventory();
 };
+
+$('.inventory-item').unbind('click').click(function () {
+    useItem($(this).attr('itemType'));
+    $(this).remove();
+});
 
 function sortInventory() {
     var alphabeticallyOrderedDivs = $('.inventory-item').sort(function(a, b) {
@@ -98,5 +99,4 @@ function sortInventory() {
     container.empty().append(alphabeticallyOrderedDivs);
 };
 
-activateInventory();
 sortInventory();
