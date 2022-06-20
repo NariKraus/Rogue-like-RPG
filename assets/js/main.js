@@ -102,10 +102,12 @@ function doffItem(item, type) {
     if (type == 'Armour') {
         $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
         $('#playerArmour').html('Unarmoured');
+        player.Armour = armour.unarmoured;
     };
-    if (type = 'Weapon') {
+    if (type == 'Weapon') {
         $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Weapon" itemType="` + item + `">` + item + `</button>`);
         $('#playerWeapon').html('Unarmed');
+        player.Weapon = weapons.unarmed;
     };
 };
 
