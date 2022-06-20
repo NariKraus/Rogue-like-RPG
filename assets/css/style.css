@@ -69,6 +69,7 @@ div, a, h2, button {
 
 .inventory-item {
     padding: 8px;
+    margin: 0.5em;
     min-width: 100px;
     display: flex;
     align-items: center;
@@ -78,7 +79,6 @@ div, a, h2, button {
     text-transform: uppercase;
     justify-content: center;
     background-color: var(--primary);
-    color: var(--onPrimary);
 }
 
 .item-modal .item-wrapper {
