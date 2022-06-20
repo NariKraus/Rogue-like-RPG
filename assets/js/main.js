@@ -113,13 +113,17 @@ function doffItem(item, type) {
 
 $('#playerArmour').click(function() {
     if (player.Armour.Type != 'Unarmoured') {
-        doffItem(player.Armour.Type, 'Armour')
-    }
+        doffItem(player.Armour.Type, 'Armour');
+    };
+    sortInventory();
+    loadButtons();
 });
 $('#playerWeapon').click(function() {
     if (player.Weapon.Type != 'Unarmed') {
-        doffItem(player.Weapon.Type, 'Weapon')
-    }
+        doffItem(player.Weapon.Type, 'Weapon');
+    };
+    sortInventory();
+    loadButtons();
 });
 
 sortInventory();
