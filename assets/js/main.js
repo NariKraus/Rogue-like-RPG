@@ -82,7 +82,9 @@ function useItem(itemType) {
     sortInventory();
     loadButtons();
     addTips();
-    $('#tip-info').remove();
+    if( $('#tip-info').length > 0 ) {
+        $('#tip-info').remove();
+    };
 };
 
 // Loading Buttons
@@ -125,7 +127,9 @@ $('#playerArmour').click(function() {
     sortInventory();
     loadButtons();
     addTips();
-    $('#tip-info').remove();
+    if( $('#tip-info').length > 0 ) {
+        $('#tip-info').remove();
+    };
 });
 $('#playerWeapon').click(function() {
     if (player.Weapon.Type != 'Unarmed') {
@@ -134,7 +138,9 @@ $('#playerWeapon').click(function() {
     sortInventory();
     loadButtons();
     addTips();
-    $('#tip-info').remove();
+    if( $('#tip-info').length > 0 ) {
+        $('#tip-info').remove();
+    };
 });
 
 // Attack Button
@@ -169,14 +175,18 @@ function addTips() {
 
         $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).text(innerHtml).appendTo( $('body') );
     }, function(){
+    if( $('#tip-info').length > 0 ) {
         $('#tip-info').remove();
+    };
     });
 };
 
 sortInventory();
 loadButtons();
 addTips();
-$('#tip-info').remove();
+    if( $('#tip-info').length > 0 ) {
+        $('#tip-info').remove();
+    };
 
 function giveAll() {
     Object.keys(armour).forEach(function(k) {
@@ -188,5 +198,7 @@ function giveAll() {
     sortInventory();
     loadButtons();
     addTips();
-    $('#tip-info').remove();
+    if( $('#tip-info').length > 0 ) {
+        $('#tip-info').remove();
+    };
 }
