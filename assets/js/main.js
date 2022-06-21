@@ -71,7 +71,7 @@ function useItem(itemType) {
         };
         player.Armour = armour[itemType];
         $('#playerArmour').children().remove();
-        $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="` + armour[itemType] + `">` + armour[itemType] + `</button>`);
+        $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="` + armour[itemType].Type + `">` + armour[itemType].Type + `</button>`);
     };
     if (weapons[itemType]) {
         if (player.Weapon.Type != 'Unarmed') {
@@ -79,7 +79,7 @@ function useItem(itemType) {
         };
         player.Weapon = weapons[itemType];
         $('#playerWeapon').children().remove();
-        $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="` + weapons[itemType] + `">` + weapons[itemType] + `</button>`);
+        $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="` + weapons[itemType].Type + `">` + weapons[itemType].Type + `</button>`);
     };
     sortInventory();
     loadButtons();
