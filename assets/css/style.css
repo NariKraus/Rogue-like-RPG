@@ -121,3 +121,19 @@ div, a, h2, button {
 .item-modal .info-box:not(:last-child) {
     margin-bottom: 16px;
 }
+
+#tip-info {
+    border: var(--separator) 1px dotted;
+    padding: 5px 20px 5px 5px;
+    display: block;
+    z-index: 100;
+    background: var(--surface) no-repeat 100% 5%;
+    color: var(--onSurface);
+    left: 0px;
+    margin-top: 1.5em!important;
+    margin: 0.5em;
+    width: 250px;
+    position: absolute;
+    top: 10px;
+    text-decoration: none;
+}
