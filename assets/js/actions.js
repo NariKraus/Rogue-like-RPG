@@ -74,14 +74,14 @@ function Attack(Offence, Defence) {
 // Heal
 function Heal(Target, Healing) {
     Target.Health = Math.min(Target.Health + Healing, Target.HealthMax);
-    $('#infoLog').append(`<p>The ` + Target.Type + ` was healed up to '` + Target.Health + `.</p>`);
+    $('#infoLog').append(`<p>The ` + Target.Type + ` was healed up to ` + Target.Health + `.</p>`);
 };
 
 // Damage
 function Damage(Target, Damage) {
     Target.Health = Math.max(Target.Health - Damage, 0);
     if (Target.Health > 0) {
-        $('#infoLog').append(`<p>The ` + Target.Type + ` was hit for '` + Damage + ` damage.</p>`);
+        $('#infoLog').append(`<p>The ` + Target.Type + ` was hit for ` + Damage + ` damage.</p>`);
     } else {
         $('#infoLog').append(`<p>The ` + Target.Type + ` died.</p>`);
         $('#enemy').html('');
