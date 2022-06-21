@@ -84,5 +84,7 @@ function Damage(Target, Damage) {
         console.log('The ' + Target.Type + ' was hit for ' + Damage + ' damage.');
     } else {
         console.log('The ' + Target.Type + ' died.');
+        $('#enemy').html('');
+        window.enemy = null;
     }
 };
