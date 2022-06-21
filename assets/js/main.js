@@ -126,5 +126,14 @@ $('#playerWeapon').click(function() {
     loadButtons();
 });
 
+$('.attack-button').click(function() {
+    if (enemy) {
+        Attack(player, enemy);
+        if (enemy.Health > 0) {
+            Attack(enemy, player)
+        };
+    };
+})
+
 sortInventory();
 loadButtons();
