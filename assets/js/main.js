@@ -123,6 +123,10 @@ function doffItem(item, type) {
         $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="Unarmed">Unarmed</button>`);
         player.Weapon = weapons.Unarmed;
     };
+    sortInventory();
+    loadButtons();
+    $('#tip-info').remove();
+    addTips();
 };
 
 // Attack Button
