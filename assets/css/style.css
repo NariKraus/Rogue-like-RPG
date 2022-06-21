@@ -49,6 +49,7 @@ div, a, h2, button {
     justify-content: center;
     background-color: var(--primary);
     color: var(--onPrimary);
+    border-radius: 0.5em 0 0 0.5em;
 }
 
 .item-modal {
@@ -60,8 +61,8 @@ div, a, h2, button {
     padding: 10px 14px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     overflow: auto;
+    max-height: 102px;
 }
 .info-value {
     display: flex;
@@ -106,7 +107,7 @@ div, a, h2, button {
 
 .item-modal .info-box {
     padding: 0;
-    min-height: 44px;
+    min-height: 61px;
     display: flex;
     overflow: hidden;
 }
