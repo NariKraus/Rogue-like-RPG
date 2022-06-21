@@ -121,25 +121,3 @@ div, a, h2, button {
 .item-modal .info-box:not(:last-child) {
     margin-bottom: 16px;
 }
-
-
-.tip:hover {
-    cursor: help;
-    position: relative
-}
-.tip span {
-    display: none
-}
-.tip:hover span {
-    border: #c0c0c0 1px dotted;
-    padding: 5px 20px 5px 5px;
-    display: block;
-    z-index: 100;
-    background: url(../images/status-info.png) #f0f0f0 no-repeat 100% 5%;
-    left: 0px;
-    margin: 10px;
-    width: 250px;
-    position: absolute;
-    top: 10px;
-    text-decoration: none
-}
