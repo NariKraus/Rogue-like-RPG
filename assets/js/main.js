@@ -149,7 +149,7 @@ function addTips() {
     $('.tip').hover(function(){
         const position = $(this).position();
         const element = $(`<span id='tip-info'></span>`);
-        const itemType = $(this).text();
+        const itemType = $(this).attr('itemtype');
         var innerHtml = '';
 
         if (armour[itemType]) {
