@@ -129,10 +129,14 @@ $('#playerWeapon').click(function() {
 $('.attack-button').click(function() {
     if (enemy) {
         Attack(player, enemy);
-        if (enemy.Health > 0) {
-            Attack(enemy, player);
+        try {    
+            if (enemy.Health > 0) {
+                Attack(enemy, player);
+            };
+            $('#playerHealth').html(player.Health);
+        } catch (error) {
+            console.log('Congratulations!');
         };
-        $('#playerHealth').html(player.Health);
     };
 })
 
