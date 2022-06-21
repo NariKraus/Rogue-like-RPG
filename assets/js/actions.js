@@ -33,7 +33,7 @@ function Attack(Offence, Defence) {
     Damage_roll = Math.max(Attack_Power - Defence_Power, 1);
 
     if (Attack_roll >= Dodge_roll) {
-        $('#infoLog').append(`<p>The ` + Offence.Type + `'s attack hit the ` + Defence.Type + `.</p>`);
+        $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack hit the ` + Defence.Type + `.</span><br/>`);
         Damage(Defence, Damage_roll)
 
         // Offence Traits
@@ -67,23 +67,23 @@ function Attack(Offence, Defence) {
         };
 
     } else {
-        $('#infoLog').append(`<p>The ` + Offence.Type + `'s attack missed the ` + Defence.Type + `.</p>`);
+        $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack missed the ` + Defence.Type + `.</span><br/>`);
     };
 };
 
 // Heal
 function Heal(Target, Healing) {
     Target.Health = Math.min(Target.Health + Healing, Target.HealthMax);
-    $('#infoLog').append(`<p>The ` + Target.Type + ` was healed up to ` + Target.Health + `.</p>`);
+    $('#infoLog').append(`<span>The ` + Target.Type + ` was healed up to ` + Target.Health + `.</span><br/>`);
 };
 
 // Damage
 function Damage(Target, Damage) {
     Target.Health = Math.max(Target.Health - Damage, 0);
     if (Target.Health > 0) {
-        $('#infoLog').append(`<p>The ` + Target.Type + ` was hit for ` + Damage + ` damage.</p>`);
+        $('#infoLog').append(`<span>The ` + Target.Type + ` was hit for ` + Damage + ` damage.</span><br/>`);
     } else {
-        $('#infoLog').append(`<p>The ` + Target.Type + ` died.</p>`);
+        $('#infoLog').append(`<span>The ` + Target.Type + ` died.</span><br/>`);
         $('#enemy').html('');
         window.enemy = null;
     }
