@@ -171,14 +171,6 @@
             //         rooms[Object.keys(window.rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)]);
             //     };
             // };
-
-            $('.tip').hover(function(){
-                var position = $(this).position();
-                var element = $(`<span id='tip-info'>test</span>`);
-                $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).appendTo( $('body') );
-            }, function(){
-                $('#tip-info').remove();
-            });
         </script>
     </body>
 </html>
