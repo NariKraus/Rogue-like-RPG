@@ -67,14 +67,14 @@ function go(room, direction) {
 function useItem(itemType) {
     if (armour[itemType]) {
         if (player.Armour.Type != 'Unarmoured') {
-            $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Armour" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`);
+            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`);
         };
         player.Armour = armour[itemType];
         $('#playerArmour').html(itemType);
     };
     if (weapons[itemType]) {
         if (player.Weapon.Type != 'Unarmed') {
-            $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Weapon" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`);
+            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`);
         };
         player.Weapon = weapons[itemType];
         $('#playerWeapon').html(itemType);
@@ -82,9 +82,7 @@ function useItem(itemType) {
     sortInventory();
     loadButtons();
     addTips();
-    if( $('#tip-info').length > 0 ) {
-        $('#tip-info').remove();
-    };
+    $('#tip-info').remove();
 };
 
 // Loading Buttons
@@ -127,9 +125,7 @@ $('#playerArmour').click(function() {
     sortInventory();
     loadButtons();
     addTips();
-    if( $('#tip-info').length > 0 ) {
-        $('#tip-info').remove();
-    };
+    $('#tip-info').remove();
 });
 $('#playerWeapon').click(function() {
     if (player.Weapon.Type != 'Unarmed') {
@@ -138,9 +134,7 @@ $('#playerWeapon').click(function() {
     sortInventory();
     loadButtons();
     addTips();
-    if( $('#tip-info').length > 0 ) {
-        $('#tip-info').remove();
-    };
+    $('#tip-info').remove();
 });
 
 // Attack Button
@@ -175,18 +169,14 @@ function addTips() {
 
         $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).text(innerHtml).appendTo( $('body') );
     }, function(){
-    if( $('#tip-info').length > 0 ) {
         $('#tip-info').remove();
-    };
     });
 };
 
 sortInventory();
 loadButtons();
 addTips();
-    if( $('#tip-info').length > 0 ) {
-        $('#tip-info').remove();
-    };
+$('#tip-info').remove();
 
 function giveAll() {
     Object.keys(armour).forEach(function(k) {
@@ -198,7 +188,5 @@ function giveAll() {
     sortInventory();
     loadButtons();
     addTips();
-    if( $('#tip-info').length > 0 ) {
-        $('#tip-info').remove();
-    };
+    $('#tip-info').remove();
 }
