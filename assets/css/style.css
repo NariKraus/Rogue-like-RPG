@@ -89,6 +89,10 @@ div, a, h2, button {
 
 .item-modal .item-wrapper {
     padding: 0 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .border-shadow {
