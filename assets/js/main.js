@@ -63,6 +63,7 @@ function go(room, direction) {
     checkRoom(window.room);
 };
 
+// Use Item
 function useItem(itemType) {
     if (armour[itemType]) {
         if (player.Armour.Type != 'Unarmoured') {
@@ -82,6 +83,7 @@ function useItem(itemType) {
     loadButtons();
 };
 
+// Loading Buttons
 function loadButtons() {
     $('.inventory-item').unbind('click').click(function () {
         useItem($(this).attr('itemType'));
@@ -89,6 +91,7 @@ function loadButtons() {
     });
 };
 
+// Sort Inventory
 function sortInventory() {
     var alphabeticallyOrderedDivs = $('.inventory-item').sort(function(a, b) {
         return String.prototype.localeCompare.call($(a).attr('itemCatagory').toLowerCase() + $(a).attr('itemType').toLowerCase(), $(b).attr('itemCatagory').toLowerCase() + $(b).attr('itemType').toLowerCase());
@@ -98,6 +101,7 @@ function sortInventory() {
     container.empty().append(alphabeticallyOrderedDivs);
 };
 
+// Doffing
 function doffItem(item, type) {
     if (type == 'Armour') {
         $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
@@ -111,6 +115,7 @@ function doffItem(item, type) {
     };
 };
 
+// Equipment Buttons
 $('#playerArmour').click(function() {
     if (player.Armour.Type != 'Unarmoured') {
         doffItem(player.Armour.Type, 'Armour');
@@ -126,6 +131,7 @@ $('#playerWeapon').click(function() {
     loadButtons();
 });
 
+// Attack Button
 $('.attack-button').click(function() {
     if (enemy) {
         Attack(player, enemy);
@@ -138,7 +144,28 @@ $('.attack-button').click(function() {
             console.log('Congratulations!');
         };
     };
-})
+});
+
+// Item Tips
+function addTips() {
+    $('.tip').hover(function(){
+        const position = $(this).position();
+        const element = $(`<span id='tip-info'></span>`);
+        const itemType = $(this).attr('itemType');
+        const innerHtml = '';
+
+        if (armour[itemType]) {
+            innerHtml = 'Defence : ' + armour[itemType].Defence + ' | Dodge : ' + armour[itemType].Dodge;
+        };
+        if (weapons[itemType]) {
+            innerHtml = 'Accuracy : ' + armour[itemType].Accuracy + ' | Power : ' + armour[itemType].Power;
+        };
+
+        $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).text(innerHtml).appendTo( $('body') );
+    }, function(){
+        $('#tip-info').remove();
+    });
+}
 
 sortInventory();
 loadButtons();
