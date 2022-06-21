@@ -81,6 +81,8 @@ function useItem(itemType) {
     };
     sortInventory();
     loadButtons();
+    addTips();
+    $('#tip-info').remove();
 };
 
 // Loading Buttons
@@ -104,12 +106,12 @@ function sortInventory() {
 // Doffing
 function doffItem(item, type) {
     if (type == 'Armour') {
-        $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
+        $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
         $('#playerArmour').html('Unarmoured');
         player.Armour = armour.Unarmoured;
     };
     if (type == 'Weapon') {
-        $('#playerInventory').append(`<button class="inventory-item" itemCatagory="Weapon" itemType="` + item + `">` + item + `</button>`);
+        $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + item + `">` + item + `</button>`);
         $('#playerWeapon').html('Unarmed');
         player.Weapon = weapons.Unarmed;
     };
@@ -122,6 +124,8 @@ $('#playerArmour').click(function() {
     };
     sortInventory();
     loadButtons();
+    addTips();
+    $('#tip-info').remove();
 });
 $('#playerWeapon').click(function() {
     if (player.Weapon.Type != 'Unarmed') {
@@ -129,6 +133,8 @@ $('#playerWeapon').click(function() {
     };
     sortInventory();
     loadButtons();
+    addTips();
+    $('#tip-info').remove();
 });
 
 // Attack Button
@@ -151,21 +157,36 @@ function addTips() {
     $('.tip').hover(function(){
         const position = $(this).position();
         const element = $(`<span id='tip-info'></span>`);
-        const itemType = $(this).attr('itemType');
-        const innerHtml = '';
+        const itemType = $(this).text();
+        var innerHtml = '';
 
         if (armour[itemType]) {
             innerHtml = 'Defence : ' + armour[itemType].Defence + ' | Dodge : ' + armour[itemType].Dodge;
         };
         if (weapons[itemType]) {
-            innerHtml = 'Accuracy : ' + armour[itemType].Accuracy + ' | Power : ' + armour[itemType].Power;
+            innerHtml = 'Accuracy : ' + weapons[itemType].Accuracy + ' | Power : ' + weapons[itemType].Power;
         };
 
         $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).text(innerHtml).appendTo( $('body') );
     }, function(){
         $('#tip-info').remove();
     });
-}
+};
 
 sortInventory();
 loadButtons();
+addTips();
+$('#tip-info').remove();
+
+function giveAll() {
+    Object.keys(armour).forEach(function(k) {
+        $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + k + `">` + k + `</button>`);
+    });
+    Object.keys(weapons).forEach(function(k) {
+        $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + k + `">` + k + `</button>`);
+    });
+    sortInventory();
+    loadButtons();
+    addTips();
+    $('#tip-info').remove();
+}
