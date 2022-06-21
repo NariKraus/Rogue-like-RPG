@@ -81,8 +81,8 @@ function useItem(itemType) {
     };
     sortInventory();
     loadButtons();
-    addTips();
     $('#tip-info').remove();
+    addTips();
 };
 
 // Loading Buttons
@@ -124,8 +124,8 @@ $('#playerArmour').click(function() {
     };
     sortInventory();
     loadButtons();
-    addTips();
     $('#tip-info').remove();
+    addTips();
 });
 $('#playerWeapon').click(function() {
     if (player.Weapon.Type != 'Unarmed') {
@@ -133,8 +133,8 @@ $('#playerWeapon').click(function() {
     };
     sortInventory();
     loadButtons();
-    addTips();
     $('#tip-info').remove();
+    addTips();
 });
 
 // Attack Button
@@ -175,8 +175,8 @@ function addTips() {
 
 sortInventory();
 loadButtons();
-addTips();
 $('#tip-info').remove();
+addTips();
 
 function giveAll() {
     Object.keys(armour).forEach(function(k) {
@@ -187,6 +187,6 @@ function giveAll() {
     });
     sortInventory();
     loadButtons();
-    addTips();
     $('#tip-info').remove();
+    addTips();
 }
