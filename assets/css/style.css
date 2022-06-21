@@ -68,7 +68,7 @@ div, a, h2, button {
     flex-wrap: wrap;
 }
 
-.inventory-item, #playerArmour, #playerWeapon {
+.inventory-item, .attack-button, #playerArmour, #playerWeapon {
     padding: 8px;
     margin: 0.5em;
     min-width: 100px;
@@ -85,6 +85,9 @@ div, a, h2, button {
 }
 .inventory-item[itemCatagory="Weapon"], #playerWeapon {
     background-color: var(--red);
+}
+.attack-button {
+    background-color: crimson;
 }
 
 .item-modal .item-wrapper {
