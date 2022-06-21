@@ -113,12 +113,14 @@ function sortInventory() {
 function doffItem(item, type) {
     if (type == 'Armour') {
         $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
-        $('#playerArmour').html('Unarmoured');
+        $('#playerArmour').children().remove();
+        $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="Unarmoured">Unarmoured</button>`);
         player.Armour = armour.Unarmoured;
     };
     if (type == 'Weapon') {
         $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + item + `">` + item + `</button>`);
-        $('#playerWeapon').html('Unarmed');
+        $('#playerWeapon').children().remove();
+        $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="Unarmed">Unarmed</button>`);
         player.Weapon = weapons.Unarmed;
     };
 };
