@@ -52,5 +52,11 @@
       "Power": 8,
       "Accuracy": -2,
       "Traits": null
+    },
+    "God" : {
+      "Type": "God",
+      "Power": 100,
+      "Accuracy": 100,
+      "Traits": null
     }
 }
