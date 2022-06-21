@@ -130,7 +130,7 @@ $('.attack-button').click(function() {
     if (enemy) {
         Attack(player, enemy);
         if (enemy.Health > 0) {
-            Attack(enemy, player)
+            Attack(enemy, player);
         };
     };
 })
