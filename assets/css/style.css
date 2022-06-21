@@ -69,7 +69,7 @@ div, a, h2, button {
     flex-wrap: wrap;
 }
 
-.inventory-item, .attack-button, #playerArmour, #playerWeapon {
+.inventory-item, .equipped-item, .attack-button, #playerArmour, #playerWeapon {
     padding: 8px;
     margin: 0.5em;
     min-width: 100px;
@@ -81,10 +81,10 @@ div, a, h2, button {
     text-transform: uppercase;
     justify-content: center;
 }
-.inventory-item[itemCatagory="Armour"], #playerArmour {
+.inventory-item[itemCatagory="Armour"], .equipped-item[itemCatagory="Armour"], #playerArmour {
     background-color: var(--green);
 }
-.inventory-item[itemCatagory="Weapon"], #playerWeapon {
+.inventory-item[itemCatagory="Weapon"], .equipped-item[itemCatagory="Weapon"], #playerWeapon {
     background-color: var(--red);
 }
 .attack-button {
