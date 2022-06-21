@@ -1,62 +1,62 @@
 {
     "Unarmed" : {
       "Type": "Unarmed",
-      "Power": 0,
       "Accuracy": 0,
+      "Power": 0,
       "Traits": "Basic"
     },
     "Dagger" : {
       "Type": "Dagger",
-      "Power": 2,
       "Accuracy": 3,
+      "Power": 2,
       "Traits": null
     },
     "Short Sword" : {
       "Type": "Short Sword",
-      "Power": 4,
       "Accuracy": 1,
+      "Power": 4,
       "Traits": null
     },
     "Longsword" : {
       "Type": "Longsword",
-      "Power": 6,
       "Accuracy": 1,
+      "Power": 6,
       "Traits": null
     },
     "Short Spear" : {
       "Type": "Short Spear",
-      "Power": 6,
       "Accuracy": 0,
+      "Power": 6,
       "Traits": null
     },
     "Mace" : {
       "Type": "Mace",
-      "Power": 5,
       "Accuracy": 0,
+      "Power": 5,
       "Traits": null
     },
     "Club" : {
       "Type": "Club",
-      "Power": 3,
       "Accuracy": 0,
+      "Power": 3,
       "Traits": null
     },
     "Halberd" : {
       "Type": "Halberd",
-      "Power": 8,
       "Accuracy": -2,
+      "Power": 8,
       "Traits": "Reach"
     },
     "Greatsword" : {
       "Type": "Greatsword",
-      "Power": 8,
       "Accuracy": -2,
+      "Power": 8,
       "Traits": null
     },
     "Pootis" : {
       "Type": "Pootis",
-      "Power": 100,
       "Accuracy": 100,
+      "Power": 100,
       "Traits": null
     }
 }
