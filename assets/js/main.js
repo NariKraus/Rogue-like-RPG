@@ -132,6 +132,7 @@ $('.attack-button').click(function() {
         if (enemy.Health > 0) {
             Attack(enemy, player);
         };
+        $('#playerHealth').html(player.Health);
     };
 })
 
