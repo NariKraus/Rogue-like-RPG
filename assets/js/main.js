@@ -153,9 +153,11 @@ function addTips() {
         var innerHtml = '';
 
         if (armour[itemType]) {
+            console.log('Armour')
             innerHtml = 'Defence : ' + armour[itemType].Defence + ' | Dodge : ' + armour[itemType].Dodge;
         };
         if (weapons[itemType]) {
+            console.log('Weapon')
             innerHtml = 'Accuracy : ' + weapons[itemType].Accuracy + ' | Power : ' + weapons[itemType].Power;
         };
 
