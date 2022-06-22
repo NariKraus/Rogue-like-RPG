@@ -83,7 +83,7 @@ function useItem(itemType) {
     };
     sortInventory();
     loadButtons();
-    $('#tip-info').remove();
+    $('.tip-info').remove();
     addTips();
 };
 
@@ -111,13 +111,13 @@ function sortInventory() {
 
 // Doffing
 function doffItem(item, type) {
-    if (type == 'Armour') {
+    if (type == 'Armour' && player.Armour.Type != 'Unarmoured') {
         $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
         $('#playerArmour').children().remove();
         $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="Unarmoured">Unarmoured</button>`);
         player.Armour = armour.Unarmoured;
     };
-    if (type == 'Weapon') {
+    if (type == 'Weapon' && player.Weapon.Type != 'Unarmed') {
         $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + item + `">` + item + `</button>`);
         $('#playerWeapon').children().remove();
         $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="Unarmed">Unarmed</button>`);
@@ -125,7 +125,7 @@ function doffItem(item, type) {
     };
     sortInventory();
     loadButtons();
-    $('#tip-info').remove();
+    $('.tip-info').remove();
     addTips();
 };
 
@@ -149,7 +149,7 @@ $('.attack-button').click(function() {
 function addTips() {
     $('.tip').hover(function(){
         const position = $(this).position();
-        const element = $(`<span id='tip-info'></span>`);
+        const element = $(`<span class='tip-info'></span>`);
         const itemType = $(this).attr('itemtype');
         var innerHtml = '';
 
@@ -162,13 +162,13 @@ function addTips() {
 
         $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).text(innerHtml).appendTo( $('body') );
     }, function(){
-        $('#tip-info').remove();
+        $('.tip-info').remove();
     });
 };
 
 sortInventory();
 loadButtons();
-$('#tip-info').remove();
+$('.tip-info').remove();
 addTips();
 
 function giveAll() {
@@ -180,6 +180,6 @@ function giveAll() {
     });
     sortInventory();
     loadButtons();
-    $('#tip-info').remove();
+    $('.tip-info').remove();
     addTips();
 }
