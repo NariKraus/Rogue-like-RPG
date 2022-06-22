@@ -144,7 +144,7 @@ div, a, h2, button {
     margin-bottom: 16px;
 }
 
-#tip-info {
+.tip-info {
     border: var(--separator) 1px dotted;
     padding: 5px 20px 5px 5px;
     display: block;
