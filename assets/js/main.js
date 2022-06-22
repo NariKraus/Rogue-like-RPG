@@ -140,6 +140,7 @@ $('.attack-button').click(function() {
             $('#playerHealth').html(player.Health);
         } catch (error) {
             console.log('Congratulations!');
+            rooms[room].enemy = [];
         };
     };
 });
