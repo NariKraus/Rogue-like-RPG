@@ -94,8 +94,7 @@ function loadButtons() {
         $(this).remove();
     });
     $('.equipped-item').unbind('click').click(function() {
-        doffItem($(this).attr('itemType'), $(this).attr('itemCatagory'));
-        $(this).remove();
+        doffItem($(this).attr('itemType'), $(this).attr('itemCatagory'), $(this));
     });
 };
 
@@ -110,18 +109,20 @@ function sortInventory() {
 };
 
 // Doffing
-function doffItem(item, type) {
+function doffItem(item, type, element) {
     if (type == 'Armour' && player.Armour.Type != 'Unarmoured') {
         $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
         $('#playerArmour').children().remove();
         $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="Unarmoured">Unarmoured</button>`);
         player.Armour = armour.Unarmoured;
+        $(element).remove();
     };
     if (type == 'Weapon' && player.Weapon.Type != 'Unarmed') {
         $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + item + `">` + item + `</button>`);
         $('#playerWeapon').children().remove();
         $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="Unarmed">Unarmed</button>`);
         player.Weapon = weapons.Unarmed;
+        $(element).remove();
     };
     sortInventory();
     loadButtons();
