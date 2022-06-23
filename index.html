@@ -165,7 +165,7 @@
                         <span class="markdown-italics">Please note that visuals do not work properly on mobile devices.</span>
                     </code>
                 </pre>
-                <button class="close-log-button">Close</button>
+                <button class="close-log-button" onclick="$('.update-container').remove();">Close</button>
             </div>
         </div>
 
@@ -225,6 +225,13 @@
             };
 
             spawnMonsters();
+
+            var bypassCheck = document.location.search;
+
+            if (bypassCheck.includes('NoUpdateLog')) {
+                $('.update-container').remove();
+            };
+
         </script>
     </body>
 </html>
