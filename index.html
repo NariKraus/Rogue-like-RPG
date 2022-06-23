@@ -16,126 +16,157 @@
         <link rel="shortcut icon" href="assets/ico/Ico.ico">
     </head>
     <body>
-        <div class="row">
-            <div class="col">
-                <div class="container">
-                    <div class="item-modal border-shadow align-content-center justify-content-center row">
+        <main>
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <div class="item-modal border-shadow align-content-center justify-content-center row">
+                                
+                            <div class="pixel" style="border-radius: 6px 0 0 0;"></div>
+                            <div class="pixel"></div>
+                            <button disabled id="button-up" class="pixel up h4" onclick="go(room, 'up')">up</button>
+                            <div class="pixel"></div>
+                            <div class="pixel" style="border-radius: 0 6px 0 0;"></div>
                             
-                        <div class="pixel" style="border-radius: 6px 0 0 0;"></div>
-                        <div class="pixel"></div>
-                        <button disabled id="button-up" class="pixel up h4" onclick="go(room, 'up')">up</button>
-                        <div class="pixel"></div>
-                        <div class="pixel" style="border-radius: 0 6px 0 0;"></div>
-                        
-                        <div class="w-100"></div>
-        
-                        <div class="pixel"></div>
-                        <div class="pixel middle"></div>
-                        <div class="pixel middle h2" id="title"></div>
-                        <div class="pixel middle"></div>
-                        <div class="pixel"></div>
-                        
-                        <div class="w-100"></div>
-        
-                        <button disabled id="button-left" class="pixel left h4" onclick="go(room, 'left')">left</button>
-                        <div class="pixel middle"></div>
-                        <button class="pixel middle" onclick="
-                            canGo(room);
-                            checkRoom(room);
-                            $('#title').html(window.room);
-                            $(this).replaceWith(`<div class='pixel middle h5' id='enemy'></div>`);
-                        " id="start">
-                            <div class="h2">Start</div>
-                            <div class="h2">Game</div>
-                        </button>
-                        <div class="pixel middle"></div>
-                        <button disabled id="button-right" class="pixel right h4" onclick="go(room, 'right')">right</button>
-                        
-                        <div class="w-100"></div>
-        
-                        <div class="pixel"></div>
-                        <div class="pixel middle"></div>
-                        <div class="pixel middle"></div>
-                        <div class="pixel middle"></div>
-                        <div class="pixel"></div>
-                        
-                        <div class="w-100"></div>
-        
-                        <div class="pixel" style="border-radius: 0 0 0 6px;"></div>
-                        <div class="pixel"></div>
-                        <button disabled id="button-down" class="pixel down h4" onclick="go(room, 'down')">down</button>
-                        <div class="pixel"></div>
-                        <div class="pixel" style="border-radius: 0 0 6px 0;"></div>
-
+                            <div class="w-100"></div>
+            
+                            <div class="pixel"></div>
+                            <div class="pixel middle"></div>
+                            <div class="pixel middle h2" id="title"></div>
+                            <div class="pixel middle"></div>
+                            <div class="pixel"></div>
+                            
+                            <div class="w-100"></div>
+            
+                            <button disabled id="button-left" class="pixel left h4" onclick="go(room, 'left')">left</button>
+                            <div class="pixel middle"></div>
+                            <button class="pixel middle" onclick="
+                                canGo(room);
+                                checkRoom(room);
+                                $('#title').html(window.room);
+                                $(this).replaceWith(`<div class='pixel middle h5' id='enemy'></div>`);
+                            " id="start">
+                                <div class="h2">Start</div>
+                                <div class="h2">Game</div>
+                            </button>
+                            <div class="pixel middle"></div>
+                            <button disabled id="button-right" class="pixel right h4" onclick="go(room, 'right')">right</button>
+                            
+                            <div class="w-100"></div>
+            
+                            <div class="pixel"></div>
+                            <div class="pixel middle"></div>
+                            <div class="pixel middle"></div>
+                            <div class="pixel middle"></div>
+                            <div class="pixel"></div>
+                            
+                            <div class="w-100"></div>
+            
+                            <div class="pixel" style="border-radius: 0 0 0 6px;"></div>
+                            <div class="pixel"></div>
+                            <button disabled id="button-down" class="pixel down h4" onclick="go(room, 'down')">down</button>
+                            <div class="pixel"></div>
+                            <div class="pixel" style="border-radius: 0 0 6px 0;"></div>
+    
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="container">
-
-                    <div class="item-modal border-shadow">
-                        <div class="item-wrapper">
-                            <div class="info-box border-shadow">
-                                <span class="info-title">Health</span>
-                                <div class="info-content" style="justify-content: center;">
-                                    <span class="info-value" id="playerHealth">20</span>
+                <div class="col">
+                    <div class="container">
+    
+                        <div class="item-modal border-shadow">
+                            <div class="item-wrapper">
+                                <div class="info-box border-shadow">
+                                    <span class="info-title">Health</span>
+                                    <div class="info-content" style="justify-content: center;">
+                                        <span class="info-value" id="playerHealth">20</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="info-box border-shadow">
-                                <span class="info-title">Weapon</span>
-                                <div class="info-content">
-                                    <span class="info-value" id="playerWeapon">
-                                        <button class="equipped-item tip" itemcatagory="Weapon" itemtype="Unarmed">Unarmed</button>
-                                    </span>
+                                <div class="info-box border-shadow">
+                                    <span class="info-title">Weapon</span>
+                                    <div class="info-content">
+                                        <span class="info-value" id="playerWeapon">
+                                            <button class="equipped-item tip" itemcatagory="Weapon" itemtype="Unarmed">Unarmed</button>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="info-box border-shadow">
-                                <span class="info-title">Armour</span>
-                                <div class="info-content">
-                                    <span class="info-value" id="playerArmour">
-                                        <button class="equipped-item tip" itemcatagory="Armour" itemtype="Unarmoured">Unarmoured</button>
-                                    </span>
+                                <div class="info-box border-shadow">
+                                    <span class="info-title">Armour</span>
+                                    <div class="info-content">
+                                        <span class="info-value" id="playerArmour">
+                                            <button class="equipped-item tip" itemcatagory="Armour" itemtype="Unarmoured">Unarmoured</button>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="info-box border-shadow">
-                                <span class="info-title">Status</span>
-                                <div class="info-content">
-                                    <span class="info-value" id="playerStatus"></span>
+                                <div class="info-box border-shadow">
+                                    <span class="info-title">Status</span>
+                                    <div class="info-content">
+                                        <span class="info-value" id="playerStatus"></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="info-box border-shadow">
-                                <span class="info-title">Inventory</span>
-                                <div class="info-content">
-                                    <span class="info-value" id="playerInventory">
-                                        <button class="inventory-item tip" itemcatagory="Armour" itemtype="Leather">Leather</button>
-                                        <button class="inventory-item tip" itemcatagory="Armour" itemtype="Plate">Plate</button>
-                                        <button class="inventory-item tip" itemcatagory="Armour" itemtype="Spiked">Spiked</button>
-                                        <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Club">Club</button>
-                                        <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Dagger">Dagger</button>
-                                        <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Greatsword">Greatsword</button>
-                                        <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Halberd">Halberd</button>
-                                        <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Longsword">Longsword</button>
-                                        <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Mace">Mace</button>
-                                        <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Short Spear">Short Spear</button>
-                                        <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Short Sword">Short Sword</button>
-                                    </span>
+                                <div class="info-box border-shadow">
+                                    <span class="info-title">Inventory</span>
+                                    <div class="info-content">
+                                        <span class="info-value" id="playerInventory">
+                                            <button class="inventory-item tip" itemcatagory="Armour" itemtype="Leather">Leather</button>
+                                            <button class="inventory-item tip" itemcatagory="Armour" itemtype="Plate">Plate</button>
+                                            <button class="inventory-item tip" itemcatagory="Armour" itemtype="Spiked">Spiked</button>
+                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Club">Club</button>
+                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Dagger">Dagger</button>
+                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Greatsword">Greatsword</button>
+                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Halberd">Halberd</button>
+                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Longsword">Longsword</button>
+                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Mace">Mace</button>
+                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Short Spear">Short Spear</button>
+                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Short Sword">Short Sword</button>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="info-box border-shadow" style="overflow: auto;">
-                                <span class="info-title">Log</span>
-                                <div class="info-content" style="max-height: 300px;">
-                                    <span class="info-value" id="infoLog"></span>
+                                <div class="info-box border-shadow" style="overflow: auto;">
+                                    <span class="info-title">Log</span>
+                                    <div class="info-content" style="max-height: 300px;">
+                                        <span class="info-value" id="infoLog"></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="info-box border-shadow row justify-content-center" style="margin-top: auto;">
-                                <div class="info-content">
-                                    <button class="attack-button">Attack</button>
+                                <div class="info-box border-shadow row justify-content-center" style="margin-top: auto;">
+                                    <div class="info-content">
+                                        <button class="attack-button">Attack</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+    
                     </div>
-
                 </div>
+            </div>
+        </main>
+
+        <div class="update-container">
+            <div class="update-log">
+                <pre>
+                    <code>
+                        <span class="markdown-blue"># Update Log</span>
+                        <span class="markdown-red">-</span> The page now has an actual favicon and title.
+                        <span class="markdown-red">-</span> Customised scroll bar for elements such as the inventory.
+        
+                        <span class="markdown-blue"># Bug Fixes</span>
+                        <span class="markdown-red">-</span> Doffing a weapon or armour will no longer cause the stats panel to be duplicated for said elements.
+                        <span class="markdown-red">-</span> Enemy spawning has been fixed to now spawn randomly around the map. (There is still always a Kobold in room 5-4)
+                        <span class="markdown-red">-</span> Enemies will no longer generate with just the first 2 letters of their name.
+        
+                        <span class="markdown-blue"># Next Tasks</span>
+                        <span class="markdown-red">-</span> Making the log system show the most recent input, with an option to view all previous log inputs.
+                        <span class="markdown-red">-</span> Allowing the player to get to the 2nd and 3rd levels.
+                        <span class="markdown-red">-</span> Making more gear and enemy traits, as well as applying them better in combat.
+                        <span class="markdown-red">-</span> Creating status effects such as Poisoned, Enraged and Undead.
+                        <span class="markdown-red">-</span> Creating usable single-use potions and poisons.
+                        <span class="markdown-red">-</span> Capping the inventory to a maximum capacity yet to be decided.
+        
+                        <span class="markdown-italics">Please note that visuals do not work properly on mobile devices.</span>
+
+                        <button class="close-log-button">Close</button>
+                    </code>
+                </pre>
             </div>
         </div>
 
