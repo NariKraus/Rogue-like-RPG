@@ -178,7 +178,7 @@
             };   
 
             x = 0
-            $(document).ready(function() {                
+            function spawnMonsters(rooms) {                
                 while (x != 4) {
                     selector = Math.floor(Math.random() * (Object.keys(rooms).length - 1));
                     
@@ -187,7 +187,9 @@
                         rooms[Object.keys(rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)][0]);
                     };
                 };
-            });
+            };
+
+            spawnMonsters(rooms);
         </script>
     </body>
 </html>
