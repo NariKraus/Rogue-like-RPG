@@ -3,20 +3,20 @@
         "Type" : "Unarmoured",
         "Defence" : 0,
         "Dodge" : 0,
-        "Traits" : [null]
+        "Traits" : []
     },
 
     "Leather" : {
         "Type" : "Leather",
         "Defence" : 1,
         "Dodge" : 2, 
-        "Traits" : [null]
+        "Traits" : []
     },
     "Plate" : {
         "Type" : "Plate",
         "Defence" : 5,
         "Dodge" : -2,
-        "Traits" : [null]
+        "Traits" : []
     },
     "Spiked" : {
         "Type" : "Spiked",
