@@ -162,7 +162,9 @@
             getData("json/player.json", (data) => player = data );
             getData("json/foes.json", (data) => foes = data );
             getData("json/weapons.json", (data) => weapons = data );
-            getData("assets/Levels/L1.json", (data) => rooms = data );
+            getData("assets/Levels/L1.json", (data) => rooms = data )
+                .then( console.log( Object.keys( window.rooms ) ) )
+                .then( spawnMonsters( window.rooms ) );
 
 
             var fade = 2;
@@ -188,10 +190,6 @@
                     };
                 };
             };
-
-            console.log(Object.keys(window.rooms))
-
-            spawnMonsters(window.rooms);
         </script>
     </body>
 </html>
