@@ -138,9 +138,15 @@ function addTips() {
 
         if (armour[itemType]) {
             innerHtml = 'Defence : ' + armour[itemType].Defence + ' | Dodge : ' + armour[itemType].Dodge;
+            if (!armour[itemType].Traits) {
+                innerHtml += ' | Traits : ' + armour[itemType].Traits;
+            };
         };
         if (weapons[itemType]) {
             innerHtml = 'Accuracy : ' + weapons[itemType].Accuracy + ' | Power : ' + weapons[itemType].Power;
+            if (!weapons[itemType].Traits) {
+                innerHtml += ' | Traits : ' + weapons[itemType].Traits;
+            };
         };
 
         $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).text(innerHtml).appendTo( $('body') );
