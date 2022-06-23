@@ -142,32 +142,27 @@
         <script src="assets/js/main.js"></script>
 
         <script>
-            var armour = '';
-            var player = '';
-            var foes = '';
-            var weapons = '';
-            var rooms = '';
+            var armour = null;
+            var player = null;
+            var foes = null;
+            var weapons = null;
+            var rooms = null;
 
             function getData(url, cb, spawn) {
                 fetch(url)
                 .then(response => response.json())
-                .then(result => cb(result))
-                .then(function (spawn) {
-                    if (spawn) {
-                        spawnMonsters(rooms);
-                    };
-                });
+                .then(result => cb(result));
             }
 
             
 
             // getData(url, (data) => console.log({ data }));
 
-            getData("json/armour.json", (data) => armour = data , false);
-            getData("json/player.json", (data) => player = data , false);
-            getData("json/foes.json", (data) => foes = data , false);
-            getData("json/weapons.json", (data) => weapons = data , false);
-            getData("assets/Levels/L1.json", (data) => rooms = data , true);
+            getData("json/armour.json", (data) => armour = data );
+            getData("json/player.json", (data) => player = data );
+            getData("json/foes.json", (data) => foes = data );
+            getData("json/weapons.json", (data) => weapons = data );
+            getData("assets/Levels/L1.json", (data) => rooms = data );
 
             var fade = 2;
             var room = "5-5";
@@ -179,19 +174,25 @@
                 $('.title').html(window.room);
                 canGo(window.room);
                 checkRoom(window.room);
-            };   
+            };
 
-            x = 0
-            function spawnMonsters(data) {                
-                while (x != 4) {
-                    selector = Math.floor(Math.random() * (Object.keys(data).length - 1));
-                    
-                    if (data[Object.keys(data)[selector]]['enemy'].length == 0 && Object.keys(data)[selector] != '5-5' && Object.keys(data)[selector] != '5-4') {
-                        x += 1;
-                        data[Object.keys(data)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)][0]);
+            function spawnMonsters(){
+                if (rooms != null) {
+                    x = 0;
+                    while (x != 4) {
+                        selector = Math.floor(Math.random() * (Object.keys(window.rooms).length - 1));
+                        
+                        if (window.rooms[Object.keys(window.rooms)[selector]]['enemy'].length == 0 && Object.keys(window.rooms)[selector] != '5-5' && Object.keys(window.rooms)[selector] != '5-4') {
+                            x += 1;
+                            window.rooms[Object.keys(window.rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)][0]);
+                        };
                     };
+                } else {
+                    setTimeout(spawnMonsters, 250);
                 };
             };
+
+            spawnMonsters();
         </script>
     </body>
 </html>
