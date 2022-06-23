@@ -171,15 +171,14 @@ reload()
 $('.attack-button').click(function() {
     if (enemy) {
         Attack(player, enemy);
-        // try {    
+        try {    
             if (enemy.Health > 0) {
                 Attack(enemy, player);
             };
             $('#playerHealth').html(player.Health);
-        // } catch (error) {
-        //     console.log('Congratulations!');
-        //     rooms[room].enemy = [];
-        // };
+        } catch (error) {
+            rooms[room].enemy = [];
+        };
     };
 });
 
