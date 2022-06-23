@@ -138,13 +138,13 @@ function addTips() {
 
         if (armour[itemType]) {
             innerHtml = 'Defence : ' + armour[itemType].Defence + '<br />Dodge : ' + armour[itemType].Dodge;
-            if (!armour[itemType].Traits.includes(null)) {
+            if (armour[itemType].Traits.length > 0) {
                 innerHtml += '<br />Traits : ' + armour[itemType].Traits.join(', ');
             };
         };
         if (weapons[itemType]) {
             innerHtml = 'Accuracy : ' + weapons[itemType].Accuracy + '<br />Power : ' + weapons[itemType].Power;
-            if (!weapons[itemType].Traits.includes(null)) {
+            if (weapons[itemType].Traits.length > 0) {
                 innerHtml += '<br />Traits : ' + weapons[itemType].Traits.join(', ');
             };
         };
@@ -215,7 +215,7 @@ function Attack(Offence, Defence) {
 
     if (Attack_roll >= Dodge_roll) {
         $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack hit the ` + Defence.Type + `.</span>`);
-        
+
         modifierTraits(Offence, Defence);
 
         Damage(Defence, Damage_roll);
