@@ -159,3 +159,36 @@ div, a, h2, button {
     top: 10px;
     text-decoration: none;
 }
+
+.modal-container {
+    display: none;
+}
+
+.update-container {
+    background-color: rgba(0,0,0,0.5);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-log {
+    background-color: var(--surface);
+    width: 60vw;
+    max-height: 60vh;
+    border-radius: 2em;
+    border: double 3px var(--separator);
+}
+
+span.markdown-blue {
+    color: cornflowerblue;
+}
+span.markdown-red {
+    color: red;
+}
+span.markdown-italics {
+    font-style: italic;
+}
