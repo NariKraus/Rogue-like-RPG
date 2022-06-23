@@ -149,7 +149,7 @@ function addTips() {
             };
         };
 
-        $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).text(innerHtml).appendTo( $('body') );
+        $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).html(innerHtml).appendTo( $('body') );
     }, function(){
         $('.tip-info').remove();
     });
