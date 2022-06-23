@@ -17,6 +17,9 @@ Player First, check if enemy is alive.
 
 
 # Traits
+> Offense
 - Basic : Always hits, but only does 1 damage
 - Vampiric : Gains health equal to half damage dealt.
+> Defence
 - Spiky : Deals 1 point of damage to the attacker.
+- Undead : Immune to poison, Vampiric has no effect.
