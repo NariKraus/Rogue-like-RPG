@@ -163,9 +163,11 @@
             getData("json/foes.json", (data) => foes = data );
             getData("json/weapons.json", (data) => weapons = data );
             getData("assets/Levels/L1.json", (data) => rooms = data ).then(function() {
-                spawnMonsters( window.rooms );
+                console.log(rooms);
+                spawnMonsters(rooms);
             });
-
+            
+            console.log(rooms);
 
             var fade = 2;
             var room = "5-5";
