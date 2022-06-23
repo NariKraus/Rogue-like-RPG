@@ -182,11 +182,14 @@ div, a, h2, button {
     padding: 1em;
 }
 
-span.markdown-blue {
-    color: cornflowerblue;
-}
 span.markdown-red {
-    color: red;
+    color: var(--bs-pink);
+}
+span.markdown-blue {
+    color: var(--bs-blue);
+}
+span.markdown-green {
+    color: var(--bs-teal);
 }
 span.markdown-italics {
     font-style: italic;
