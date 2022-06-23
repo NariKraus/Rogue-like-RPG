@@ -25,7 +25,7 @@
     },
     "Short Spear" : {
       "Type": "Short Spear",
-      "Accuracy": 0,
+      "Accuracy": -2,
       "Power": 6,
       "Traits": ["Piercing"]
     },
@@ -49,7 +49,7 @@
     },
     "Greatsword" : {
       "Type": "Greatsword",
-      "Accuracy": -2,
+      "Accuracy": 1,
       "Power": 8,
       "Traits": [null]
     },
