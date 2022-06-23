@@ -32,20 +32,16 @@ function defenceTraits(Offence, Defence) {
     if (Defence.Type == "player") {
         // 
 
-        switch (Defence.Armour.Traits) {
-            case "Spiky":
-                Damage(Offence, 1);
-                break;
+        if (Defence.Armour.Traits.includes('Spiky')) {
+            Damage(Offence, 1);
         };
 
         // 
     } else {
         // 
 
-        switch (Defence.Traits) {
-            case "Spiky":
-                Damage(Offence, 1);
-                break;
+        if (Defence.Traits.includes('Spiky')) {
+            Damage(Offence, 1);
         };
 
         // 
