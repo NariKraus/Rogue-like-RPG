@@ -148,13 +148,13 @@
             var weapons = '';
             var rooms = '';
 
-            function getData(url, cb, extra) {
+            function getData(url, cb, spawn) {
                 fetch(url)
                 .then(response => response.json())
                 .then(result => cb(result))
-                .then(function (extra) {
-                    if (extra) {
-                        extra();
+                .then(function (spawn) {
+                    if (spawn) {
+                        spawnMonsters(rooms);
                     };
                 });
             }
@@ -163,11 +163,11 @@
 
             // getData(url, (data) => console.log({ data }));
 
-            getData("json/armour.json", (data) => armour = data , null);
-            getData("json/player.json", (data) => player = data , null);
-            getData("json/foes.json", (data) => foes = data , null);
-            getData("json/weapons.json", (data) => weapons = data , null);
-            getData("assets/Levels/L1.json", (data) => rooms = data , spawnMonsters(rooms));
+            getData("json/armour.json", (data) => armour = data , false);
+            getData("json/player.json", (data) => player = data , false);
+            getData("json/foes.json", (data) => foes = data , false);
+            getData("json/weapons.json", (data) => weapons = data , false);
+            getData("assets/Levels/L1.json", (data) => rooms = data , true);
 
             var fade = 2;
             var room = "5-5";
