@@ -211,12 +211,11 @@ function Attack(Offence, Defence) {
     };
 
     // Damage Roll
+    modifierTraits(Offence, Defence);
     Damage_roll = Math.max(Attack_Power - Defence_Power, 1);
 
     if (Attack_roll >= Dodge_roll) {
         $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack hit the ` + Defence.Type + `.</span>`);
-
-        modifierTraits(Offence, Defence);
 
         Damage(Defence, Damage_roll);
 
