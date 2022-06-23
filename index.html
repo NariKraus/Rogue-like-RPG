@@ -9,9 +9,11 @@
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        
         <link href="assets/css/style.css" rel="stylesheet">
 
-        <title>Hello, world!</title>
+        <title>Rogue-Like RPG</title>
+        <link rel="shortcut icon" href="assets/ico/Ico.ico">
     </head>
     <body>
         <div class="row">
@@ -184,7 +186,7 @@
                         
                         if (window.rooms[Object.keys(window.rooms)[selector]]['enemy'].length == 0 && Object.keys(window.rooms)[selector] != '5-5' && Object.keys(window.rooms)[selector] != '5-4') {
                             x += 1;
-                            window.rooms[Object.keys(window.rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)][0]);
+                            window.rooms[Object.keys(window.rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)]);
                         };
                     };
                 } else {
