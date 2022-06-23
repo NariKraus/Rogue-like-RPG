@@ -215,6 +215,7 @@ function Attack(Offence, Defence) {
 
     if (Attack_roll >= Dodge_roll) {
         $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack hit the ` + Defence.Type + `.</span>`);
+        
         modifierTraits(Offence, Defence);
 
         Damage(Defence, Damage_roll);
