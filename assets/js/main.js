@@ -207,9 +207,9 @@ function Attack(Offence, Defence) {
             // if (Offence.Traits.includes('Piercing')) {
             //     Defence_Power = Math.round(Defence_Power/2);
             // };
-            if (Offence.Weapon.Traits.includes('Piercing')) {
-                Defence_Power = Math.round(Defence_Power/2);
-            };
+            // if (Offence.Weapon.Traits.includes('Piercing')) {
+            //     Defence_Power = Math.round(Defence_Power/2);
+            // };
             break;
         default:
             Dodge_roll = Math.floor( dice(20) + Defence.Dodge );
@@ -217,9 +217,9 @@ function Attack(Offence, Defence) {
             // if (Offence.Traits.includes('Piercing')) {
             //     Defence_Power = Math.round(Defence_Power/2);
             // };
-            if (Offence.Weapon.Traits.includes('Piercing')) {
-                Defence_Power = Math.round(Defence_Power/2);
-            };
+            // if (Offence.Weapon.Traits.includes('Piercing')) {
+            //     Defence_Power = Math.round(Defence_Power/2);
+            // };
     };
 
     // Damage Roll
