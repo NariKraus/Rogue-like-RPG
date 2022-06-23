@@ -130,7 +130,7 @@ function doffItem(item, type, element) {
 
 // Item Tips
 function addTips() {
-    $('.tip').hover(function(){
+    $('.tip').unbind('hover').hover(function(){
         const position = $(this).position();
         const element = $(`<span class='tip-info'></span>`);
         const itemType = $(this).attr('itemtype');
