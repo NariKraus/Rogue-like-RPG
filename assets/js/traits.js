@@ -5,6 +5,9 @@ function modifierTraits(Offence, Defence) {
         if (Offence.Weapon.Traits.includes('Piercing')) {
             Defence_Power = Math.round(Defence_Power/2);
         };
+        if (Offence.Weapon.Traits.includes('Basic')) {
+            Attack_roll = 100;;
+        };
 
         // 
     } else {
@@ -12,6 +15,9 @@ function modifierTraits(Offence, Defence) {
 
         if (Offence.Traits.includes('Piercing')) {
             Defence_Power = Math.round(Defence_Power/2); 
+        };
+        if (Offence.Traits.includes('Basic')) {
+            Attack_roll = 100; 
         };
 
         // 
