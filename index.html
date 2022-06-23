@@ -178,18 +178,20 @@
             };   
 
             x = 0
-            function spawnMonsters(rooms) {                
+            function spawnMonsters(data) {                
                 while (x != 4) {
-                    selector = Math.floor(Math.random() * (Object.keys(rooms).length - 1));
+                    selector = Math.floor(Math.random() * (Object.keys(data).length - 1));
                     
-                    if (rooms[Object.keys(rooms)[selector]]['enemy'].length == 0 && Object.keys(rooms)[selector] != '5-5' && Object.keys(rooms)[selector] != '5-4') {
+                    if (data[Object.keys(data)[selector]]['enemy'].length == 0 && Object.keys(data)[selector] != '5-5' && Object.keys(data)[selector] != '5-4') {
                         x += 1;
-                        rooms[Object.keys(rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)][0]);
+                        data[Object.keys(data)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)][0]);
                     };
                 };
             };
 
-            spawnMonsters(rooms);
+            console.log(Object.keys(window.rooms))
+
+            spawnMonsters(window.rooms);
         </script>
     </body>
 </html>
