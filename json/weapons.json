@@ -27,7 +27,7 @@
       "Type": "Short Spear",
       "Accuracy": 0,
       "Power": 6,
-      "Traits": [null]
+      "Traits": ["Piercing"]
     },
     "Mace" : {
       "Type": "Mace",
@@ -41,11 +41,11 @@
       "Power": 3,
       "Traits": [null]
     },
-    "Halberd" : {
-      "Type": "Halberd",
+    "Spear" : {
+      "Type": "Spear",
       "Accuracy": -2,
       "Power": 8,
-      "Traits": ["Reach"]
+      "Traits": ["Piercing"]
     },
     "Greatsword" : {
       "Type": "Greatsword",
