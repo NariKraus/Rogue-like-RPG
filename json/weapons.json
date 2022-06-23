@@ -9,19 +9,19 @@
       "Type": "Dagger",
       "Accuracy": 3,
       "Power": 2,
-      "Traits": [null]
+      "Traits": []
     },
     "Short Sword" : {
       "Type": "Short Sword",
       "Accuracy": 1,
       "Power": 4,
-      "Traits": [null]
+      "Traits": []
     },
     "Longsword" : {
       "Type": "Longsword",
       "Accuracy": 1,
       "Power": 6,
-      "Traits": [null]
+      "Traits": []
     },
     "Short Spear" : {
       "Type": "Short Spear",
@@ -33,13 +33,13 @@
       "Type": "Mace",
       "Accuracy": 0,
       "Power": 5,
-      "Traits": [null]
+      "Traits": []
     },
     "Club" : {
       "Type": "Club",
       "Accuracy": 0,
       "Power": 3,
-      "Traits": [null]
+      "Traits": []
     },
     "Spear" : {
       "Type": "Spear",
@@ -51,7 +51,7 @@
       "Type": "Greatsword",
       "Accuracy": 1,
       "Power": 8,
-      "Traits": [null]
+      "Traits": []
     },
     "Pootis" : {
       "Type": "Pootis",
