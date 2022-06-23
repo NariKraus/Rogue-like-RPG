@@ -171,15 +171,15 @@ reload()
 $('.attack-button').click(function() {
     if (enemy) {
         Attack(player, enemy);
-        try {    
+        // try {    
             if (enemy.Health > 0) {
                 Attack(enemy, player);
             };
             $('#playerHealth').html(player.Health);
-        } catch (error) {
-            console.log('Congratulations!');
-            rooms[room].enemy = [];
-        };
+        // } catch (error) {
+        //     console.log('Congratulations!');
+        //     rooms[room].enemy = [];
+        // };
     };
 });
 
@@ -204,22 +204,10 @@ function Attack(Offence, Defence) {
         case "Special":
             Dodge_roll = Math.floor( dice(20) + Defence.Armour.Dodge );
             Defence_Power = Defence.Armour.Defence;
-            // if (Offence.Traits.includes('Piercing')) {
-            //     Defence_Power = Math.round(Defence_Power/2);
-            // };
-            // if (Offence.Weapon.Traits.includes('Piercing')) {
-            //     Defence_Power = Math.round(Defence_Power/2);
-            // };
             break;
         default:
             Dodge_roll = Math.floor( dice(20) + Defence.Dodge );
             Defence_Power = Defence.Defence;
-            // if (Offence.Traits.includes('Piercing')) {
-            //     Defence_Power = Math.round(Defence_Power/2);
-            // };
-            // if (Offence.Weapon.Traits.includes('Piercing')) {
-            //     Defence_Power = Math.round(Defence_Power/2);
-            // };
     };
 
     // Damage Roll
