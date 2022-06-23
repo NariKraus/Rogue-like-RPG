@@ -142,11 +142,11 @@
         <script src="assets/js/main.js"></script>
 
         <script>
-            var armour;
-            var player;
-            var foes;
-            var weapons;
-            var rooms;
+            var armour = '';
+            var player = '';
+            var foes = '';
+            var weapons = '';
+            var rooms = '';
 
             function getData(url, cb) {
                 fetch(url)
@@ -160,12 +160,10 @@
             getData("json/player.json", (data) => player = data );
             getData("json/foes.json", (data) => foes = data );
             getData("json/weapons.json", (data) => weapons = data );
-            getData("assets/Levels/L1.json", (data) => rooms = data ).then(function() {
-                console.log(rooms);
-                spawnMonsters(rooms);
-            });
+            getData("assets/Levels/L1.json", (data) => rooms = data );
             
             console.log(rooms);
+            spawnMonsters(rooms);
 
             var fade = 2;
             var room = "5-5";
