@@ -91,7 +91,7 @@ div, a, h2, button {
     flex-wrap: wrap;
 }
 
-.inventory-item, .equipped-item, .attack-button {
+.inventory-item, .equipped-item, .attack-button, .close-log-button {
     padding: 8px;
     margin: 0.5em;
     min-width: 100px;
@@ -109,7 +109,7 @@ div, a, h2, button {
 .inventory-item[itemCatagory="Weapon"], .equipped-item[itemCatagory="Weapon"] {
     background-color: var(--red);
 }
-.attack-button {
+.attack-button, .close-log-button {
     background-color: crimson;
 }
 
