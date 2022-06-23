@@ -2,20 +2,20 @@ function offenceTraits(Offence, Defence) {
     if (Offence.Type == "player") {
         // 
 
-        switch (Offence.Weapon.Traits) {
-            case "Vampiric":
+        if (Offence.Weapon.Traits.includes('Vampiric')) {
+            if (Defence.Traits.includes('Undead')) {} else {
                 Heal(Offence, Damage_roll/2);
-                break;
+            };
         };
 
         // 
     } else {
         // 
 
-        switch (Offence.Traits) {
-            case "Vampiric":
+        if (Offence.Traits.includes('Vampiric')) {
+            if (Defence.Armour.Traits.includes('Undead')) {} else {
                 Heal(Offence, Damage_roll/2);
-                break;
+            };
         };
 
         // 
