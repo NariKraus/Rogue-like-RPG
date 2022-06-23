@@ -211,9 +211,9 @@ function Attack(Offence, Defence) {
         $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack hit the ` + Defence.Type + `.</span>`);
         Damage(Defence, Damage_roll)
 
-        offenceTraits();
+        offenceTraits(Offence, Defence);
 
-        defenceTraits();
+        defenceTraits(Offence, Defence);
 
     } else {
         $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack missed the ` + Defence.Type + `.</span>`);
