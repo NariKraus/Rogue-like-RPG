@@ -3,25 +3,25 @@
         "Type" : "Unarmoured",
         "Defence" : 0,
         "Dodge" : 0,
-        "Traits" : null
+        "Traits" : [null]
     },
 
     "Leather" : {
         "Type" : "Leather",
         "Defence" : 1,
         "Dodge" : 2, 
-        "Traits" : null
+        "Traits" : [null]
     },
     "Plate" : {
         "Type" : "Plate",
         "Defence" : 5,
         "Dodge" : -2,
-        "Traits" : null
+        "Traits" : [null]
     },
     "Spiked" : {
         "Type" : "Spiked",
         "Defence" : 2,
         "Dodge" : -2,
-        "Traits" : "Spiky"
+        "Traits" : ["Spiky"]
     }
 }
