@@ -137,15 +137,15 @@ function addTips() {
         var innerHtml = '';
 
         if (armour[itemType]) {
-            innerHtml = 'Defence : ' + armour[itemType].Defence + ' | Dodge : ' + armour[itemType].Dodge;
+            innerHtml = 'Defence : ' + armour[itemType].Defence + '<br />Dodge : ' + armour[itemType].Dodge;
             if (!armour[itemType].Traits.includes(null)) {
-                innerHtml += ' | Traits : ' + armour[itemType].Traits.join(', ');
+                innerHtml += '<br />Traits : ' + armour[itemType].Traits.join(', ');
             };
         };
         if (weapons[itemType]) {
-            innerHtml = 'Accuracy : ' + weapons[itemType].Accuracy + ' | Power : ' + weapons[itemType].Power;
+            innerHtml = 'Accuracy : ' + weapons[itemType].Accuracy + '<br />Power : ' + weapons[itemType].Power;
             if (!weapons[itemType].Traits.includes(null)) {
-                innerHtml += ' | Traits : ' + weapons[itemType].Traits.join(', ');
+                innerHtml += '<br />Traits : ' + weapons[itemType].Traits.join(', ');
             };
         };
 
