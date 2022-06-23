@@ -1,10 +1,36 @@
+function modifierTraits(Offence, Defence) {
+    if (Offence.Type == "player") {
+        // 
+
+        if (Offence.Weapon.Traits.includes('Piercing')) {
+            Defence_Power = Math.round(Defence_Power/2);
+        };
+
+        // 
+    } else {
+        // 
+
+        if (Offence.Traits.includes('Piercing')) {
+            Defence_Power = Math.round(Defence_Power/2); 
+        };
+
+        // 
+    };
+}
+
+
+// █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
+// █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
+// █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
+
+
 function offenceTraits(Offence, Defence) {
     if (Offence.Type == "player") {
         // 
 
         if (Offence.Weapon.Traits.includes('Vampiric')) {
             if (Defence.Traits.includes('Undead')) {} else {
-                Heal(Offence, Damage_roll/2);
+                Heal(Offence, Math.round(Damage_roll/2));
             };
         };
 
@@ -14,7 +40,7 @@ function offenceTraits(Offence, Defence) {
 
         if (Offence.Traits.includes('Vampiric')) {
             if (Defence.Armour.Traits.includes('Undead')) {} else {
-                Heal(Offence, Damage_roll/2);
+                Heal(Offence, Math.round(Damage_roll/2));
             };
         };
 
