@@ -7,7 +7,7 @@
         "Accuracy" : -3,
         "Dodge" : -2,
         "Defence" : 4,
-        "Traits" : null
+        "Traits" : [null]
     },
     "Drake" : {
         "Type" : "Drake",
@@ -17,7 +17,7 @@
         "Accuracy" : 0,
         "Dodge" : 2,
         "Defence" : 2,
-        "Traits" : null
+        "Traits" : [null]
     },
     "Goblin" : {
         "Type" : "Goblin",
@@ -27,7 +27,7 @@
         "Accuracy" : 2,
         "Dodge" : 0,
         "Defence" : 0,
-        "Traits" : null
+        "Traits" : [null]
     },
     "Kobold" : {
         "Type" : "Kobold",
@@ -37,7 +37,7 @@
         "Accuracy" : 0,
         "Dodge" : 2,
         "Defence" : 2,
-        "Traits" : null
+        "Traits" : [null]
     },
     "Ogre" : {
         "Type" : "Ogre",
@@ -47,7 +47,7 @@
         "Accuracy" : -1,
         "Dodge" : -4,
         "Defence" : 0,
-        "Traits" : null
+        "Traits" : [null]
     },
     "Orc" : {
         "Type" : "Orc",
@@ -57,7 +57,7 @@
         "Accuracy" : -1,
         "Dodge" : -2,
         "Defence" : 0,
-        "Traits" : null
+        "Traits" : [null]
     },
     "Skeleton" : {
         "Type" : "Skeleton",
@@ -67,7 +67,7 @@
         "Accuracy" : 1,
         "Dodge" : -4,
         "Defence" : 4,
-        "Traits" : null
+        "Traits" : ["Undead"]
     },
     "Vampire" : {
         "Type" : "Vampire",
@@ -77,7 +77,7 @@
         "Accuracy" : 3,
         "Dodge" : 2,
         "Defence" : 0,
-        "Traits" : "Vampiric"
+        "Traits" : ["Vampiric"]
     },
     "Zombie" : {
         "Type" : "Zombie",
@@ -87,6 +87,6 @@
         "Accuracy" : -2,
         "Dodge" : -3,
         "Defence" : -2,
-        "Traits" : null
+        "Traits" : ["Undead"]
     }
 }
