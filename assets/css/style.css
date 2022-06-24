@@ -176,8 +176,8 @@ div, a, h2, button {
     background-color: var(--surface);
     width: 60vw;
     max-height: 60vh;
-    border-radius: 2em;
-    border: double 3px var(--separator);
+    border-radius: 0.25rem;
+    border: solid 3px var(--separator);
     display: flex;
     flex-direction: column;
     padding: 1em;
