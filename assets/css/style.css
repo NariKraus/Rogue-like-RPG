@@ -9,6 +9,7 @@
     --primaryVariant:#BDC8F1;
     --green:#81CE55;
     --red:#FF7E7E;
+    --purple:#C3B1E1
 }
 
 body {
@@ -109,6 +110,9 @@ div, a, h2, button {
 }
 .inventory-item[itemCatagory="Weapon"], .equipped-item[itemCatagory="Weapon"] {
     background-color: var(--red);
+}
+.inventory-item[itemCatagory="Potion"] {
+    background-color: var(--purple);
 }
 .attack-button, .close-log-button {
     background-color: crimson;
