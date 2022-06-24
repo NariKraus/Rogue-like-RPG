@@ -160,7 +160,7 @@ div, a, h2, button {
     text-decoration: none;
 }
 
-.update-container {
+.update-container, .adventure-container {
     background-color: rgba(0,0,0,0.75);
     height: 100vh;
     width: 100vw;
@@ -171,7 +171,7 @@ div, a, h2, button {
     align-items: center;
 }
 
-.update-log {
+.update-log, .adventure-log {
     background-color: var(--surface);
     width: 60vw;
     max-height: 60vh;
