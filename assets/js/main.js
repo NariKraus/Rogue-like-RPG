@@ -68,7 +68,7 @@ function go(room, direction) {
 };
 
 function storeLog() {
-    $('#log-store').append($('#infoLog').html());
+    $('#log-store').append($('#infoLog').html()).append($('<br />'));
     $('#infoLog').html('');
 };
 
