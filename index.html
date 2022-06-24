@@ -143,6 +143,7 @@
 
         <div class="update-container">
             <div class="update-log">
+                <button class="close-log-button" onclick="$('.update-container').remove();">Close</button>
                 <pre>
 <code>
 <span class="markdown-green">23/06/2022</span>
@@ -173,7 +174,6 @@
 <span class="markdown-italics">Please note that visuals do not work properly on mobile devices.</span>
 </code>
                 </pre>
-                <button class="close-log-button" onclick="$('.update-container').remove();">Close</button>
             </div>
         </div>
 
@@ -243,7 +243,9 @@
 
         </script>
         <div class="adventure-container" style="display: none;">
-            <div class="adventure-log" id="log-store" style="flex-direction: column;"></div>
+            <div class="adventure-log" id="log-store" style="flex-direction: column;">
+                <button class="close-log-button" onclick="$('.adventure-container').hide();">Close</button>
+            </div>
         </div>
     </body>
 </html>
