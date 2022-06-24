@@ -6,7 +6,7 @@ function modifierTraits(Offence, Defence) {
             Defence_Power = Math.round(Defence_Power/2);
         };
         if (Offence.Weapon.Traits.includes('Basic')) {
-            Attack_roll = 100;
+            window.Attack_roll = 100;
         };
 
         // 
@@ -17,7 +17,7 @@ function modifierTraits(Offence, Defence) {
             Defence_Power = Math.round(Defence_Power/2); 
         };
         if (Offence.Traits.includes('Basic')) {
-            Attack_roll = 100; 
+            window.Attack_roll = 100; 
         };
 
         // 
