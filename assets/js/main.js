@@ -1,7 +1,48 @@
+// █ Utility Functions █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
+
+// Loading Buttons
+function loadButtons() {
+    $('.inventory-item').unbind('click').click(function() {
+        useItem($(this).attr('itemType'));
+        $(this).remove();
+    });
+    $('.equipped-item').unbind('click').click(function() {
+        doffItem($(this).attr('itemType'), $(this).attr('itemCatagory'), $(this));
+    });
+};
+
+// Sort Inventory
+function sortInventory() {
+    var alphabeticallyOrderedDivs = $('.inventory-item').sort(function(a, b) {
+        return String.prototype.localeCompare.call($(a).attr('itemCatagory').toLowerCase() + $(a).attr('itemType').toLowerCase(), $(b).attr('itemCatagory').toLowerCase() + $(b).attr('itemType').toLowerCase());
+    });
+    
+    var container = $("#playerInventory");
+    container.empty().append(alphabeticallyOrderedDivs);
+};
+
+// Reload functions
+function reload() {
+    sortInventory();
+    loadButtons();
+    $('.tip-info').remove();
+    addTips();
+};
+
+// Store the current log
+function storeLog() {
+    $('#log-store').append($('#infoLog').html()).append($('<br />'));
+    $('#infoLog').html('');
+};
+
+// Roll a dice
 function dice(size) {
     return Math.floor( Math.random() * size + 1 );
 };
 
+// █ Movement █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
+
+// Check available paths
 function canGo(room) {
     if (rooms[room]['paths'].includes('up')) {
         $('#button-up').prop('disabled', false);
@@ -33,6 +74,7 @@ function canGo(room) {
     };
 };
 
+// Check room for items, enemies, etc.
 function checkRoom(room) {
     // Enemies
     if (rooms[room]['enemy'].length != 0) {
@@ -44,6 +86,7 @@ function checkRoom(room) {
     };
 };
 
+// Move to another room
 function go(room, direction) {
     if (rooms[room]['paths'].includes(direction)) {
         const splitroom = room.split("");
@@ -69,10 +112,7 @@ function go(room, direction) {
     checkRoom(window.room);
 };
 
-function storeLog() {
-    $('#log-store').append($('#infoLog').html()).append($('<br />'));
-    $('#infoLog').html('');
-};
+// █ Actions █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
 // Use Item
 function useItem(itemType) {
@@ -104,28 +144,16 @@ function useItem(itemType) {
         }
         $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
     };
+    if (poisons[itemType]) {
+        if (potions[itemType].Healing > 0) {
+            Heal(player, potions[itemType].Healing);
+        };
+        if (potions[itemType].Power > 0) {
+            player.Effects.Power = potions[itemType].Power;
+        }
+        $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
+    };
     reload();
-};
-
-// Loading Buttons
-function loadButtons() {
-    $('.inventory-item').unbind('click').click(function() {
-        useItem($(this).attr('itemType'));
-        $(this).remove();
-    });
-    $('.equipped-item').unbind('click').click(function() {
-        doffItem($(this).attr('itemType'), $(this).attr('itemCatagory'), $(this));
-    });
-};
-
-// Sort Inventory
-function sortInventory() {
-    var alphabeticallyOrderedDivs = $('.inventory-item').sort(function(a, b) {
-        return String.prototype.localeCompare.call($(a).attr('itemCatagory').toLowerCase() + $(a).attr('itemType').toLowerCase(), $(b).attr('itemCatagory').toLowerCase() + $(b).attr('itemType').toLowerCase());
-    });
-    
-    var container = $("#playerInventory");
-    container.empty().append(alphabeticallyOrderedDivs);
 };
 
 // Doffing
@@ -182,16 +210,6 @@ function addTips() {
         $('.tip-info').remove();
     });
 };
-
-// Reload functions
-function reload() {
-    sortInventory();
-    loadButtons();
-    $('.tip-info').remove();
-    addTips();
-};
-
-reload()
 
 // █ Combat █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
@@ -278,6 +296,10 @@ function Damage(Target, Damage) {
     }
 };
 
+// █ Start Up █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
+
+reload()
+
 // █ Dev Commands █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
 // Give All Items
@@ -290,3 +312,4 @@ function giveAll() {
     });
     reload();
 }
+
