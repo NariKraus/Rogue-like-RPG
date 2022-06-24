@@ -84,7 +84,7 @@ function useItem(itemType) {
         player.Armour = armour[itemType];
         $('#playerArmour').children().remove();
         $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="` + armour[itemType].Type + `">` + armour[itemType].Type + `</button>`);
-        $('#infoLog').append(`<span>The player equips a ` + armour[itemType].Type + `.</span>`);
+        $('#infoLog').append(`<span>The player equips a set of ` + armour[itemType].Type + ` armour.</span>`);
     };
     if (weapons[itemType]) {
         if (player.Weapon.Type != 'Unarmed') {
