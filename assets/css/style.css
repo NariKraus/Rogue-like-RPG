@@ -93,6 +93,9 @@ div, a, h2, button {
     flex-wrap: wrap;
 }
 
+/* █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ */
+/*  Item Buttons █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ */
+/* █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ */
 .inventory-item, .equipped-item, .attack-button, .close-log-button {
     padding: 8px;
     margin: 0.5em;
@@ -111,7 +114,7 @@ div, a, h2, button {
 .inventory-item[itemCatagory="Weapon"], .equipped-item[itemCatagory="Weapon"] {
     background-color: var(--red);
 }
-.inventory-item[itemCatagory="Potion"] {
+.inventory-item[itemCatagory="Potion"], .inventory-item[itemCatagory="Poison"] {
     background-color: var(--purple);
 }
 .attack-button, .close-log-button {
