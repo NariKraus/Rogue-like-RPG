@@ -1,14 +1,14 @@
 {
     "Potion of Lesser Healing" : {
-        "Type" : " Potion of Lesser Healing",
+        "Type" : "Potion of Lesser Healing",
         "Healing" : 5
     },
-    " Potion of Healing" : {
-        "Type" : " Potion of Healing",
+    "Potion of Healing" : {
+        "Type" : "Potion of Healing",
         "Healing" : 10
     },
-    " Potion of Greater Healing" : {
-        "Type" : " Potion of Greater Healing",
+    "Potion of Greater Healing" : {
+        "Type" : "Potion of Greater Healing",
         "Healing" : 15
     }
 }
