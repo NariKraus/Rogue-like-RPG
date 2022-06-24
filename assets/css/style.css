@@ -71,6 +71,7 @@ div, a, h2, button {
     justify-content: center;
     background-color: var(--primary);
     color: var(--onPrimary);
+    border: none;
     border-radius: 0.5em 0 0 0.5em;
 }
 
