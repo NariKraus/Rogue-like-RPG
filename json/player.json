@@ -2,7 +2,7 @@
     "Type": "player",
     "Health" : 20,
     "HealthMax" : 20,
-    "Weapon" : {"Type" : "Unarmed", "Power" : 0, "Accuracy" : 0, "Traits" : []},
+    "Weapon" : {"Type" : "Unarmed", "Power" : 0, "Accuracy" : 0, "Traits" : ["Basic"]},
     "Armour" : {"Type" : "Unarmoured", "Dodge" : 0, "Defence" : 0, "Traits" : []},
     "Spells" : [],
     "Effects" : {"Power" : 0}
