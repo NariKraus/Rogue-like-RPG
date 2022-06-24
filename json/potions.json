@@ -2,5 +2,13 @@
     "Lesser Healing" : {
         "Type" : "Lesser Healing",
         "Healing" : 5
+    },
+    "Healing" : {
+        "Type" : "Healing",
+        "Healing" : 10
+    },
+    "Greater Healing" : {
+        "Type" : "Greater Healing",
+        "Healing" : 15
     }
 }
