@@ -167,6 +167,15 @@ function addTips() {
                 innerHtml += '<br />Traits : ' + weapons[itemType].Traits.join(', ');
             };
         };
+        if (potions[itemType]) {
+            if (potions[itemType].Healing > 0) {
+                innerHtml += '<br />Healing : ' + potions[itemType].Healing;
+            };
+            if (potions[itemType].Power > 0) {
+                innerHtml += '<br />Power : ' + potions[itemType].Power;
+            };
+            innerHtml = innerHtml.substring(6)
+        };
 
         $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).html(innerHtml).appendTo( $('body') );
     }, function(){
