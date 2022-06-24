@@ -62,6 +62,7 @@ function go(room, direction) {
                 break;
         };
     };
+    $('#infoLog').append(`<span>The player moved ` + direction + ` to ` + window.room + `.</span>`);
     $('#title').html(window.room);
     canGo(window.room);
     checkRoom(window.room);
