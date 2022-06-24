@@ -76,6 +76,7 @@ function storeLog() {
 
 // Use Item
 function useItem(itemType) {
+    storeLog();
     if (armour[itemType]) {
         if (player.Armour.Type != 'Unarmoured') {
             $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`);
@@ -83,6 +84,7 @@ function useItem(itemType) {
         player.Armour = armour[itemType];
         $('#playerArmour').children().remove();
         $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="` + armour[itemType].Type + `">` + armour[itemType].Type + `</button>`);
+        $('#infoLog').append(`<span>The player equips a ` + armour[itemType].Type + `.</span>`);
     };
     if (weapons[itemType]) {
         if (player.Weapon.Type != 'Unarmed') {
@@ -91,11 +93,12 @@ function useItem(itemType) {
         player.Weapon = weapons[itemType];
         $('#playerWeapon').children().remove();
         $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="` + weapons[itemType].Type + `">` + weapons[itemType].Type + `</button>`);
+        $('#infoLog').append(`<span>The player equips a ` + weapons[itemType].Type + `.</span>`);
     };
     if (potions[itemType]) {
         if (potions[itemType].Healing > 0) {
-            $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
             Heal(player, potions[itemType].Healing);
+            $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
         };
     };
     reload();
