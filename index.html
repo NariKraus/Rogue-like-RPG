@@ -185,9 +185,10 @@
         <script src="assets/js/traits.js"></script>
 
         <script>
-            var armour = null;
             var player = null;
             var foes = null;
+            var armour = null;
+            var potions = null;
             var weapons = null;
             var rooms = null;
 
@@ -201,9 +202,10 @@
 
             // getData(url, (data) => console.log({ data }));
 
-            getData("json/armour.json", (data) => armour = data );
             getData("json/player.json", (data) => player = data );
             getData("json/foes.json", (data) => foes = data );
+            getData("json/armour.json", (data) => armour = data );
+            getData("json/potions.json", (data) => potions = data );
             getData("json/weapons.json", (data) => weapons = data );
             getData("assets/Levels/L1.json", (data) => rooms = data );
 
