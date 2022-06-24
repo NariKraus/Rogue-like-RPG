@@ -92,6 +92,12 @@ function useItem(itemType) {
         $('#playerWeapon').children().remove();
         $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="` + weapons[itemType].Type + `">` + weapons[itemType].Type + `</button>`);
     };
+    if (potions[itemType]) {
+        if (potions[itemType].Healing > 0) {
+            $('#infoLog').append(`<span>The player drinks a potion of ` + potions[itemType].Type + `.</span>`);
+            Heal(player, potions[itemType].Healing);
+        };
+    };
     reload();
 };
 
