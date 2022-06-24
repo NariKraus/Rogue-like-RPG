@@ -94,7 +94,7 @@ function useItem(itemType) {
     };
     if (potions[itemType]) {
         if (potions[itemType].Healing > 0) {
-            $('#infoLog').append(`<span>The player drinks a potion of ` + potions[itemType].Type + `.</span>`);
+            $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
             Heal(player, potions[itemType].Healing);
         };
     };
