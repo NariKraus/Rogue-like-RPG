@@ -67,6 +67,11 @@ function go(room, direction) {
     checkRoom(window.room);
 };
 
+function storeLog() {
+    $('#log-store').append($('#infoLog').html());
+    $('#infoLog').html('');
+};
+
 // Use Item
 function useItem(itemType) {
     if (armour[itemType]) {
@@ -170,6 +175,7 @@ reload()
 // Attack Button
 $('.attack-button').click(function() {
     if (enemy) {
+        storeLog();
         Attack(player, enemy);
         try {    
             if (enemy.Health > 0) {
