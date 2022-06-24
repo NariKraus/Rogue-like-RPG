@@ -181,6 +181,7 @@ div, a, h2, button {
     display: flex;
     flex-direction: column;
     padding: 1em;
+    overflow-y: auto;
 }
 
 span.markdown-red {
