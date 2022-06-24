@@ -98,8 +98,11 @@ function useItem(itemType) {
     if (potions[itemType]) {
         if (potions[itemType].Healing > 0) {
             Heal(player, potions[itemType].Healing);
-            $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
         };
+        if (potions[itemType].Strength > 0) {
+            player.Effects.Strength = potions[itemType].Strength;
+        }
+        $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
     };
     reload();
 };
@@ -229,6 +232,9 @@ function Attack(Offence, Defence) {
     // Damage Roll
     modifierTraits(Offence, Defence);
     Damage_roll = Math.max(Attack_Power - Defence_Power, 1);
+    if (Offence.Effects.Strength > 0) {
+        Damage_roll += Offence.Effects.Strength;
+    };
 
     if (Attack_roll >= Dodge_roll) {
         $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack hit the ` + Defence.Type + `.</span>`);
