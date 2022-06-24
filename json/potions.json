@@ -11,8 +11,8 @@
         "Type" : "Potion of Greater Healing",
         "Healing" : 15
     },
-    "Potion of Strength" : {
-        "Type" : "Potion of Strength",
-        "Strength" : 5
+    "Potion of Power" : {
+        "Type" : "Potion of Power",
+        "Power" : 5
     }
 }

@@ -5,5 +5,5 @@
     "Weapon" : {"Type" : "Unarmed", "Power" : 0, "Accuracy" : 0, "Traits" : []},
     "Armour" : {"Type" : "Unarmoured", "Dodge" : 0, "Defence" : 0, "Traits" : []},
     "Spells" : [],
-    "Effects" : {"Strength" : 0}
+    "Effects" : {"Power" : 0}
 }

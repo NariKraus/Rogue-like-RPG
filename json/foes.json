@@ -7,7 +7,7 @@
         "Accuracy" : -3,
         "Dodge" : -2,
         "Defence" : 4,
-        "Effects" : {"Strength" : 0},
+        "Effects" : {"Power" : 0},
         "Traits" : []
     },
     "Drake" : {
@@ -18,7 +18,7 @@
         "Accuracy" : 0,
         "Dodge" : 2,
         "Defence" : 2,
-        "Effects" : {"Strength" : 0},
+        "Effects" : {"Power" : 0},
         "Traits" : []
     },
     "Goblin" : {
@@ -29,7 +29,7 @@
         "Accuracy" : 2,
         "Dodge" : 0,
         "Defence" : 0,
-        "Effects" : {"Strength" : 0},
+        "Effects" : {"Power" : 0},
         "Traits" : []
     },
     "Kobold" : {
@@ -40,7 +40,7 @@
         "Accuracy" : 0,
         "Dodge" : 2,
         "Defence" : 2,
-        "Effects" : {"Strength" : 0},
+        "Effects" : {"Power" : 0},
         "Traits" : []
     },
     "Ogre" : {
@@ -51,7 +51,7 @@
         "Accuracy" : -1,
         "Dodge" : -4,
         "Defence" : 0,
-        "Effects" : {"Strength" : 0},
+        "Effects" : {"Power" : 0},
         "Traits" : []
     },
     "Orc" : {
@@ -62,7 +62,7 @@
         "Accuracy" : -1,
         "Dodge" : -2,
         "Defence" : 0,
-        "Effects" : {"Strength" : 0},
+        "Effects" : {"Power" : 0},
         "Traits" : []
     },
     "Skeleton" : {
@@ -73,7 +73,7 @@
         "Accuracy" : 1,
         "Dodge" : -4,
         "Defence" : 4,
-        "Effects" : {"Strength" : 0},
+        "Effects" : {"Power" : 0},
         "Traits" : ["Undead"]
     },
     "Vampire" : {
@@ -84,7 +84,7 @@
         "Accuracy" : 3,
         "Dodge" : 2,
         "Defence" : 0,
-        "Effects" : {"Strength" : 0},
+        "Effects" : {"Power" : 0},
         "Traits" : ["Vampiric"]
     },
     "Zombie" : {
@@ -95,7 +95,7 @@
         "Accuracy" : -2,
         "Dodge" : -3,
         "Defence" : -2,
-        "Effects" : {"Strength" : 0},
+        "Effects" : {"Power" : 0},
         "Traits" : ["Undead"]
     }
 }
