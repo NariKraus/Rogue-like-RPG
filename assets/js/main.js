@@ -201,6 +201,12 @@ function addTips() {
             };
             innerHtml = innerHtml.substring(6)
         };
+        if (poisons[itemType]) {
+            if (potions[itemType].Healing > 0) {
+                innerHtml += '<br />Poison : ' + potions[itemType].Poison;
+            };
+            innerHtml = innerHtml.substring(6)
+        };
 
         $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).html(innerHtml).appendTo( $('body') );
     }, function(){
