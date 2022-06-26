@@ -1,6 +1,7 @@
 {
     "Poison" : {
         "Type" : "Poison",
-        "Poison" : 2
+        "PoisonType" : "Damage",
+        "PoisonPower" : 2
     }
 }
