@@ -121,7 +121,7 @@ function useItem(itemType) {
         if (player.Armour.Type != 'Unarmoured') {
             $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`);
         };
-        player.Armour = armour[itemType];
+        player.Armour = JSON.parse(JSON.stringify( armour[itemType]));
         $('#playerArmour').children().remove();
         $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="` + armour[itemType].Type + `">` + armour[itemType].Type + `</button>`);
         $('#infoLog').append(`<span>The player equips a set of ` + armour[itemType].Type + ` armour.</span>`);
@@ -130,7 +130,7 @@ function useItem(itemType) {
         if (player.Weapon.Type != 'Unarmed') {
             $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`);
         };
-        player.Weapon = weapons[itemType];
+        player.Weapon = JSON.parse(JSON.stringify( weapons[itemType] ));
         $('#playerWeapon').children().remove();
         $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="` + weapons[itemType].Type + `">` + weapons[itemType].Type + `</button>`);
         $('#infoLog').append(`<span>The player equips a ` + weapons[itemType].Type + `.</span>`);
@@ -141,16 +141,13 @@ function useItem(itemType) {
         };
         if (potions[itemType].Power > 0) {
             player.Effects.Power = potions[itemType].Power;
-        }
+        };
         $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
     };
     if (poisons[itemType]) {
         if (potions[itemType].Healing > 0) {
             Heal(player, potions[itemType].Healing);
         };
-        if (potions[itemType].Power > 0) {
-            player.Effects.Power = potions[itemType].Power;
-        }
         $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
     };
     reload();
@@ -162,14 +159,14 @@ function doffItem(item, type, element) {
         $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
         $('#playerArmour').children().remove();
         $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="Unarmoured">Unarmoured</button>`);
-        player.Armour = armour.Unarmoured;
+        player.Armour = JSON.parse(JSON.stringify( armour.Unarmoured ));
         $(element).remove();
     };
     if (type == 'Weapon' && player.Weapon.Type != 'Unarmed') {
         $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + item + `">` + item + `</button>`);
         $('#playerWeapon').children().remove();
         $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="Unarmed">Unarmed</button>`);
-        player.Weapon = weapons.Unarmed;
+        player.Weapon = JSON.parse(JSON.stringify( weapons.Unarmed ));
         $(element).remove();
     };
     reload();
@@ -222,10 +219,10 @@ $('.attack-button').click(function() {
             if (enemy.Health > 0) {
                 Attack(enemy, player);
             };
-            $('#playerHealth').html(player.Health);
         } catch (error) {
             rooms[room].enemy = [];
         };
+        $('#playerHealth').html(player.Health);
     };
 });
 
