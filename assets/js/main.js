@@ -129,7 +129,7 @@ function useItem(itemType) {
     storeLog();
     if (armour[itemType]) {
         if (player.Armour.Type != 'Unarmoured') {
-            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + player.Armour.Type + `">` + player.Armour.Type + `</button>`);
+            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + player.Armour.Type + `" extraTraits='[]'>` + player.Armour.Type + `</button>`);
         };
         player.Armour = JSON.parse(JSON.stringify( armour[itemType]));
         $('#playerArmour').children().remove();
@@ -138,7 +138,7 @@ function useItem(itemType) {
     };
     if (weapons[itemType]) {
         if (player.Weapon.Type != 'Unarmed') {
-            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + player.Weapon.Type + `">` + player.Weapon.Type + `</button>`);
+            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + player.Weapon.Type + `" extraTraits='[]'>` + player.Weapon.Type + `</button>`);
         };
         player.Weapon = JSON.parse(JSON.stringify( weapons[itemType] ));
         $('#playerWeapon').children().remove();
