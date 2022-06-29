@@ -4,6 +4,15 @@
 function loadButtons() {
     $('.inventory-item').unbind('click').click(function() {
         useItem($(this).attr('itemType'));
+        for (let i = 0; i < JSON.parse($(this).attr('extratraits')).length; i++) {
+            const x = JSON.parse($(this).attr('extratraits'))[i];
+            if (armour[itemType]) {
+                EnchantArmour(x);
+            };
+            if (weapons[itemType]) {
+                EnchantWeapon(x);
+            };
+        }
         $(this).remove();
     });
     $('.equipped-item').unbind('click').click(function() {
