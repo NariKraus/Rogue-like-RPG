@@ -12,9 +12,15 @@
     --purple:#957DAD
 }
 
+@font-face {
+    font-family: Pixelation;
+    src: url('../fonts/Pixelation.woff');
+}
+
 body {
     overflow-x: hidden;
     background-color: var(--background);
+    font-family: Pixelation;
 }
 
 /* ===== Scrollbar CSS ===== */
