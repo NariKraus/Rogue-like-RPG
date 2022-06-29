@@ -3,7 +3,8 @@
 // Loading Buttons
 function loadButtons() {
     $('.inventory-item').unbind('click').click(function() {
-        useItem($(this).attr('itemType'));
+        const itemType = $(this).attr('itemType')
+        useItem(itemType);
         for (let i = 0; i < JSON.parse($(this).attr('extratraits')).length; i++) {
             const x = JSON.parse($(this).attr('extratraits'))[i];
             if (armour[itemType]) {
