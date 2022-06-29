@@ -56,31 +56,31 @@ function dice(size) {
 function canGo(room) {
     if (rooms[room]['paths'].includes('up')) {
         $('#button-up').prop('disabled', false);
-        $('.up').addClass('active');
+        $('.up, .Up-East, .Up-West').addClass('active');
     } else {
         $('#button-up').prop('disabled', true);
-        $('.up').removeClass('active');
+        $('.up, .Up-East, .Up-West').removeClass('active');
     };
     if (rooms[room]['paths'].includes('down')) {
         $('#button-down').prop('disabled', false);
-        $('.down').addClass('active');
+        $('.down, .Down-East, .Down-West').addClass('active');
     } else {
         $('#button-down').prop('disabled', true);
-        $('.down').removeClass('active');
+        $('.down, .Down-East, .Down-West').removeClass('active');
     };
     if (rooms[room]['paths'].includes('left')) {
         $('#button-left').prop('disabled', false);
-        $('.left').addClass('active');
+        $('.left, .Left-North, .Left-South').addClass('active');
     } else {
         $('#button-left').prop('disabled', true);
-        $('.left').removeClass('active');
+        $('.left, .Left-North, .Left-South').removeClass('active');
     };
     if (rooms[room]['paths'].includes('right')) {
         $('#button-right').prop('disabled', false);
-        $('.right').addClass('active');
+        $('.right, .Right-North, .Right-South').addClass('active');
     } else {
         $('#button-right').prop('disabled', true);
-        $('.right').removeClass('active');
+        $('.right, .Right-North, .Right-South').removeClass('active');
     };
 };
 

@@ -47,7 +47,7 @@ body {
     padding: 0;
     text-align: center;
     line-height: 100px;
-    
+    background-color: unset;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -64,32 +64,6 @@ body {
 
 div, a, h2, button {
     color: var(--onSurface) !important;
-}
-
-.pixel.NE {
-    background-image: url('../images/Walls/Corner-NE.png');
-}
-.pixel.NW {
-    background-image: url('../images/Walls/Corner-NW.png');
-}
-.pixel.SE {
-    background-image: url('../images/Walls/Corner-SE.png');
-}
-.pixel.SW {
-    background-image: url('../images/Walls/Corner-SW.png');
-}
-
-.pixel.N {
-    background-image: url('../images/Walls/Edge-N.png');
-}
-.pixel.S {
-    background-image: url('../images/Walls/Edge-S.png');
-}
-.pixel.E {
-    background-image: url('../images/Walls/Edge-E.png');
-}
-.pixel.W {
-    background-image: url('../images/Walls/Edge-W.png');
 }
 
 .item-modal .info-title {
