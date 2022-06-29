@@ -1,3 +1,8 @@
+/* Middle */
+.pixel.middle {
+    background-image: url('../images/Floor/Tile.png');
+}
+
 /* Corners */
 .pixel.North-East {
     background-image: url('../images/Walls/Corner-NE.png');
@@ -29,7 +34,7 @@
 /* Paths */
     /* Up */
     .pixel.North.active {
-        background-image: unset;
+        background-image: url('../images/Floor/Tile.png');
     }
     .pixel.Up-East.active {
         background-image: url('../images/Walls/Path-NE.png') !important;
@@ -40,7 +45,7 @@
 
     /* Down */
     .pixel.South.active {
-        background-image: unset;
+        background-image: url('../images/Floor/Tile.png');
     }
     .pixel.Down-East.active {
         background-image: url('../images/Walls/Path-SE.png') !important;
@@ -51,7 +56,7 @@
 
     /* Left */
     .pixel.West.active {
-        background-image: unset;
+        background-image: url('../images/Floor/Tile.png');
     }
     .pixel.Left-North.active {
         background-image: url('../images/Walls/Path-NW.png') !important;
@@ -62,7 +67,7 @@
     
     /* Right */
     .pixel.East.active {
-        background-image: unset;
+        background-image: url('../images/Floor/Tile.png');
     }
     .pixel.Right-North.active {
         background-image: url('../images/Walls/Path-NE.png') !important;
