@@ -64,16 +64,16 @@ div, a, h2, button {
 }
 
 .pixel.NE {
-    background-image: url('./images/Walls/Corner-NE.png');
+    background-image: url('../images/Walls/Corner-NE.png');
 }
 .pixel.NW {
-    background-image: url('./images/Walls/Corner-NW.png');
+    background-image: url('../images/Walls/Corner-NW.png');
 }
 .pixel.SE {
-    background-image: url('./images/Walls/Corner-SE.png');
+    background-image: url('../images/Walls/Corner-SE.png');
 }
 .pixel.SW {
-    background-image: url('./images/Walls/Corner-SW.png');
+    background-image: url('../images/Walls/Corner-SW.png');
 }
 
 .item-modal .info-title {
