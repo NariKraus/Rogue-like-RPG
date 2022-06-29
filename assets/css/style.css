@@ -76,6 +76,19 @@ div, a, h2, button {
     background-image: url('../images/Walls/Corner-SW.png');
 }
 
+.pixel.N {
+    background-image: url('../images/Walls/Edge-N.png');
+}
+.pixel.S {
+    background-image: url('../images/Walls/Edge-S.png');
+}
+.pixel.E {
+    background-image: url('../images/Walls/Edge-E.png');
+}
+.pixel.W {
+    background-image: url('../images/Walls/Edge-W.png');
+}
+
 .item-modal .info-title {
     padding: 8px;
     min-width: 100px;
