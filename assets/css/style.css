@@ -55,8 +55,11 @@ body {
 .pixel.middle {
     background-color: unset !important;
 }
+.pixel.up, .pixel.down, .pixel.left, .pixel.right {
+    color: #0000 !important;
+}
 .pixel.up.active, .pixel.down.active, .pixel.left.active, .pixel.right.active {
-    background-color: unset !important;
+    color: var(--onSurface) !important;
 }
 
 div, a, h2, button {
