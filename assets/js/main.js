@@ -133,7 +133,7 @@ function useItem(itemType) {
         };
         player.Armour = JSON.parse(JSON.stringify( armour[itemType]));
         $('#playerArmour').children().remove();
-        $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="` + armour[itemType].Type + `">` + armour[itemType].Type + `</button>`);
+        $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="` + armour[itemType].Type + `" extraTraits='[]'>` + armour[itemType].Type + `</button>`);
         $('#infoLog').append(`<span>The player equips a set of ` + armour[itemType].Type + ` armour.</span>`);
     };
     if (weapons[itemType]) {
@@ -142,7 +142,7 @@ function useItem(itemType) {
         };
         player.Weapon = JSON.parse(JSON.stringify( weapons[itemType] ));
         $('#playerWeapon').children().remove();
-        $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="` + weapons[itemType].Type + `">` + weapons[itemType].Type + `</button>`);
+        $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="` + weapons[itemType].Type + `" extraTraits='[]'>` + weapons[itemType].Type + `</button>`);
         $('#infoLog').append(`<span>The player equips a ` + weapons[itemType].Type + `.</span>`);
     };
     if (potions[itemType]) {
