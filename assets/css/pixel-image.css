@@ -29,32 +29,44 @@
 /* Paths */
     /* Up */
     .pixel.Up-East.active {
-        background-image: url('../images/Walls/Corner-NE.png');
+        background-image: url('../images/Walls/Path-NE.png');
     }
     .pixel.Up-West.active {
-        background-image: url('../images/Walls/Corner-NW.png');
+        background-image: url('../images/Walls/Path-NW.png');
+    }
+    .pixel.North.active {
+        background-image: unset;
     }
 
     /* Down */
     .pixel.Down-East.active {
-        background-image: url('../images/Walls/Corner-SE.png');
+        background-image: url('../images/Walls/Path-SE.png');
     }
     .pixel.Down-West.active {
-        background-image: url('../images/Walls/Corner-SW.png');
+        background-image: url('../images/Walls/Path-SW.png');
+    }
+    .pixel.South.active {
+        background-image: unset;
     }
 
     /* Left */
     .pixel.Left-North.active {
-        background-image: url('../images/Walls/Corner-NW.png');
+        background-image: url('../images/Walls/Path-NW.png');
     }
     .pixel.Left-South.active {
-        background-image: url('../images/Walls/Corner-SW.png');
+        background-image: url('../images/Walls/Path-SW.png');
     }
-
+    .pixel.West.active {
+        background-image: unset;
+    }
+    
     /* Right */
     .pixel.Right-North.active {
-        background-image: url('../images/Walls/Corner-NE.png');
+        background-image: url('../images/Walls/Path-NE.png');
     }
     .pixel.Right-South.active {
-        background-image: url('../images/Walls/Corner-SE.png');
+        background-image: url('../images/Walls/Path-SE.png');
+    }
+    .pixel.East.active {
+        background-image: unset;
     }
