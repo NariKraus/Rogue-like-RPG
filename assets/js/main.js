@@ -202,8 +202,8 @@ function addTips() {
             innerHtml = innerHtml.substring(6)
         };
         if (poisons[itemType]) {
-            innerHtml += 'Poison : ' + poisons[itemType].PoisonType;
-            innerHtml += '<br />Poison : ' + poisons[itemType].PoisonPower;
+            innerHtml += 'Type : ' + poisons[itemType].PoisonType;
+            innerHtml += '<br />Power : ' + poisons[itemType].PoisonPower;
         };
 
         $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).html(innerHtml).appendTo( $('body') );
