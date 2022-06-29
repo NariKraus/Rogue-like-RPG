@@ -45,9 +45,12 @@ body {
     border: none;
     margin: 0;
     padding: 0;
-    background-color: var(--onSurface);
     text-align: center;
     line-height: 100px;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .pixel.middle {
     background-color: unset !important;
@@ -58,6 +61,19 @@ body {
 
 div, a, h2, button {
     color: var(--onSurface) !important;
+}
+
+.pixel.NE {
+    background-image: url('/assets/images/Walls/Corner-NE.png');
+}
+.pixel.NW {
+    background-image: url('/assets/images/Walls/Corner-NW.png');
+}
+.pixel.SE {
+    background-image: url('/assets/images/Walls/Corner-SE.png');
+}
+.pixel.SW {
+    background-image: url('/assets/images/Walls/Corner-SW.png');
 }
 
 .item-modal .info-title {
