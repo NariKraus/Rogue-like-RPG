@@ -33,7 +33,7 @@
             
                             <div class="pixel West Left-North"></div>
                             <div class="pixel middle"></div>
-                            <div class="pixel middle h2" id="title"></div>
+                            <div class="pixel middle h4" id="title"></div>
                             <div class="pixel middle"></div>
                             <div class="pixel East Right-North"></div>
                             
@@ -45,10 +45,10 @@
                                 canGo(room);
                                 checkRoom(room);
                                 $('#title').html(window.room);
-                                $(this).replaceWith(`<div class='pixel middle h5' id='enemy'></div>`);
+                                $(this).replaceWith(`<div class='pixel middle' id='enemy'></div>`);
                             " id="start">
-                                <div class="h2">Start</div>
-                                <div class="h2">Game</div>
+                                <div class="h4">Start</div>
+                                <div class="h4">Game</div>
                             </button>
                             <div class="pixel middle"></div>
                             <button disabled id="button-right" class="pixel East right h4" onclick="go(room, 'right')">right</button>
