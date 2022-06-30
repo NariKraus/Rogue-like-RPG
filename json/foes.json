@@ -23,8 +23,8 @@
     },
     "Goblin" : {
         "Type" : "Goblin",
-        "Health" : 8,
-        "HealthMax" : 8,
+        "Health" : 10,
+        "HealthMax" : 10,
         "Power" : 2,
         "Accuracy" : 2,
         "Dodge" : 0,
@@ -34,8 +34,8 @@
     },
     "Kobold" : {
         "Type" : "Kobold",
-        "Health" : 8,
-        "HealthMax" : 8,
+        "Health" : 10,
+        "HealthMax" : 10,
         "Power" : 2,
         "Accuracy" : 0,
         "Dodge" : 2,
@@ -78,8 +78,8 @@
     },
     "Vampire" : {
         "Type" : "Vampire",
-        "Health" : 24,
-        "HealthMax" : 24,
+        "Health" : 25,
+        "HealthMax" : 25,
         "Power" : 6,
         "Accuracy" : 3,
         "Dodge" : 2,
@@ -89,8 +89,8 @@
     },
     "Zombie" : {
         "Type" : "Zombie",
-        "Health" : 16,
-        "HealthMax" : 16,
+        "Health" : 15,
+        "HealthMax" : 15,
         "Power" : 6,
         "Accuracy" : -2,
         "Dodge" : -3,
