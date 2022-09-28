@@ -33,9 +33,13 @@ function sortInventory() {
 
 // Reload functions
 function reload() {
-    sortInventory();
-    loadButtons();
-    addTips();
+    if ( player != null || foes != null || armour != null || potions != null || weapons != null || rooms != null ) {
+        sortInventory();
+        loadButtons();
+        addTips();
+    } else {
+        setTimeout(reload, 250);
+    };
 };
 
 // Store the current log
