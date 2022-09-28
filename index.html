@@ -206,21 +206,13 @@
 
                 // getData(url, (data) => console.log({ data }));
 
-                getData("json/player.json", (data) => player = data ).done(function() {
-                    getData("json/foes.json", (data) => foes = data ).done(function() {
-                        getData("json/armour.json", (data) => armour = data ).done(function() {
-                            getData("json/poisons.json", (data) => poisons = data ).done(function() {
-                                getData("json/potions.json", (data) => potions = data ).done(function() {
-                                    getData("json/weapons.json", (data) => weapons = data ).done(function() {
-                                        getData("assets/Levels/L1.json", (data) => rooms = data ).done(function() {
-                                            reload();
-                                        });
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
+                getData("json/player.json", (data) => player = data );
+                getData("json/foes.json", (data) => foes = data );
+                getData("json/armour.json", (data) => armour = data );
+                getData("json/poisons.json", (data) => poisons = data );
+                getData("json/potions.json", (data) => potions = data );
+                getData("json/weapons.json", (data) => weapons = data );
+                getData("assets/Levels/L1.json", (data) => rooms = data );
 
                 var fade = 2;
                 var room = "5-5";
@@ -268,6 +260,6 @@
                 <button class="close-log-button" onclick="$('.adventure-container').hide();">Close</button>
             </div>
         </div>
-
+        
     </body>
 </html>
