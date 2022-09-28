@@ -35,7 +35,6 @@ function sortInventory() {
 function reload() {
     sortInventory();
     loadButtons();
-    $('.tip-info').remove();
     addTips();
 };
 
@@ -192,9 +191,7 @@ function doffItem(item, type, element) {
 
 // Item Tips
 function addTips() {
-    $('.tip').unbind('mouseenter mouseleave').hover(function(){
-        const position = $(this).position();
-        const element = $(`<span class='tip-info'></span>`);
+    $('.tip').each(function(){
         const itemType = $(this).attr('itemtype');
         const extraTraits = $(this).attr('extraTraits');
         var innerHtml = '';
@@ -240,9 +237,11 @@ function addTips() {
             };
         }
 
-        $(element).css({top: position.top + $(this).height() + 'px', left: position.left + 'px', position: 'fixed'}).html(innerHtml).appendTo( $('body') );
-    }, function(){
-        $('.tip-info').remove();
+        $(this).data('powertip', innerHtml);
+
+        $(this).powerTip({
+            placement: 'sw-alt'
+        });
     });
 };
 
