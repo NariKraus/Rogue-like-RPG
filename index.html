@@ -188,78 +188,76 @@
         <script src="assets/vendor/jQuery PowerTip/jquery.powertip.min.js"></script>
 
         <script>
-            $(document).ready(function() {
-                var player = null;
-                var foes = null;
-                var armour = null;
-                var potions = null;
-                var weapons = null;
-                var rooms = null;
+            var player = null;
+            var foes = null;
+            var armour = null;
+            var potions = null;
+            var weapons = null;
+            var rooms = null;
 
-                function getData(url, cb, spawn) {
-                    fetch(url)
-                    .then(response => response.json())
-                    .then(result => cb(result));
-                }
+            function getData(url, cb, spawn) {
+                fetch(url)
+                .then(response => response.json())
+                .then(result => cb(result));
+            }
 
-                
+            
 
-                // getData(url, (data) => console.log({ data }));
+            // getData(url, (data) => console.log({ data }));
 
-                getData("json/player.json", (data) => player = data );
-                getData("json/foes.json", (data) => foes = data );
-                getData("json/armour.json", (data) => armour = data );
-                getData("json/poisons.json", (data) => poisons = data );
-                getData("json/potions.json", (data) => potions = data );
-                getData("json/weapons.json", (data) => weapons = data );
-                getData("assets/Levels/L1.json", (data) => rooms = data );
+            getData("json/player.json", (data) => player = data );
+            getData("json/foes.json", (data) => foes = data );
+            getData("json/armour.json", (data) => armour = data );
+            getData("json/poisons.json", (data) => poisons = data );
+            getData("json/potions.json", (data) => potions = data );
+            getData("json/weapons.json", (data) => weapons = data );
+            getData("assets/Levels/L1.json", (data) => rooms = data );
 
-                var fade = 2;
-                var room = "5-5";
+            var fade = 2;
+            var room = "5-5";
 
-                function loadmap(level) {
-                    getData("assets/Levels/" + level + ".json", (data) => window.rooms = data )
+            function loadmap(level) {
+                getData("assets/Levels/" + level + ".json", (data) => window.rooms = data )
 
-                    room = "5-5";
-                    $('.title').html(window.room);
-                    canGo(window.room);
-                    checkRoom(window.room);
-                };
+                room = "5-5";
+                $('.title').html(window.room);
+                canGo(window.room);
+                checkRoom(window.room);
+            };
 
-                function spawnMonsters(){
-                    if (rooms != null) {
-                        x = 0;
-                        while (x != 4) {
-                            selector = Math.floor(Math.random() * (Object.keys(window.rooms).length - 1));
-                            
-                            if (window.rooms[Object.keys(window.rooms)[selector]]['enemy'].length == 0 && Object.keys(window.rooms)[selector] != '5-5' && Object.keys(window.rooms)[selector] != '5-4') {
-                                x += 1;
-                                window.rooms[Object.keys(window.rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)]);
-                            };
+            function spawnMonsters(){
+                if (rooms != null) {
+                    x = 0;
+                    while (x != 4) {
+                        selector = Math.floor(Math.random() * (Object.keys(window.rooms).length - 1));
+                        
+                        if (window.rooms[Object.keys(window.rooms)[selector]]['enemy'].length == 0 && Object.keys(window.rooms)[selector] != '5-5' && Object.keys(window.rooms)[selector] != '5-4') {
+                            x += 1;
+                            window.rooms[Object.keys(window.rooms)[selector]]['enemy'].push(Object.keys(foes)[Math.floor(Math.random() * 9)]);
                         };
-                    } else {
-                        setTimeout(spawnMonsters, 250);
                     };
+                } else {
+                    setTimeout(spawnMonsters, 250);
                 };
+            };
 
-                spawnMonsters();
+            spawnMonsters();
 
-                var bypassCheck = document.location.search;
+            var bypassCheck = document.location.search;
 
-                if (bypassCheck.includes('NoUpdateLog')) {
-                    $('.update-container').remove();
-                };
-            });
+            if (bypassCheck.includes('NoUpdateLog')) {
+                $('.update-container').remove();
+            };
+
         </script>
 
         <script src="assets/js/main.js"></script>
         <script src="assets/js/traits.js"></script>
-
+        
         <div class="adventure-container" style="display: none;">
             <div class="adventure-log" id="log-store" style="flex-direction: column;">
                 <button class="close-log-button" onclick="$('.adventure-container').hide();">Close</button>
             </div>
         </div>
-        
     </body>
 </html>
