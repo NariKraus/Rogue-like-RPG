@@ -329,9 +329,13 @@ function Damage(Target, Damage) {
         $('#infoLog').append(`<span>The ` + Target.Type + ` was hit for ` + Damage + ` damage.</span>`);
     } else {
         $('#infoLog').append(`<span>The ` + Target.Type + ` died.</span>`);
-        $('#enemy').html('');
-        window.enemy = null;
-    }
+        if (Target == window.enemy) {
+            $('#enemy').html('');
+            window.enemy = null;
+        } else {
+            GameOver();
+        };
+    };
 };
 
 // █ Start Up █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
@@ -375,6 +379,7 @@ function EnchantArmour(enchantment) {
     };
     x = JSON.stringify(y);
     $('#playerArmour').children().attr('extraTraits', x);
+    addTips();
 };
 
 function EnchantWeapon(enchantment) {
@@ -395,4 +400,9 @@ function EnchantWeapon(enchantment) {
     };
     x = JSON.stringify(y);
     $('#playerWeapon').children().attr('extraTraits', x);
+    addTips();
+};
+
+function GameOver() {
+    $('main > .row').html('').append( $(`<div class="col"><div class="container"><div class="item-modal border-shadow align-content-center text-center row"><h1>Game Over</h1><h3>This is a placeholder death screen</h3></div></div></div>`) );
 };
