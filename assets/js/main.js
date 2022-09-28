@@ -33,7 +33,7 @@ function sortInventory() {
 
 // Reload functions
 function reload() {
-    if ( player != null || foes != null || armour != null || potions != null || weapons != null || rooms != null ) {
+    if ( window.player != null || window.foes != null || window.armour != null || window.potions != null || window.weapons != null || window.rooms != null ) {
         sortInventory();
         loadButtons();
         addTips();
