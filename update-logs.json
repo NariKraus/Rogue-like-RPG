@@ -65,7 +65,7 @@
     },
     "08/10/2022": {
         "Update Log": [
-            "Given functionality to poisons. As opposed to the potion of power, poison damage will apply whether the attack hits or not.",
+            "Given functionality to poisons. As opposed to the potion of power, poison will last until an attack hits a target.",
             "The player is no longer able to leave a room with an enemy within it.",
             "Redesigned the full log system, limiting to a maximum of the most recent 20 log actions. All logs are stored within the 'Log' variable for potential later use.",
             "While not optimised, a step has been taken to making the page more responsive, allowing for mobile or tablet play.",
