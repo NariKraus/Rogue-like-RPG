@@ -10,30 +10,30 @@
 
 /* Corners */
 .pixel.North-East {
-    background-image: url('../images/Walls/Corner-NE.png');
+    background-image: url('../images/Walls/Top\ Right.png');
 }
 .pixel.North-West {
-    background-image: url('../images/Walls/Corner-NW.png');
+    background-image: url('../images/Walls/Top\ Left.png');
 }
 .pixel.South-East {
-    background-image: url('../images/Walls/Corner-SE.png');
+    background-image: url('../images/Walls/Bottom\ Right.png');
 }
 .pixel.South-West {
-    background-image: url('../images/Walls/Corner-SW.png');
+    background-image: url('../images/Walls/Bottom\ Left.png');
 }
 
 /* Edges */
 .pixel.North {
-    background-image: url('../images/Walls/Edge-N.png');
+    background-image: url('../images/Walls/Cap.png');
 }
 .pixel.South {
-    background-image: url('../images/Walls/Edge-S.png');
+    background-image: url('../images/Walls/Cap.png');
 }
 .pixel.East {
-    background-image: url('../images/Walls/Edge-E.png');
+    background-image: url('../images/Walls/Side.png');
 }
 .pixel.West {
-    background-image: url('../images/Walls/Edge-W.png');
+    background-image: url('../images/Walls/Side.png');
 }
 
 /* Paths */
@@ -42,10 +42,10 @@
         background-image: url('../images/Floor/Tile.png');
     }
     .pixel.Up-East.active {
-        background-image: url('../images/Walls/Path-NE.png') !important;
+        background-image: url('../images/Walls/Cap\ Right.png') !important;
     }
     .pixel.Up-West.active {
-        background-image: url('../images/Walls/Path-NW.png') !important;
+        background-image: url('../images/Walls/Cap\ Left.png') !important;
     }
 
     /* Down */
@@ -53,10 +53,10 @@
         background-image: url('../images/Floor/Tile.png');
     }
     .pixel.Down-East.active {
-        background-image: url('../images/Walls/Path-SE.png') !important;
+        background-image: url('../images/Walls/Cap\ Right.png') !important;
     }
     .pixel.Down-West.active {
-        background-image: url('../images/Walls/Path-SW.png') !important;
+        background-image: url('../images/Walls/Cap\ Left.png') !important;
     }
 
     /* Left */
@@ -64,10 +64,10 @@
         background-image: url('../images/Floor/Tile.png');
     }
     .pixel.Left-North.active {
-        background-image: url('../images/Walls/Path-NW.png') !important;
+        background-image: url('../images/Walls/Side\ Top.png') !important;
     }
     .pixel.Left-South.active {
-        background-image: url('../images/Walls/Path-SW.png') !important;
+        background-image: url('../images/Walls/Side\ Bottom.png') !important;
     }
     
     /* Right */
@@ -75,8 +75,8 @@
         background-image: url('../images/Floor/Tile.png');
     }
     .pixel.Right-North.active {
-        background-image: url('../images/Walls/Path-NE.png') !important;
+        background-image: url('../images/Walls/Side\ Top.png') !important;
     }
     .pixel.Right-South.active {
-        background-image: url('../images/Walls/Path-SE.png') !important;
+        background-image: url('../images/Walls/Side\ Bottom.png') !important;
     }

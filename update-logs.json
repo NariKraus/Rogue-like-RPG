@@ -1,0 +1,82 @@
+{
+    "23/06/2022": {
+        "Update Log": [
+            "The page now has an actual favicon and title.",
+            "Customised scroll bar for elements such as the inventory."
+        ],
+        "Bug Fixes": [
+            "Doffing a weapon or armour will no longer cause the stats panel to be duplicated for said elements.",
+            "Enemy spawning has been fixed to now spawn randomly around the map. (There is still always a Kobold in room 5-4)",
+            "Enemies will no longer generate with just the first 2 letters of their name."
+        ],
+        "Next Tasks": [
+            "Making the log system show the most recent input, with an option to view all previous log inputs.",
+            "Allowing the player to get to the 2nd and 3rd levels.",
+            "Making more gear and enemy traits, as well as applying them better in combat.",
+            "Creating status effects such as Poisoned, Enraged and Undead.",
+            "Creating usable single-use potions and poisons.",
+            "Capping the inventory to a maximum capacity yet to be decided.",
+            "Prevent running from monsters.",
+            "Create an Enchantment system."
+        ],
+        "Bugs": [
+            "Player death is not permanent.",
+            "The vampiric trait heals for floating point numbers."
+        ],
+        "Comment": "Please note that visuals do not work properly on mobile devices."
+    },
+    "30/06/2022" : {
+        "Update Log": [
+            "Implemented textures to the visible map.",
+            "Created functions that allow for Enchantments. Yet to be implemented into gameplay.",
+            "Created multiple Potions that restore health or increase damage.",
+            "Added the trait 'Piercing' that halves the defending party's effective defence.",
+            "Created a Log system to display what the player does and store each log for visualisation. (Click the Log Index to view)"
+        ],
+        "Bug Fixes": [
+            "The 'Vampiric' trait now works as intended."
+        ],
+        "Next Tasks": [
+            "Allowing the player to get to the 2nd and 3rd levels.",
+            "Creating status effects such as Poisoned, Enraged and Paralysed.",
+            "Give functionality to poisons.",
+            "Capping the inventory to a maximum capacity yet to be decided.",
+            "Prevent running from monsters."
+        ],
+        "Bugs": [
+            "Player death is not permanent." 
+        ],
+        "Comment": "Please note that visuals do not work properly on mobile devices."
+    },
+    "28/09/2022" : {
+        "Update Log": [
+            "Changed the hover style when looking at an item.",
+            "Added a basic 'Game Over' screen when the player's health reaches 0."
+        ],
+        "Next Tasks": [
+            "Allowing the player to get to the 2nd and 3rd levels.",
+            "Creating status effects such as Poisoned, Enraged and Paralysed.",
+            "Give functionality to poisons.",
+            "Capping the inventory to a maximum capacity yet to be decided.",
+            "Prevent running from monsters.",
+            "Make the full log look better."
+        ],
+        "Comment": "Please note that visuals do not work properly on mobile devices."
+    },
+    "08/10/2022": {
+        "Update Log": [
+            "Given functionality to poisons. As opposed to the potion of power, poison damage will apply whether the attack hits or not.",
+            "The player is no longer able to leave a room with an enemy within it.",
+            "Redesigned the full log system, limiting to a maximum of the most recent 20 log actions. All logs are stored within the 'Log' variable for potential later use.",
+            "While not optimised, a step has been taken to making the page more responsive, allowing for mobile or tablet play.",
+            "Updated graphics for the visible area."
+        ],
+        "Next Tasks": [
+            "Allowing the player to get to the 2nd and 3rd levels.",
+            "Creating status effects such as Poisoned, Enraged and Paralysed.",
+            "Capping the inventory to a maximum capacity yet to be decided.",
+            "Creating a shop system and allowing players to find items, either on the floor or dropped from a 'special' Foe.",
+            "Enemies names will soon be replaced with token icons. For now, the text may run off the tile."
+        ]
+    }
+}

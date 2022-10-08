@@ -1,3 +1,49 @@
+var log = [];
+
+// █ Change Size █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
+
+//  Window Ready
+$(window).ready(function() {
+    var windowWidth = parseInt( $( window ).width() );
+    if (windowWidth >= 1400) {
+        $(':root').css('--c-Pixel', 'var(--xxl-Pixel)');
+    } else if (windowWidth >= 1200) {
+        $(':root').css('--c-Pixel', 'var(--xl-Pixel)');
+    } else if (windowWidth  >= 992 ) {
+        $(':root').css('--c-Pixel', 'var(--lg-Pixel)');
+    } else if (windowWidth  >= 768 ) {
+        $(':root').css('--c-Pixel', 'var(--md-Pixel)');
+    } else if (windowWidth  >= 576 ) {
+        $(':root').css('--c-Pixel', 'var(--sm-Pixel)');
+    } else if ( windowWidth < 576 ) {
+        $(':root').css('--c-Pixel', 'var(--xs-Pixel)');
+    };
+});
+
+// Window Resize
+$( window ).resize(function() {
+    var windowWidth = parseInt( $( window ).width() );
+    if (windowWidth >= 1400) {
+        $(':root').css('--c-Pixel', 'var(--xxl-Pixel)');
+        console.log('xxl');
+    } else if (windowWidth >= 1200) {
+        $(':root').css('--c-Pixel', 'var(--xl-Pixel)');
+        console.log('xl');
+    } else if (windowWidth  >= 992 ) {
+        $(':root').css('--c-Pixel', 'var(--lg-Pixel)');
+        console.log('lg');
+    } else if (windowWidth  >= 768 ) {
+        $(':root').css('--c-Pixel', 'var(--md-Pixel)');
+        console.log('md');
+    } else if (windowWidth  >= 576 ) {
+        $(':root').css('--c-Pixel', 'var(--sm-Pixel)');
+        console.log('sm');
+    } else if ( windowWidth < 576 ) {
+        $(':root').css('--c-Pixel', 'var(--xs-Pixel)');
+        console.log('xs');
+    };
+});
+
 // █ Utility Functions █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
 // Loading Buttons
@@ -44,8 +90,12 @@ function reload() {
 
 // Store the current log
 function storeLog() {
-    $('#log-store').append($('#infoLog').html()).append($('<br />'));
-    $('#infoLog').html('');
+    log.push( $('#infoLog').text() );
+    $('#infoLog').text('');
+    $('#log-store').children('p, hr').remove();
+    log.slice(-20).forEach( element => {
+        $('#log-store').prepend( $(`<p class="log-text">` + element + `</p>`) );
+    });
 };
 
 // Roll a dice
@@ -93,6 +143,7 @@ function checkRoom(room) {
     if (rooms[room]['enemy'].length != 0) {
         $('#enemy').html(rooms[room]['enemy']);
         window.enemy = JSON.parse( JSON.stringify( foes[rooms[room]['enemy']] ) );
+        $('#infoLog').append(`<span>Ambush! The ` + rooms[room]['enemy'] + ` attacks.</span> `);
     } else {
         $('#enemy').html('');
         window.enemy = null;
@@ -101,6 +152,11 @@ function checkRoom(room) {
 
 // Move to another room
 function go(room, direction) {
+    if (rooms[room]['enemy'].length != 0) {
+        storeLog();
+        $('#infoLog').append(`<span>The ` + rooms[room]['enemy'] + ` blocks the player's path. You cannot escape.</span> `);
+        return;
+    }
     if (rooms[room]['paths'].includes(direction)) {
         const splitroom = room.split("");
         switch (direction) {
@@ -119,7 +175,7 @@ function go(room, direction) {
         };
     };
     storeLog();
-    $('#infoLog').append(`<span>The player moved ` + direction + ` to ` + window.room + `.</span>`);
+    $('#infoLog').append(`<span>The player moved ` + direction + ` to ` + window.room + `.</span> `);
     $('#title').html(window.room);
     canGo(window.room);
     checkRoom(window.room);
@@ -137,7 +193,7 @@ function useItem(itemType) {
         player.Armour = JSON.parse(JSON.stringify( armour[itemType]));
         $('#playerArmour').children().remove();
         $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="` + armour[itemType].Type + `" extraTraits='[]'>` + armour[itemType].Type + `</button>`);
-        $('#infoLog').append(`<span>The player equips a set of ` + armour[itemType].Type + ` armour.</span>`);
+        $('#infoLog').append(`<span>The player equips a set of ` + armour[itemType].Type + ` armour.</span> `);
     };
     if (weapons[itemType]) {
         if (player.Weapon.Type != 'Unarmed') {
@@ -146,22 +202,24 @@ function useItem(itemType) {
         player.Weapon = JSON.parse(JSON.stringify( weapons[itemType] ));
         $('#playerWeapon').children().remove();
         $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="` + weapons[itemType].Type + `" extraTraits='[]'>` + weapons[itemType].Type + `</button>`);
-        $('#infoLog').append(`<span>The player equips a ` + weapons[itemType].Type + `.</span>`);
+        $('#infoLog').append(`<span>The player equips a ` + weapons[itemType].Type + `.</span> `);
     };
     if (potions[itemType]) {
         if (potions[itemType].Healing > 0) {
             Heal(player, potions[itemType].Healing);
+            $('#playerHealth').html(player.Health);
         };
         if (potions[itemType].Power > 0) {
             player.Effects.Power = potions[itemType].Power;
         };
-        $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
+        $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span> `);
     };
     if (poisons[itemType]) {
-        if (potions[itemType].Healing > 0) {
-            Heal(player, potions[itemType].Healing);
+        if (poisons[itemType].PoisonType == "Damage") {
+            EnchantWeapon('Poisoned');
+            player.Weapon.PoisonPower = poisons[itemType].PoisonPower;
         };
-        $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span>`);
+        $('#infoLog').append(`<span>The player applys a poison to their weapon.</span> `);
     };
     reload();
 };
@@ -269,7 +327,6 @@ $('.attack-button').click(function() {
 
 // Attack
 function Attack(Offence, Defence) {
-
     // Offence Roll
     switch (Offence.Type) {
         case "player":
@@ -303,7 +360,7 @@ function Attack(Offence, Defence) {
     };
 
     if (Attack_roll >= Dodge_roll) {
-        $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack hit the ` + Defence.Type + `.</span>`);
+        $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack hit the ` + Defence.Type + `.</span> `);
 
         Damage(Defence, Damage_roll);
 
@@ -312,23 +369,23 @@ function Attack(Offence, Defence) {
         defenceTraits(Offence, Defence);
 
     } else {
-        $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack missed the ` + Defence.Type + `.</span>`);
+        $('#infoLog').append(`<span>The ` + Offence.Type + `'s attack missed the ` + Defence.Type + `.</span> `);
     };
 };
 
 // Heal
 function Heal(Target, Healing) {
     Target.Health = Math.min(Target.Health + Healing, Target.HealthMax);
-    $('#infoLog').append(`<span>The ` + Target.Type + ` was healed up to ` + Target.Health + `.</span>`);
+    $('#infoLog').append(`<span>The ` + Target.Type + ` was healed up to ` + Target.Health + `.</span> `);
 };
 
 // Damage
 function Damage(Target, Damage) {
     Target.Health = Math.max(Target.Health - Damage, 0);
     if (Target.Health > 0) {
-        $('#infoLog').append(`<span>The ` + Target.Type + ` was hit for ` + Damage + ` damage.</span>`);
+        $('#infoLog').append(`<span>The ` + Target.Type + ` was hit for ` + Damage + ` damage.</span> `);
     } else {
-        $('#infoLog').append(`<span>The ` + Target.Type + ` died.</span>`);
+        $('#infoLog').append(`<span>The ` + Target.Type + ` died.</span> `);
         if (Target == window.enemy) {
             $('#enemy').html('');
             window.enemy = null;
@@ -382,6 +439,16 @@ function EnchantArmour(enchantment) {
     addTips();
 };
 
+function UnenchantArmour(enchantment) {
+    var x = $('#playerArmour').children().attr('extraTraits');
+    y = JSON.parse(x);
+    y.splice( y.findIndex((num) => num === enchantment) );
+    player.Armour.Traits.splice( player.Armour.Traits.findIndex((num) => num === enchantment) );
+    x = JSON.stringify(y);
+    $('#playerArmour').children().attr('extraTraits', x);
+    addTips();
+};
+
 function EnchantWeapon(enchantment) {
     var x = $('#playerWeapon').children().attr('extraTraits');
     if (x) {
@@ -398,6 +465,16 @@ function EnchantWeapon(enchantment) {
             player.Weapon.Traits.push(enchantment);
         };
     };
+    x = JSON.stringify(y);
+    $('#playerWeapon').children().attr('extraTraits', x);
+    addTips();
+};
+
+function UnenchantWeapon(enchantment) {
+    var x = $('#playerWeapon').children().attr('extraTraits');
+    y = JSON.parse(x);
+    y.splice( y.findIndex((num) => num === enchantment) );
+    player.Weapon.Traits.splice( player.Weapon.Traits.findIndex((num) => num === enchantment) );
     x = JSON.stringify(y);
     $('#playerWeapon').children().attr('extraTraits', x);
     addTips();

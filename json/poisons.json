@@ -3,5 +3,10 @@
         "Type" : "Poison",
         "PoisonType" : "Damage",
         "PoisonPower" : 2
+    },
+    "Strong Poison" : {
+        "Type" : "Poison",
+        "PoisonType" : "Damage",
+        "PoisonPower" : 10
     }
 }

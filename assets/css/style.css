@@ -12,6 +12,17 @@
     --purple:#957DAD
 }
 
+:root {
+    --xs-Pixel: 32;	    /* <576px */
+    --sm-Pixel: 48;	/* ≥576px */
+    --md-Pixel: 64;	/* ≥768px */
+    --lg-Pixel: 96;	    /* ≥992px */
+    --xl-Pixel: 112;	    /* ≥1200px */
+    --xxl-Pixel: 128;	    /* ≥1400px */
+
+    --c-Pixel: var(--md-Pixel);
+}
+
 body {
     overflow-x: hidden;
     background-color: var(--background);
@@ -39,18 +50,49 @@ body {
     border: 3px solid var(--separator);
 }
 
+#pixel-border {
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+    border: solid black calc( var(--c-Pixel) / 16 * 1px );
+    padding: 0;
+}
+
+#pixel-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    height: calc( 5 * var(--c-Pixel) * 1px);
+    width: calc( 5 * var(--c-Pixel) * 1px);
+}
+
 .pixel {
-    height: 100px;
-    width: 100px;
+    font-family: 'Silkscreen', cursive;
+    image-rendering: pixelated;
+    height: calc( var(--c-Pixel) * 1px );
+    width: calc( var(--c-Pixel) * 1px );
     border: none;
     margin: 0;
     padding: 0;
     text-align: center;
-    line-height: 100px;
+    font-size: calc( var(--c-Pixel) / 100 * 1.5rem );
+    font-weight: 500;
+    text-transform: uppercase;
     background-color: unset;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
+}
+.pixel:target-text {
+    white-space: nowrap;
+    overflow: auto;
 }
 .pixel.up, .pixel.down, .pixel.left, .pixel.right {
     color: #0000 !important;
@@ -83,6 +125,11 @@ div, a, h2, button {
     margin: 60px 20px;
     height: calc(100vh - 120px);
     background-color: var(--surface);
+}
+@media only screen and (max-width: 992px) {
+    .item-modal {
+      height: fit-content;
+    }
 }
 .item-modal .info-content {
     padding: 10px 14px;
@@ -141,6 +188,15 @@ div, a, h2, button {
 
 #infoLog span {
     width: 100%;
+   
+}
+
+.log-text {
+    padding: .5rem!important;
+    margin: 0;
+}
+.log-text:not(:first-child) {
+    border-top: solid 1px var(--separator);
 }
 
 .item-modal .info-box {

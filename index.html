@@ -5,7 +5,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- <base href="https://narikraus.github.io/Rogue-like-RPG/" target="_blank"> -->
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
@@ -22,54 +25,44 @@
             <div class="row">
                 <div class="col">
                     <div class="container">
-                        <div class="item-modal border-shadow align-content-center justify-content-center row">
-                                
-                            <div class="pixel North-West"></div>
-                            <div class="pixel North Up-West"></div>
-                            <button disabled id="button-up" class="pixel North up h4" onclick="go(room, 'up')">up</button>
-                            <div class="pixel North Up-East"></div>
-                            <div class="pixel North-East"></div>
-                            
-                            <div class="w-100"></div>
-            
-                            <div class="pixel West Left-North"></div>
-                            <div class="pixel middle"></div>
-                            <div class="pixel middle h4" id="title"></div>
-                            <div class="pixel middle"></div>
-                            <div class="pixel East Right-North"></div>
-                            
-                            <div class="w-100"></div>
-            
-                            <button disabled id="button-left" class="pixel West left h4" onclick="go(room, 'left')">left</button>
-                            <div class="pixel middle"></div>
-                            <button class="pixel middle" onclick="
-                                canGo(room);
-                                checkRoom(room);
-                                $('#title').html(window.room);
-                                $(this).replaceWith(`<div class='pixel middle h4' id='enemy'></div>`);
+                        <div class="item-modal border-shadow row align-content-center justify-content-center">
 
-                            " id="start">
-                                <div class="h4">Start</div>
-                                <div class="h4">Game</div>
-                            </button>
-                            <div class="pixel middle"></div>
-                            <button disabled id="button-right" class="pixel East right h4" onclick="go(room, 'right')">right</button>
-                            
-                            <div class="w-100"></div>
-            
-                            <div class="pixel West Left-South"></div>
-                            <div class="pixel middle"></div>
-                            <div class="pixel middle"></div>
-                            <div class="pixel middle"></div>
-                            <div class="pixel East Right-South"></div>
-                            
-                            <div class="w-100"></div>
-            
-                            <div class="pixel South-West"></div>
-                            <div class="pixel South Down-West"></div>
-                            <button disabled id="button-down" class="pixel South down h4" onclick="go(room, 'down')">down</button>
-                            <div class="pixel South Down-East"></div>
-                            <div class="pixel South-East"></div>
+                            <div id="pixel-border">
+                                <div id="pixel-container">
+                                    <div class="pixel North-West"></div>
+                                    <div class="pixel North Up-West"></div>
+                                    <button disabled id="button-up" class="pixel North up" onclick="go(room, 'up')">up</button>
+                                    <div class="pixel North Up-East"></div>
+                                    <div class="pixel North-East"></div>
+                    
+                                    <div class="pixel West Left-North"></div>
+                                    <div class="pixel middle"></div>
+                                    <div class="pixel middle" id="title"></div>
+                                    <div class="pixel middle"></div>
+                                    <div class="pixel East Right-North"></div>
+                    
+                                    <button disabled id="button-left" class="pixel West left" onclick="go(room, 'left')">left</button>
+                                    <div class="pixel middle"></div>
+                                    <button class="pixel middle" onclick="canGo(room); checkRoom(room); $('#infoLog').html('<span>The player begins their adventure.</span>'); $('#title').html(window.room); $(this).replaceWith(`<div class='pixel middle' id='enemy'></div>`);" id="start">
+                                        <div>Start</div>
+                                        <div>Game</div>
+                                    </button>
+                                    <div class="pixel middle"></div>
+                                    <button disabled id="button-right" class="pixel East right" onclick="go(room, 'right')">right</button>
+                    
+                                    <div class="pixel West Left-South"></div>
+                                    <div class="pixel middle"></div>
+                                    <div class="pixel middle"></div>
+                                    <div class="pixel middle"></div>
+                                    <div class="pixel East Right-South"></div>
+                    
+                                    <div class="pixel South-West"></div>
+                                    <div class="pixel South Down-West"></div>
+                                    <button disabled id="button-down" class="pixel South down" onclick="go(room, 'down')">down</button>
+                                    <div class="pixel South Down-East"></div>
+                                    <div class="pixel South-East"></div>
+                                </div>
+                            </div>
     
                         </div>
                     </div>
@@ -127,15 +120,14 @@
                                             <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Short Spear" extratraits="[]">Short Spear</button>
                                             <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Short Sword" extratraits="[]">Short Sword</button>
                                             <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Spear" extratraits="[]">Spear</button>
+                                            <button class="inventory-item tip" itemcatagory="Poison" itemtype="Strong Poison" extratraits="[]">Strong Poison</button>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="info-box border-shadow" style="overflow: auto;">
                                     <button class="info-title" onclick="$('.adventure-container').show()">Log</button>
                                     <div class="info-content" style="max-height: 300px;">
-                                        <span class="info-value" id="infoLog">
-                                            <span>The player begins their adventure.</span>
-                                        </span>
+                                        <span class="info-value" id="infoLog"></span>
                                     </div>
                                 </div>
                                 <div class="info-box border-shadow row justify-content-center" style="margin-top: auto;">
@@ -154,28 +146,6 @@
         <div class="update-container">
             <div class="update-log">
                 <button class="close-log-button" onclick="$('.update-container').remove();">Close</button>
-                <pre>
-<code>
-<span class="markdown-green">28/09/2022</span>
-
-<span class="markdown-blue"># Update Log</span>
-<span class="markdown-red">-</span> Changed the hover style when looking at an item.
-<span class="markdown-red">-</span> Added a basic 'Game Over' screen when the player's health reaches 0.
-
-<span class="markdown-blue"># Next Tasks</span>
-<span class="markdown-red">-</span> Allowing the player to get to the 2nd and 3rd levels.
-<span class="markdown-red">-</span> Creating status effects such as Poisoned, Enraged and Paralysed.
-<span class="markdown-red">-</span> Give functionality to poisons.
-<span class="markdown-red">-</span> Capping the inventory to a maximum capacity yet to be decided.
-<span class="markdown-red">-</span> Prevent running from monsters.
-<span class="markdown-red">-</span> Make the full log look better.
-
-<span class="markdown-blue"># Bugs</span>
-<span class="markdown-red">-</span> None currently known.
-
-<span class="markdown-italics">Please note that visuals do not work properly on mobile devices.</span>
-</code>
-                </pre>
             </div>
         </div>
 
@@ -190,6 +160,7 @@
             var potions = null;
             var weapons = null;
             var rooms = null;
+            var update_log = null;
 
             function getData(url, cb, spawn) {
                 fetch(url)
@@ -208,6 +179,8 @@
             getData("json/potions.json", (data) => potions = data );
             getData("json/weapons.json", (data) => weapons = data );
             getData("assets/Levels/L1.json", (data) => rooms = data );
+            
+            getData("update-logs.json", (data) => update_log = data );
 
             var fade = 2;
             var room = "5-5";
@@ -245,6 +218,29 @@
                 $('.update-container').remove();
             };
 
+            function loadUpdateLog() {
+                if ( update_log != null ) {
+                    const currentLog = update_log[ Object.keys( update_log )[ Object.keys( update_log ).length - 1 ] ];
+                    const updateContainer = $(`<pre class="m-0"></pre>`)
+                    $(updateContainer).append(`<span class="markdown-green">` + Object.keys( update_log )[ Object.keys( update_log ).length - 1 ] + `</span> \n`)
+                    Object.keys(currentLog).forEach(key => {
+                        if (key != 'Comment') {
+                            $(updateContainer).append(`<span class="markdown-blue"># ` + key + `</span> \n`)
+                            currentLog[key].forEach(value => {
+                                $(updateContainer).append(`<span class="markdown-red">-</span> <span>` + value + `</span>\n`)
+                            });
+                            $(updateContainer).append(`\n`)
+                        } else {
+                            $(updateContainer).append(`<span class="markdown-green">` + currentLog[key] + `</span>`)
+                        }
+                    });
+                    $('.update-log').append(updateContainer)
+                } else {
+                    setTimeout( loadUpdateLog, 250 )
+                };
+            };
+            loadUpdateLog();
+
         </script>
 
         <script src="assets/js/main.js"></script>
@@ -252,6 +248,7 @@
 
         <div class="adventure-container" style="display: none;">
             <div class="adventure-log" id="log-store" style="flex-direction: column;">
+                <p class="log-text">Your adventure is only just starting!</p>
                 <button class="close-log-button" onclick="$('.adventure-container').hide();">Close</button>
             </div>
         </div>
