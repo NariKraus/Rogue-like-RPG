@@ -147,11 +147,10 @@ div, a, h2, button {
 /* █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ */
 /*  Item Buttons █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ */
 /* █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ */
-.inventory-item, .equipped-item, .attack-button, .close-log-button {
+.inventory-item, .equipped-item, .action-button, .close-log-button {
     padding: 8px;
     margin: 0.5em;
     min-width: 100px;
-    display: flex;
     align-items: center;
     font-size: 10px;
     border-radius: 0.25rem!important;
@@ -159,16 +158,16 @@ div, a, h2, button {
     text-transform: uppercase;
     justify-content: center;
 }
-.inventory-item[itemCatagory="Armour"], .equipped-item[itemCatagory="Armour"] {
+.inventory-item.Armour, .equipped-item.Armour {
     background-color: var(--green);
 }
-.inventory-item[itemCatagory="Weapon"], .equipped-item[itemCatagory="Weapon"] {
+.inventory-item.Weapon, .equipped-item.Weapon {
     background-color: var(--red);
 }
-.inventory-item[itemCatagory="Potion"], .inventory-item[itemCatagory="Poison"] {
+.inventory-item.Potion, .inventory-item.Poison {
     background-color: var(--purple);
 }
-.attack-button, .close-log-button {
+.action-button, .close-log-button {
     background-color: crimson;
 }
 
@@ -262,4 +261,21 @@ span.markdown-green {
 }
 span.markdown-italics {
     font-style: italic;
+}
+
+
+
+
+.button-section {
+    margin: 0.5em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 1em;
+    font-size: 10px;
+}
+
+.button-section > button {
+    width: 100%;
+    margin: 0;
 }

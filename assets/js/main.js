@@ -1,4 +1,7 @@
 var log = [];
+const item = '<button class="tip"></button>';
+
+
 
 // █ Change Size █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
@@ -44,15 +47,17 @@ $( window ).resize(function() {
     };
 });
 
+
+
 // █ Utility Functions █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
 // Loading Buttons
 function loadButtons() {
     $('.inventory-item').unbind('click').click(function() {
         const itemType = $(this).attr('itemType')
-        useItem(itemType);
-        for (let i = 0; i < JSON.parse($(this).attr('extratraits')).length; i++) {
-            const x = JSON.parse($(this).attr('extratraits'))[i];
+        useItem(this, itemType);
+        for (let i = 0; i < JSON.parse($(this).attr('enchantments')).length; i++) {
+            const x = JSON.parse($(this).attr('enchantments'))[i];
             if (armour[itemType]) {
                 EnchantArmour(x);
             };
@@ -63,24 +68,104 @@ function loadButtons() {
         $(this).remove();
     });
     $('.equipped-item').unbind('click').click(function() {
-        doffItem($(this).attr('itemType'), $(this).attr('itemCatagory'), $(this));
+        doffItem($(this).attr('itemType'), $(this).attr("class").split(/\s+/));
     });
 };
 
-// Sort Inventory
-function sortInventory() {
-    var alphabeticallyOrderedDivs = $('.inventory-item').sort(function(a, b) {
-        return String.prototype.localeCompare.call($(a).attr('itemCatagory').toLowerCase() + $(a).attr('itemType').toLowerCase(), $(b).attr('itemCatagory').toLowerCase() + $(b).attr('itemType').toLowerCase());
+// Generate Inventory
+function generateInventory() {
+    $('#playerWeapon, #playerArmour, #playerInventory').html('')
+
+    let weapon = $(item);
+    $(weapon).addClass('Weapon equipped-item').attr('itemtype', player.Weapon.Type).text(player.Weapon.Type);
+    $('#playerWeapon').append( $(weapon) );
+
+    let armour = $(item);
+    $(armour).addClass('Armour equipped-item').attr('itemtype', player.Armour.Type).text(player.Armour.Type);
+    $('#playerArmour').append( $(armour) );
+
+    for (let i = 0; i < player.Inventory.length; i++) {
+        const element = player.Inventory[i];
+     
+        let inventoryItem = $(item);
+
+        $(inventoryItem).addClass(element.Item + ' inventory-item').attr('itemType', element.Type).attr('enchantments', JSON.stringify(element.Enchantments)).attr('index', i).text(element.Type);
+        $('#playerInventory').append( $(inventoryItem) );
+    };
+};
+
+// Item Tips
+function addTips() {
+    $('.tip').each(function(){
+        const itemType = $(this).attr('itemtype');
+        const enchantments = $(this).attr('enchantments');
+        var innerHtml = '';
+
+        if ($(this).hasClass('equipped-item')) {
+            if (armour[itemType]) {
+                innerHtml = 'Defence : ' + player.Armour.Defence + '<br />Dodge : ' + player.Armour.Dodge;
+                if (player.Armour.Traits.length > 0) {
+                    innerHtml += '<br />Traits : ' + player.Armour.Traits.join(', ');
+                };
+                if (player.Armour.Enchantments.length > 0) {
+                    innerHtml += '<br />Enchantments : ' + player.Armour.Enchantments.join(', ');
+                };
+            };
+            if (weapons[itemType]) {
+                innerHtml = 'Accuracy : ' + player.Weapon.Accuracy + '<br />Power : ' + player.Weapon.Power;
+                if (player.Weapon.Traits.length > 0) {
+                    innerHtml += '<br />Traits : ' + player.Weapon.Traits.join(', ');
+                };
+                if (player.Weapon.Enchantments.length > 0) {
+                    innerHtml += '<br />Enchantments : ' + player.Weapon.Enchantments.join(', ');
+                };
+            };            
+        } else {
+            if (armour[itemType]) {
+                innerHtml = 'Defence : ' + armour[itemType].Defence + '<br />Dodge : ' + armour[itemType].Dodge;
+                if (armour[itemType].Traits.length > 0) {
+                    innerHtml += '<br />Traits : ' + armour[itemType].Traits.concat(JSON.parse(enchantments)).join(', ');
+                };
+                if (JSON.parse(enchantments).length > 0) {
+                    innerHtml += '<br />Enchantments : ' + (JSON.parse(enchantments)).join(', ');
+                };
+            };
+            if (weapons[itemType]) {
+                innerHtml = 'Accuracy : ' + weapons[itemType].Accuracy + '<br />Power : ' + weapons[itemType].Power;
+                if (weapons[itemType].Traits.length > 0) {
+                    innerHtml += '<br />Traits : ' + weapons[itemType].Traits.concat(JSON.parse(enchantments)).join(', ');
+                };
+                if (JSON.parse(enchantments).length > 0) {
+                    innerHtml += '<br />Enchantments : ' + (JSON.parse(enchantments)).join(', ');
+                };
+            };
+            if (potions[itemType]) {
+                if (potions[itemType].Healing > 0) {
+                    innerHtml += '<br />Healing : ' + potions[itemType].Healing;
+                };
+                if (potions[itemType].Power > 0) {
+                    innerHtml += '<br />Power : ' + potions[itemType].Power;
+                };
+                innerHtml = innerHtml.substring(6)
+            };
+            if (poisons[itemType]) {
+                innerHtml += 'Type : ' + poisons[itemType].PoisonType;
+                innerHtml += '<br />Power : ' + poisons[itemType].PoisonPower;
+            };
+        }
+
+        $(this).data('powertip', innerHtml);
+
+        $(this).powerTip({
+            placement: 'sw-alt'
+        });
     });
-    
-    var container = $("#playerInventory");
-    container.empty().append(alphabeticallyOrderedDivs);
 };
 
 // Reload functions
 function reload() {
     if ( window.player != null || window.foes != null || window.armour != null || window.potions != null || window.weapons != null || window.rooms != null ) {
-        sortInventory();
+        generateInventory();
         loadButtons();
         addTips();
     } else {
@@ -102,6 +187,8 @@ function storeLog() {
 function dice(size) {
     return Math.floor( Math.random() * size + 1 );
 };
+
+
 
 // █ Movement █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
@@ -148,6 +235,12 @@ function checkRoom(room) {
         $('#enemy').html('');
         window.enemy = null;
     };
+    // Items
+    if (rooms[room]['item'].length != 0) {
+        $('#item').html(rooms[room]['item']);
+    } else {
+        $('#item').html('');
+    };
 };
 
 // Move to another room
@@ -181,30 +274,24 @@ function go(room, direction) {
     checkRoom(window.room);
 };
 
+
+
 // █ Actions █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
 // Use Item
-function useItem(itemType) {
+function useItem(inventory_item, itemType) {
     storeLog();
     if (armour[itemType]) {
-        if (player.Armour.Type != 'Unarmoured') {
-            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + player.Armour.Type + `" extraTraits='[]'>` + player.Armour.Type + `</button>`);
-        };
-        player.Armour = JSON.parse(JSON.stringify( armour[itemType]));
-        $('#playerArmour').children().remove();
-        $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="` + armour[itemType].Type + `" extraTraits='[]'>` + armour[itemType].Type + `</button>`);
+        player.Armour = player.Inventory[$(inventory_item).attr('index')];
         $('#infoLog').append(`<span>The player equips a set of ` + armour[itemType].Type + ` armour.</span> `);
+        $(item).remove();
     };
     if (weapons[itemType]) {
-        if (player.Weapon.Type != 'Unarmed') {
-            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + player.Weapon.Type + `" extraTraits='[]'>` + player.Weapon.Type + `</button>`);
-        };
-        player.Weapon = JSON.parse(JSON.stringify( weapons[itemType] ));
-        $('#playerWeapon').children().remove();
-        $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="` + weapons[itemType].Type + `" extraTraits='[]'>` + weapons[itemType].Type + `</button>`);
+        player.Weapon = player.Inventory[$(inventory_item).attr('index')];
         $('#infoLog').append(`<span>The player equips a ` + weapons[itemType].Type + `.</span> `);
     };
     if (potions[itemType]) {
+        $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span> `);
         if (potions[itemType].Healing > 0) {
             Heal(player, potions[itemType].Healing);
             $('#playerHealth').html(player.Health);
@@ -212,7 +299,6 @@ function useItem(itemType) {
         if (potions[itemType].Power > 0) {
             player.Effects.Power = potions[itemType].Power;
         };
-        $('#infoLog').append(`<span>The player drinks a ` + potions[itemType].Type + `.</span> `);
     };
     if (poisons[itemType]) {
         if (poisons[itemType].PoisonType == "Damage") {
@@ -221,96 +307,59 @@ function useItem(itemType) {
         };
         $('#infoLog').append(`<span>The player applys a poison to their weapon.</span> `);
     };
+    player.Inventory.splice($(inventory_item).attr('index'), 1);
     reload();
 };
 
 // Doffing
-function doffItem(item, type, element) {
-    if (type == 'Armour' && player.Armour.Type != 'Unarmoured') {
-        if ( $(element).attr('extraTraits') ) {
-            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + item + `" extraTraits='` + $(element).attr('extraTraits') + `'>` + item + `</button>`);
-        } else {
-            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Armour" itemType="` + item + `">` + item + `</button>`);
-        };
-        $('#playerArmour').children().remove();
-        $('#playerArmour').append(`<button class="equipped-item tip" itemCatagory="Armour" itemType="Unarmoured">Unarmoured</button>`);
+function doffItem(item, type) {
+    storeLog();
+    if (type.includes('Armour') && player.Armour.Type != 'Unarmoured') {
+        player.Inventory.push( JSON.parse(JSON.stringify(player.Armour)) );
         player.Armour = JSON.parse(JSON.stringify( armour.Unarmoured ));
-        $(element).remove();
+
+        $('#infoLog').append(`<span>The player doffs the ` + armour[item].Type + ` armour.</span> `);
     };
-    if (type == 'Weapon' && player.Weapon.Type != 'Unarmed') {
-        if ( $(element).attr('extraTraits') ) {
-            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + item + `" extraTraits='` + $(element).attr('extraTraits') + `'>` + item + `</button>`);
-        } else {
-            $('#playerInventory').append(`<button class="inventory-item tip" itemCatagory="Weapon" itemType="` + item + `">` + item + `</button>`);
-        };
-        $('#playerWeapon').children().remove();
-        $('#playerWeapon').append(`<button class="equipped-item tip" itemCatagory="Weapon" itemType="Unarmed">Unarmed</button>`);
+    if (type.includes('Weapon') && player.Weapon.Type != 'Unarmed') {
+        player.Inventory.push( JSON.parse(JSON.stringify(player.Weapon)) );
         player.Weapon = JSON.parse(JSON.stringify( weapons.Unarmed ));
-        $(element).remove();
+
+        $('#infoLog').append(`<span>The player doffs the ` + weapons[item].Type + `.</span> `);
     };
     reload();
 };
 
-// Item Tips
-function addTips() {
-    $('.tip').each(function(){
-        const itemType = $(this).attr('itemtype');
-        const extraTraits = $(this).attr('extraTraits');
-        var innerHtml = '';
+$('#get-button').click(function() {
+    if (rooms[room]['item']) {
+        roomItem = rooms[room]['item'].pop();
+        if (Object.keys(weapons).includes(roomItem)) {
+            getItem(weapons[roomItem]);
+        };
+        if (Object.keys(armour).includes(roomItem)) {
+            getItem(armour[roomItem]);
+        };
+        if (Object.keys(potions).includes(roomItem)) {
+            getItem(potions[roomItem]);
+        };
+        if (Object.keys(poisons).includes(roomItem)) {
+            getItem(poisons[roomItem]);
+        };
+        
+        $('#item').html('');
+    };
+});
 
-        if ($(this).hasClass('equipped-item')) {
-            if (armour[itemType]) {
-                innerHtml = 'Defence : ' + player.Armour.Defence + '<br />Dodge : ' + player.Armour.Dodge;
-                if (player.Armour.Traits.length > 0) {
-                    innerHtml += '<br />Traits : ' + player.Armour.Traits.join(', ');
-                };
-            };
-            if (weapons[itemType]) {
-                innerHtml = 'Accuracy : ' + player.Weapon.Accuracy + '<br />Power : ' + player.Weapon.Power;
-                if (player.Weapon.Traits.length > 0) {
-                    innerHtml += '<br />Traits : ' + player.Weapon.Traits.join(', ');
-                };
-            };            
-        } else {
-            if (armour[itemType]) {
-                innerHtml = 'Defence : ' + armour[itemType].Defence + '<br />Dodge : ' + armour[itemType].Dodge;
-                if (armour[itemType].Traits.length > 0 || JSON.parse(extraTraits).length > 0) {
-                    innerHtml += '<br />Traits : ' + armour[itemType].Traits.concat(JSON.parse(extraTraits)).join(', ');
-                };
-            };
-            if (weapons[itemType]) {
-                innerHtml = 'Accuracy : ' + weapons[itemType].Accuracy + '<br />Power : ' + weapons[itemType].Power;
-                if (weapons[itemType].Traits.length > 0 || JSON.parse(extraTraits).length > 0) {
-                    innerHtml += '<br />Traits : ' + weapons[itemType].Traits.concat(JSON.parse(extraTraits)).join(', ');
-                };
-            };
-            if (potions[itemType]) {
-                if (potions[itemType].Healing > 0) {
-                    innerHtml += '<br />Healing : ' + potions[itemType].Healing;
-                };
-                if (potions[itemType].Power > 0) {
-                    innerHtml += '<br />Power : ' + potions[itemType].Power;
-                };
-                innerHtml = innerHtml.substring(6)
-            };
-            if (poisons[itemType]) {
-                innerHtml += 'Type : ' + poisons[itemType].PoisonType;
-                innerHtml += '<br />Power : ' + poisons[itemType].PoisonPower;
-            };
-        }
-
-        $(this).data('powertip', innerHtml);
-
-        $(this).powerTip({
-            placement: 'sw-alt'
-        });
-    });
+function getItem(item) {
+    player.Inventory.push(item);
+    reload();
 };
+
+
 
 // █ Combat █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
 // Attack Button
-$('.attack-button').click(function() {
+$('#attack-button').click(function() {
     if (enemy) {
         storeLog();
         Attack(player, enemy);
@@ -395,11 +444,15 @@ function Damage(Target, Damage) {
     };
 };
 
+
+
 // █ Start Up █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
 $(document).ready(function() {
     reload();
 });
+
+
 
 // █ Dev Commands █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 
@@ -419,64 +472,64 @@ function giveAll() {
 // █ WIP █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ 
 
 function EnchantArmour(enchantment) {
-    var x = $('#playerArmour').children().attr('extraTraits');
+    var x = $('#playerArmour').children().attr('enchantments');
     if (x) {
-        if (!player.Armour.Traits.includes(enchantment)) {
+        if (!player.Armour.Enchantments.includes(enchantment)) {
             y = JSON.parse(x);
             if (!y.includes(enchantment)) {
                 y.push(enchantment);
-                player.Armour.Traits.push(enchantment);
+                player.Armour.Enchantments.push(enchantment);
             };
         };
     } else {
-        if (!player.Armour.Traits.includes(enchantment)) {
+        if (!player.Armour.Enchantments.includes(enchantment)) {
             y = [enchantment];
-            player.Armour.Traits.push(enchantment);
+            player.Armour.Enchantments.push(enchantment);
         };
     };
     x = JSON.stringify(y);
-    $('#playerArmour').children().attr('extraTraits', x);
+    $('#playerArmour').children().attr('enchantments', x);
     addTips();
 };
 
 function UnenchantArmour(enchantment) {
-    var x = $('#playerArmour').children().attr('extraTraits');
+    var x = $('#playerArmour').children().attr('enchantments');
     y = JSON.parse(x);
     y.splice( y.findIndex((num) => num === enchantment) );
     player.Armour.Traits.splice( player.Armour.Traits.findIndex((num) => num === enchantment) );
     x = JSON.stringify(y);
-    $('#playerArmour').children().attr('extraTraits', x);
+    $('#playerArmour').children().attr('enchantments', x);
     addTips();
 };
 
 function EnchantWeapon(enchantment) {
-    var x = $('#playerWeapon').children().attr('extraTraits');
+    var x = $('#playerWeapon').children().attr('enchantments');
     if (x) {
-        if (!player.Weapon.Traits.includes(enchantment)) {
+        if (!player.Weapon.Enchantments.includes(enchantment)) {
             y = JSON.parse(x);
             if (!y.includes(enchantment)) {
                 y.push(enchantment);
-                player.Weapon.Traits.push(enchantment);
+                player.Weapon.Enchantments.push(enchantment);
             };
         };
     } else {
-        if (!player.Weapon.Traits.includes(enchantment)) {
+        if (!player.Weapon.Enchantments.includes(enchantment)) {
             y = [enchantment];
-            player.Weapon.Traits.push(enchantment);
+            player.Weapon.Enchantments.push(enchantment);
         };
     };
     x = JSON.stringify(y);
-    $('#playerWeapon').children().attr('extraTraits', x);
+    $('#playerWeapon').children().attr('enchantments', x);
     addTips();
 };
 
 function UnenchantWeapon(enchantment) {
-    var x = $('#playerWeapon').children().attr('extraTraits');
+    var x = $('#playerWeapon').children().attr('enchantments');
     y = JSON.parse(x);
     y.splice( y.findIndex((num) => num === enchantment) );
     player.Weapon.Traits.splice( player.Weapon.Traits.findIndex((num) => num === enchantment) );
     x = JSON.stringify(y);
-    $('#playerWeapon').children().attr('extraTraits', x);
+    $('#playerWeapon').children().attr('enchantments', x);
     addTips();
 };
 

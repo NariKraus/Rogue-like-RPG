@@ -1,18 +1,22 @@
 {
     "Potion of Lesser Healing" : {
         "Type" : "Potion of Lesser Healing",
+        "Item" : "Potion",
         "Healing" : 5
     },
     "Potion of Healing" : {
         "Type" : "Potion of Healing",
+        "Item" : "Potion",
         "Healing" : 10
     },
     "Potion of Greater Healing" : {
         "Type" : "Potion of Greater Healing",
+        "Item" : "Potion",
         "Healing" : 15
     },
     "Potion of Power" : {
         "Type" : "Potion of Power",
+        "Item" : "Potion",
         "Power" : 5
     }
 }

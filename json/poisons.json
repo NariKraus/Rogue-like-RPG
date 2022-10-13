@@ -1,11 +1,13 @@
 {
     "Poison" : {
         "Type" : "Poison",
+        "Item" : "Poison",
         "PoisonType" : "Damage",
         "PoisonPower" : 2
     },
     "Strong Poison" : {
         "Type" : "Poison",
+        "Item" : "Poison",
         "PoisonType" : "Damage",
         "PoisonPower" : 10
     }

@@ -1,9 +1,18 @@
 {
-    "Type": "player",
+    "Type" : "player",
     "Health" : 20,
     "HealthMax" : 20,
-    "Weapon" : {"Type" : "Unarmed", "Power" : 0, "Accuracy" : 0, "Traits" : ["Basic"]},
-    "Armour" : {"Type" : "Unarmoured", "Dodge" : 0, "Defence" : 0, "Traits" : []},
+    "Weapon" : {
+        "Type" : "Unarmed", "Power" : 0, "Accuracy" : 0, "Traits" : ["Basic"], "Enchantments" : []
+    },
+    "Armour" : {
+        "Type" : "Unarmoured", "Dodge" : 0, "Defence" : 0, "Traits" : [], "Enchantments" : []
+    },
+    "Inventory" : [
+        {"Type" : "Dagger", "Item" : "Weapon", "Accuracy" : 3, "Power" : 2, "Traits" : [], "Enchantments" : []},
+        {"Type" : "Leather", "Item" : "Armour", "Defence" : 1, "Dodge" : 2, "Traits" : [], "Enchantments" : []},
+        {"Type" : "Potion of Healing", "Item" : "Potion", "Healing" : 10}
+    ],
     "Spells" : [],
     "Effects" : {"Power" : 0, "Poison" : 0}
 }

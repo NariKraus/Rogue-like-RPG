@@ -1,27 +1,35 @@
 {
     "Unarmoured" : {
         "Type" : "Unarmoured",
+        "Item" : "Armour",
         "Defence" : 0,
         "Dodge" : 0,
-        "Traits" : []
+        "Traits" : [],
+        "Enchantments" : []
     },
 
     "Leather" : {
         "Type" : "Leather",
+        "Item" : "Armour",
         "Defence" : 1,
         "Dodge" : 2, 
-        "Traits" : []
+        "Traits" : [],
+        "Enchantments" : []
     },
     "Plate" : {
         "Type" : "Plate",
+        "Item" : "Armour",
         "Defence" : 5,
         "Dodge" : -2,
-        "Traits" : []
+        "Traits" : [],
+        "Enchantments" : []
     },
     "Spiked" : {
         "Type" : "Spiked",
+        "Item" : "Armour",
         "Defence" : 2,
         "Dodge" : -2,
-        "Traits" : ["Spiky"]
+        "Traits" : ["Spiky"],
+        "Enchantments" : []
     }
 }

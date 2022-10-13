@@ -78,5 +78,8 @@
             "Creating a shop system and allowing players to find items, either on the floor or dropped from a 'special' Foe.",
             "Enemies names will soon be replaced with token icons. For now, the text may run off the tile."
         ]
+    },
+    "Next": {
+        
     }
 }

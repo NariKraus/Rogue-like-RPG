@@ -2,10 +2,10 @@ function modifierTraits(Offence, Defence) {
     if (Offence.Type == "player") {
         // 
 
-        if (Offence.Weapon.Traits.includes('Piercing')) {
+        if (Offence.Weapon.Traits.includes('Piercing') || Offence.Weapon.Enchantments.includes('Piercing')) {
             Defence_Power = Math.round(Defence_Power/2);
         };
-        if (Offence.Weapon.Traits.includes('Basic')) {
+        if (Offence.Weapon.Traits.includes('Basic') || Offence.Weapon.Enchantments.includes('Basic')) {
             window.Attack_roll = 100;
         };
 
@@ -34,12 +34,12 @@ function offenceTraits(Offence, Defence) {
     if (Offence.Type == "player") {
         // 
 
-        if (Offence.Weapon.Traits.includes('Vampiric')) {
+        if (Offence.Weapon.Traits.includes('Vampiric') || Offence.Weapon.Enchantments.includes('Vampiric')) {
             if (Defence.Traits.includes('Undead')) {} else {
                 Heal(Offence, Math.round(Damage_roll/2));
             };
         };
-        if (Offence.Weapon.Traits.includes('Poisoned')) {
+        if (Offence.Weapon.Traits.includes('Poisoned') || Offence.Weapon.Enchantments.includes('Poisoned')) {
             $('#infoLog').append(`<span>The player's poison deals damage to the ` + Defence.Type + `.</span> `);
             Damage(Defence, Offence.Weapon.PoisonPower);
             UnenchantWeapon('Poisoned')
@@ -74,7 +74,7 @@ function defenceTraits(Offence, Defence) {
     if (Defence.Type == "player") {
         // 
 
-        if (Defence.Armour.Traits.includes('Spiky')) {
+        if (Defence.Armour.Traits.includes('Spiky') || Defence.Armour.Enchantments.includes('Spiky')) {
             $('#infoLog').append(`<span>The ` + Defence.Type + `'s spikes damage the ` + Offence.Type + `.</span> `);
             Damage(Offence, 1);
         };

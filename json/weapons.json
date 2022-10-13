@@ -1,62 +1,82 @@
 {
     "Unarmed" : {
-      "Type": "Unarmed",
-      "Accuracy": 0,
-      "Power": 0,
-      "Traits": ["Basic"]
+      "Type" : "Unarmed",
+      "Item" : "Weapon",
+      "Accuracy" : 0,
+      "Power" : 0,
+      "Traits" : ["Basic"],
+      "Enchantments" : []
     },
     "Dagger" : {
-      "Type": "Dagger",
-      "Accuracy": 3,
-      "Power": 2,
-      "Traits": []
+      "Type" : "Dagger",
+      "Item" : "Weapon",
+      "Accuracy" : 3,
+      "Power" : 2,
+      "Traits" : [],
+      "Enchantments" : []
     },
     "Short Sword" : {
-      "Type": "Short Sword",
-      "Accuracy": 1,
-      "Power": 4,
-      "Traits": []
+      "Type" : "Short Sword",
+      "Item" : "Weapon",
+      "Accuracy" : 1,
+      "Power" : 4,
+      "Traits" : [],
+      "Enchantments" : []
     },
     "Longsword" : {
-      "Type": "Longsword",
-      "Accuracy": 1,
-      "Power": 6,
-      "Traits": []
+      "Type" : "Longsword",
+      "Item" : "Weapon",
+      "Accuracy" : 1,
+      "Power" : 6,
+      "Traits" : [],
+      "Enchantments" : []
     },
     "Short Spear" : {
-      "Type": "Short Spear",
-      "Accuracy": -2,
-      "Power": 6,
-      "Traits": ["Piercing"]
+      "Type" : "Short Spear",
+      "Item" : "Weapon",
+      "Accuracy" : -2,
+      "Power" : 6,
+      "Traits" : ["Piercing"],
+      "Enchantments" : []
     },
     "Mace" : {
-      "Type": "Mace",
-      "Accuracy": 0,
-      "Power": 5,
-      "Traits": []
+      "Type" : "Mace",
+      "Item" : "Weapon",
+      "Accuracy" : 0,
+      "Power" : 5,
+      "Traits" : [],
+      "Enchantments" : []
     },
     "Club" : {
-      "Type": "Club",
-      "Accuracy": 0,
-      "Power": 3,
-      "Traits": []
+      "Type" : "Club",
+      "Item" : "Weapon",
+      "Accuracy" : 0,
+      "Power" : 3,
+      "Traits" : [],
+      "Enchantments" : []
     },
     "Spear" : {
-      "Type": "Spear",
-      "Accuracy": -2,
-      "Power": 8,
-      "Traits": ["Piercing"]
+      "Type" : "Spear",
+      "Item" : "Weapon",
+      "Accuracy" : -2,
+      "Power" : 8,
+      "Traits" : ["Piercing"],
+      "Enchantments" : []
     },
     "Greatsword" : {
-      "Type": "Greatsword",
-      "Accuracy": 1,
-      "Power": 8,
-      "Traits": []
+      "Type" : "Greatsword",
+      "Item" : "Weapon",
+      "Accuracy" : 1,
+      "Power" : 8,
+      "Traits" : [],
+      "Enchantments" : []
     },
     "Pootis" : {
-      "Type": "Pootis",
-      "Accuracy": 100,
-      "Power": 100,
-      "Traits": ["Vampiric"]
+      "Type" : "Pootis",
+      "Item" : "Weapon",
+      "Accuracy" : 100,
+      "Power" : 100,
+      "Traits" : ["Vampiric"],
+      "Enchantments" : []
     }
 }

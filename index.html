@@ -42,7 +42,7 @@
                                     <div class="pixel East Right-North"></div>
                     
                                     <button disabled id="button-left" class="pixel West left" onclick="go(room, 'left')">left</button>
-                                    <div class="pixel middle"></div>
+                                    <div class="pixel middle" id="item"></div>
                                     <button class="pixel middle" onclick="canGo(room); checkRoom(room); $('#infoLog').html('<span>The player begins their adventure.</span>'); $('#title').html(window.room); $(this).replaceWith(`<div class='pixel middle' id='enemy'></div>`);" id="start">
                                         <div>Start</div>
                                         <div>Game</div>
@@ -82,7 +82,6 @@
                                     <span class="info-title">Weapon</span>
                                     <div class="info-content">
                                         <span class="info-value" id="playerWeapon">
-                                            <button class="equipped-item tip" itemcatagory="Weapon" itemtype="Unarmed" extraTraits='[]'>Unarmed</button>
                                         </span>
                                     </div>
                                 </div>
@@ -90,7 +89,6 @@
                                     <span class="info-title">Armour</span>
                                     <div class="info-content">
                                         <span class="info-value" id="playerArmour">
-                                            <button class="equipped-item tip" itemcatagory="Armour" itemtype="Unarmoured" extraTraits='[]'>Unarmoured</button>
                                         </span>
                                     </div>
                                 </div>
@@ -104,23 +102,6 @@
                                     <span class="info-title">Inventory</span>
                                     <div class="info-content">
                                         <span class="info-value" id="playerInventory">
-                                            <button class="inventory-item tip" itemcatagory="Armour" itemtype="Leather" extratraits="[]">Leather</button>
-                                            <button class="inventory-item tip" itemcatagory="Armour" itemtype="Plate" extratraits="[]">Plate</button>
-                                            <button class="inventory-item tip" itemcatagory="Armour" itemtype="Spiked" extratraits="[]">Spiked</button>
-                                            <button class="inventory-item tip" itemcatagory="Poison" itemtype="Poison" extratraits="[]">Poison</button>
-                                            <button class="inventory-item tip" itemcatagory="Potion" itemtype="Potion of Greater Healing" extratraits="[]">Potion of Greater Healing</button>
-                                            <button class="inventory-item tip" itemcatagory="Potion" itemtype="Potion of Healing" extratraits="[]">Potion of Healing</button>
-                                            <button class="inventory-item tip" itemcatagory="Potion" itemtype="Potion of Lesser Healing" extratraits="[]">Potion of Lesser Healing</button>
-                                            <button class="inventory-item tip" itemcatagory="Potion" itemtype="Potion of Power" extratraits="[]">Potion of Power</button>
-                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Club" extratraits="[]">Club</button>
-                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Dagger" extratraits="[]">Dagger</button>
-                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Greatsword" extratraits="[]">Greatsword</button>
-                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Longsword" extratraits="[]">Longsword</button>
-                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Mace" extratraits="[]">Mace</button>
-                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Short Spear" extratraits="[]">Short Spear</button>
-                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Short Sword" extratraits="[]">Short Sword</button>
-                                            <button class="inventory-item tip" itemcatagory="Weapon" itemtype="Spear" extratraits="[]">Spear</button>
-                                            <button class="inventory-item tip" itemcatagory="Poison" itemtype="Strong Poison" extratraits="[]">Strong Poison</button>
                                         </span>
                                     </div>
                                 </div>
@@ -132,7 +113,11 @@
                                 </div>
                                 <div class="info-box border-shadow row justify-content-center" style="margin-top: auto;">
                                     <div class="info-content">
-                                        <button class="attack-button">Attack</button>
+                                        <div class="button-section">
+                                            <button class="action-button" id="get-button">Get Item</button>
+                                            <button class="action-button">-</button>
+                                        </div>
+                                        <button class="action-button" id="attack-button">Attack</button>
                                     </div>
                                 </div>
                             </div>

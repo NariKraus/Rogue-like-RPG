@@ -51,7 +51,7 @@
     "4-5": {
         "paths": ["up","down","left","right"],
         "shop": [],
-        "item": [],
+        "item": ["Dagger"],
         "shop price": [],
         "enemy": []
     },
