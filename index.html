@@ -11,16 +11,65 @@
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/vendor/jQuery PowerTip/jquery.powertip.min.css">
 
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/pixel-image.css">
+        <link rel="stylesheet" href="assets/css/sprites.css">
 
         <title>Rogue-Like RPG</title>
         <link rel="shortcut icon" href="assets/ico/Ico.ico">
     </head>
     <body>
+        
+        <aside class="border-shadow" active="false">
+            <div class="file-input">
+                <span>
+                    <input type="file" name="file-input" id="file-input" class="upload-box"/>
+                    <label class="file-upload" for="file-input">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 211.293 211.293" style="enable-background:new 0 0 211.293 211.293;" xml:space="preserve">
+                            <g>
+                                <path d="M176.777,54.027H133.43c-4.142,0-7.5,3.357-7.5,7.5c0,4.142,3.358,7.5,7.5,7.5h35.847v127.266H42.016V69.027H77.86 c4.142,0,7.5-3.357,7.5-7.5c0-4.143-3.358-7.5-7.5-7.5H34.516c-4.142,0-7.5,3.357-7.5,7.5v142.266c0,4.143,3.358,7.5,7.5,7.5 h142.261c4.142,0,7.5-3.357,7.5-7.5V61.527C184.277,57.385,180.919,54.027,176.777,54.027z"/>
+                                <path d="M82.058,41.693l16.087-16.087V135.66c0,4.143,3.358,7.5,7.5,7.5c4.143,0,7.5-3.357,7.5-7.5V25.607l16.086,16.086 c1.464,1.465,3.384,2.197,5.303,2.197c1.919,0,3.838-0.733,5.303-2.196c2.929-2.93,2.929-7.678,0-10.607l-28.889-28.89 C109.542,0.79,107.634,0,105.645,0c-1.988,0-3.896,0.79-5.303,2.196l-28.891,28.89c-2.929,2.929-2.929,7.678,0,10.606 C74.38,44.622,79.129,44.621,82.058,41.693z"/>
+                            </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                        <span>
+                            Upload
+                        </span>
+                    </label>
+                </span>
+            </div>
+            <div class="file-download" onclick="saveGame()">
+                <span>
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 211.293 211.293" style="enable-background:new 0 0 211.293 211.293;" xml:space="preserve">
+                        <g>
+                            <path d="M176.777,54.027H133.43c-4.143,0-7.5,3.357-7.5,7.5c0,4.142,3.357,7.5,7.5,7.5h35.848v127.266H42.016V69.027h35.844 c4.143,0,7.5-3.357,7.5-7.5c0-4.143-3.357-7.5-7.5-7.5H34.516c-4.142,0-7.5,3.357-7.5,7.5v142.266c0,4.143,3.358,7.5,7.5,7.5 h142.262c4.143,0,7.5-3.357,7.5-7.5V61.527C184.277,57.385,180.92,54.027,176.777,54.027z"/>
+                            <path d="M82.058,101.468c-2.929-2.929-7.678-2.93-10.606-0.001c-2.93,2.93-2.93,7.678-0.001,10.607l28.889,28.89 c1.407,1.407,3.314,2.197,5.304,2.197c1.989,0,3.896-0.79,5.303-2.196l28.891-28.89c2.93-2.929,2.93-7.678,0.001-10.606 c-2.929-2.929-7.678-2.93-10.606-0.001l-16.088,16.087V7.5c0-4.143-3.357-7.5-7.5-7.5s-7.5,3.357-7.5,7.5v110.054L82.058,101.468z" />
+                        </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </svg>
+                    <span>Download</span>
+                </span>
+            </div>
+            <div id="aside-toggle">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 300.003 300.003" style="enable-background:new 0 0 300.003 300.003;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M150,0C67.159,0,0.001,67.159,0.001,150c0,82.838,67.157,150.003,149.997,150.003S300.002,232.838,300.002,150
+                            C300.002,67.159,232.842,0,150,0z M217.685,189.794c-5.47,5.467-14.338,5.47-19.81,0l-48.26-48.27l-48.522,48.516
+                            c-5.467,5.467-14.338,5.47-19.81,0c-2.731-2.739-4.098-6.321-4.098-9.905s1.367-7.166,4.103-9.897l56.292-56.297
+                            c0.539-0.838,1.157-1.637,1.888-2.368c2.796-2.796,6.476-4.142,10.146-4.077c3.662-0.062,7.348,1.281,10.141,4.08
+                            c0.734,0.729,1.349,1.528,1.886,2.365l56.043,56.043C223.152,175.454,223.156,184.322,217.685,189.794z"/>
+                    </g>
+                </g>
+                <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                </svg>
+            </div>
+        </aside>
+
         <main>
             <div class="row">
                 <div class="col">
@@ -31,7 +80,7 @@
                                 <div id="pixel-container">
                                     <div class="pixel North-West"></div>
                                     <div class="pixel North Up-West"></div>
-                                    <button disabled id="button-up" class="pixel North up" onclick="go(room, 'up')">up</button>
+                                    <button disabled id="button-up" class="pixel North up" onclick="go(room, 'up', false)">up</button>
                                     <div class="pixel North Up-East"></div>
                                     <div class="pixel North-East"></div>
                     
@@ -41,14 +90,14 @@
                                     <div class="pixel middle"></div>
                                     <div class="pixel East Right-North"></div>
                     
-                                    <button disabled id="button-left" class="pixel West left" onclick="go(room, 'left')">left</button>
+                                    <button disabled id="button-left" class="pixel West left" onclick="go(room, 'left', false)">left</button>
                                     <div class="pixel middle" id="item"></div>
                                     <button class="pixel middle" onclick="canGo(room); checkRoom(room); $('#infoLog').html('<span>The player begins their adventure.</span>'); $('#title').html(window.room); $(this).replaceWith(`<div class='pixel middle' id='enemy'></div>`);" id="start">
                                         <div>Start</div>
                                         <div>Game</div>
                                     </button>
                                     <div class="pixel middle"></div>
-                                    <button disabled id="button-right" class="pixel East right" onclick="go(room, 'right')">right</button>
+                                    <button disabled id="button-right" class="pixel East right" onclick="go(room, 'right', false)">right</button>
                     
                                     <div class="pixel West Left-South"></div>
                                     <div class="pixel middle"></div>
@@ -58,7 +107,7 @@
                     
                                     <div class="pixel South-West"></div>
                                     <div class="pixel South Down-West"></div>
-                                    <button disabled id="button-down" class="pixel South down" onclick="go(room, 'down')">down</button>
+                                    <button disabled id="button-down" class="pixel South down" onclick="go(room, 'down', false)">down</button>
                                     <div class="pixel South Down-East"></div>
                                     <div class="pixel South-East"></div>
                                 </div>
@@ -75,7 +124,13 @@
                                 <div class="info-box border-shadow">
                                     <span class="info-title">Health</span>
                                     <div class="info-content">
-                                        <span class="info-value" id="playerHealth">20</span>
+                                        <span class="info-value" id="playerHealth">
+                                            <img id="heart-0" src="assets/images/Hearts/4 Heart.png" alt="" />
+                                            <img id="heart-1" src="assets/images/Hearts/4 Heart.png" alt="" />
+                                            <img id="heart-2" src="assets/images/Hearts/4 Heart.png" alt="" />
+                                            <img id="heart-3" src="assets/images/Hearts/4 Heart.png" alt="" />
+                                            <img id="heart-4" src="assets/images/Hearts/4 Heart.png" alt="" />
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="info-box border-shadow">
@@ -101,8 +156,7 @@
                                 <div class="info-box border-shadow">
                                     <span class="info-title">Inventory</span>
                                     <div class="info-content">
-                                        <span class="info-value" id="playerInventory">
-                                        </span>
+                                        <span class="info-value" id="playerInventory"></span>
                                     </div>
                                 </div>
                                 <div class="info-box border-shadow" style="overflow: auto;">
@@ -111,8 +165,8 @@
                                         <span class="info-value" id="infoLog"></span>
                                     </div>
                                 </div>
-                                <div class="info-box border-shadow row justify-content-center" style="margin-top: auto;">
-                                    <div class="info-content">
+                                <div class="info-box border-shadow row" style="margin-top: auto;">
+                                    <div class="info-content" style="width: 100%;">
                                         <div class="button-section">
                                             <button class="action-button" id="get-button">Get Item</button>
                                             <button class="action-button">-</button>
@@ -134,8 +188,8 @@
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/vendor/jQuery PowerTip/jquery.powertip.min.js"></script>
 
         <script>
@@ -230,7 +284,11 @@
 
         <script src="assets/js/main.js"></script>
         <script src="assets/js/traits.js"></script>
+        <script src="assets/js/gameState.js"></script>
 
+        
+
+        <a id="saveDownload" style="display: none;"></a>
         <div class="adventure-container" style="display: none;">
             <div class="adventure-log" id="log-store" style="flex-direction: column;">
                 <p class="log-text">Your adventure is only just starting!</p>

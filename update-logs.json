@@ -79,7 +79,21 @@
             "Enemies names will soon be replaced with token icons. For now, the text may run off the tile."
         ]
     },
-    "Next": {
-        
+    "14/12/2022": {
+        "Update Log": [
+            "Revamped the inventory system.",
+            "Added a way to pick up items.",
+            "Added functionality to arrow keys, allowing the player to move around the map easier.",
+            "Added textures to the inventory and health bar.",
+            "Added a way to save and load. Saved as a '.narsav' file, the files are completely JSON."
+        ],
+        "Next Tasks": [
+            "Allowing the player to get to the 2nd and 3rd levels.",
+            "Creating status effects such as Poisoned, Enraged and Paralysed.",
+            "Capping the inventory to a maximum capacity yet to be decided.",
+            "Creating a shop system and allowing players to find items, either on the floor or dropped from a 'special' Foe.",
+            "Enemies names will soon be replaced with token icons. For now, the text may run off the tile."
+        ],
+        "Comment": "This update was primarily a Quality of Life update and thus the 'Next Tasks' section has not been changed."
     }
 }

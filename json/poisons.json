@@ -1,13 +1,19 @@
 {
-    "Poison" : {
+    "Lesser Poison" : {
         "Type" : "Poison",
-        "Item" : "Poison",
+        "Item" : "Lesser Poison",
         "PoisonType" : "Damage",
         "PoisonPower" : 2
     },
-    "Strong Poison" : {
-        "Type" : "Poison",
+    "Poison" : {
+        "Type": "Poison",
         "Item" : "Poison",
+        "PoisonType" : "Damage",
+        "PoisonPower" : 6
+    },
+    "Greater Poison" : {
+        "Type" : "Poison",
+        "Item" : "Greater Poison",
         "PoisonType" : "Damage",
         "PoisonPower" : 10
     }

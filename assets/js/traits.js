@@ -1,93 +1,128 @@
 function modifierTraits(Offence, Defence) {
-    if (Offence.Type == "player") {
-        // 
+    if (Offence.Type == 'player') {
+        //
 
-        if (Offence.Weapon.Traits.includes('Piercing') || Offence.Weapon.Enchantments.includes('Piercing')) {
-            Defence_Power = Math.round(Defence_Power/2);
-        };
-        if (Offence.Weapon.Traits.includes('Basic') || Offence.Weapon.Enchantments.includes('Basic')) {
+        if (
+            Offence.Weapon.Traits.includes('Piercing') ||
+            Offence.Weapon.Enchantments.includes('Piercing')
+        ) {
+            Defence_Power = Math.round(Defence_Power / 2);
+        }
+        if (
+            Offence.Weapon.Traits.includes('Basic') ||
+            Offence.Weapon.Enchantments.includes('Basic')
+        ) {
             window.Attack_roll = 100;
-        };
+        }
 
-        // 
+        //
     } else {
-        // 
+        //
 
         if (Offence.Traits.includes('Piercing')) {
-            Defence_Power = Math.round(Defence_Power/2); 
-        };
+            Defence_Power = Math.round(Defence_Power / 2);
+        }
         if (Offence.Traits.includes('Basic')) {
-            window.Attack_roll = 100; 
-        };
+            window.Attack_roll = 100;
+        }
 
-        // 
-    };
+        //
+    }
 }
 
-
 // █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 // █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 // █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
-
 
 function offenceTraits(Offence, Defence) {
-    if (Offence.Type == "player") {
-        // 
+    if (Offence.Type == 'player') {
+        //
 
-        if (Offence.Weapon.Traits.includes('Vampiric') || Offence.Weapon.Enchantments.includes('Vampiric')) {
-            if (Defence.Traits.includes('Undead')) {} else {
-                Heal(Offence, Math.round(Damage_roll/2));
-            };
-        };
-        if (Offence.Weapon.Traits.includes('Poisoned') || Offence.Weapon.Enchantments.includes('Poisoned')) {
-            $('#infoLog').append(`<span>The player's poison deals damage to the ` + Defence.Type + `.</span> `);
+        if (
+            Offence.Weapon.Traits.includes('Vampiric') ||
+            Offence.Weapon.Enchantments.includes('Vampiric')
+        ) {
+            if (Defence.Traits.includes('Undead')) {
+                return;
+            } else {
+                Heal(Offence, Math.round(Damage_roll / 2));
+            }
+        }
+        if (
+            Offence.Weapon.Traits.includes('Poisoned') ||
+            Offence.Weapon.Enchantments.includes('Poisoned')
+        ) {
+            $('#infoLog').append(
+                `<span>The player's poison deals damage to the ` +
+                    Defence.Type +
+                    `.</span> `
+            );
             Damage(Defence, Offence.Weapon.PoisonPower);
-            UnenchantWeapon('Poisoned')
+            UnenchantWeapon('Poisoned');
             delete Offence.Weapon.PoisonPower;
-        };
+        }
 
-        // 
+        //
     } else {
-        // 
+        //
 
         if (Offence.Traits.includes('Vampiric')) {
-            if (Defence.Armour.Traits.includes('Undead')) {} else {
-                Heal(Offence, Math.round(Damage_roll/2));
-            };
-        };
+            if (Defence.Armour.Traits.includes('Undead')) {
+                return;
+            } else {
+                Heal(Offence, Math.round(Damage_roll / 2));
+            }
+        }
         if (Offence.Traits.includes('Poisoned')) {
-            $('#infoLog').append(`<span>The ` + Offence.Type + `'s poison deals damage to the player.</span> `);
+            $('#infoLog').append(
+                `<span>The ` +
+                    Offence.Type +
+                    `'s poison deals damage to the player.</span> `
+            );
             Damage(Defence, Offence.PoisonPower);
-        };
+        }
 
-        // 
-    };
+        //
+    }
 }
 
-
 // █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 // █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
 // █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
-
 
 function defenceTraits(Offence, Defence) {
-    if (Defence.Type == "player") {
-        // 
+    if (Defence.Type == 'player') {
+        //
 
-        if (Defence.Armour.Traits.includes('Spiky') || Defence.Armour.Enchantments.includes('Spiky')) {
-            $('#infoLog').append(`<span>The ` + Defence.Type + `'s spikes damage the ` + Offence.Type + `.</span> `);
+        if (
+            Defence.Armour.Traits.includes('Spiky') ||
+            Defence.Armour.Enchantments.includes('Spiky')
+        ) {
+            $('#infoLog').append(
+                `<span>The ` +
+                    Defence.Type +
+                    `'s spikes damage the ` +
+                    Offence.Type +
+                    `.</span> `
+            );
             Damage(Offence, 1);
-        };
+        }
 
-        // 
+        //
     } else {
-        // 
+        //
 
         if (Defence.Traits.includes('Spiky')) {
-            $('#infoLog').append(`<span>The ` + Defence.Type + `'s spikes damage the ` + Offence.Type + `.</span> `);
+            $('#infoLog').append(
+                `<span>The ` +
+                    Defence.Type +
+                    `'s spikes damage the ` +
+                    Offence.Type +
+                    `.</span> `
+            );
             Damage(Offence, 1);
-        };
+        }
 
-        // 
-    };
+        //
+    }
 }

@@ -70,13 +70,5 @@
       "Power" : 8,
       "Traits" : [],
       "Enchantments" : []
-    },
-    "Pootis" : {
-      "Type" : "Pootis",
-      "Item" : "Weapon",
-      "Accuracy" : 100,
-      "Power" : 100,
-      "Traits" : ["Vampiric"],
-      "Enchantments" : []
     }
 }

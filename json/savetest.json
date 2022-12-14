@@ -1,0 +1,333 @@
+{
+    "player": {
+        "Type" : "player",
+        "Health" : 9,
+        "HealthMax" : 20,
+        "Weapon" : {
+            "Type" : "Spear", "Item" : "Weapon", "Accuracy" : -2, "Power" : 8, "Traits" : ["Piercing"], "Enchantments" : []
+        },
+        "Armour" : {
+            "Type" : "Unarmoured", "Dodge" : 0, "Defence" : 0, "Traits" : [], "Enchantments" : []
+        },
+        "Inventory" : [
+            {"Type" : "Dagger", "Item" : "Weapon", "Accuracy" : 3, "Power" : 2, "Traits" : [], "Enchantments" : []},
+            {"Type" : "Plate", "Item" : "Armour", "Defence" : 5, "Dodge" : -2, "Traits" : [], "Enchantments" : []},
+            {"Type" : "Potion of Power", "Item" : "Potion", "Power" : 5}
+        ],
+        "Spells" : [],
+        "Effects" : {"Power" : 0, "Poison" : 0}
+    },
+    "room": "4-4",
+    "rooms": {
+        "2-5": {
+            "paths": [
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "3-3": {
+            "paths": [
+                "down"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "3-4": {
+            "paths": [
+                "up",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "3-5": {
+            "paths": [
+                "left",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "3-6": {
+            "paths": [
+                "down",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "3-7": {
+            "paths": [
+                "up"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "4-4": {
+            "paths": [
+                "down",
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "4-5": {
+            "paths": [
+                "up",
+                "down",
+                "left",
+                "right"
+            ],
+            "shop": [],
+            "item": [
+                "Short Sword"
+            ],
+            "shop price": [],
+            "enemy": []
+        },
+        "4-6": {
+            "paths": [
+                "up",
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": [
+                "Skeleton"
+            ]
+        },
+        "4-7": {
+            "paths": [
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": [
+                "Vampire"
+            ]
+        },
+        "5-3": {
+            "paths": [
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "5-4": {
+            "paths": [
+                "down"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": [
+                "Kobold"
+            ]
+        },
+        "5-5": {
+            "paths": [
+                "up",
+                "down",
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "5-6": {
+            "paths": [
+                "up",
+                "down",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "5-7": {
+            "paths": [
+                "up",
+                "down",
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "5-8": {
+            "paths": [
+                "up",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": [
+                "Draconian"
+            ]
+        },
+        "6-2": {
+            "paths": [
+                "down"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "6-3": {
+            "paths": [
+                "up",
+                "down",
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "6-4": {
+            "paths": [
+                "up",
+                "down"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "6-5": {
+            "paths": [
+                "up",
+                "down",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "6-6": {
+            "paths": [
+                "up",
+                "down",
+                "left",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "6-7": {
+            "paths": [
+                "up"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": [
+                "Goblin"
+            ]
+        },
+        "6-8": {
+            "paths": [
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "7-4": {
+            "paths": [
+                "down",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "7-5": {
+            "paths": [
+                "up",
+                "left",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "7-6": {
+            "paths": [
+                "down",
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "7-7": {
+            "paths": [
+                "up",
+                "right"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "8-4": {
+            "paths": [
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "8-5": {
+            "paths": [
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        },
+        "8-7": {
+            "paths": [
+                "left"
+            ],
+            "shop": [],
+            "item": [],
+            "shop price": [],
+            "enemy": []
+        }
+    }
+}

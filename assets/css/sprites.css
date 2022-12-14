@@ -1,0 +1,104 @@
+#playerHealth > img {
+    height: 50px;
+    image-rendering: pixelated;
+}
+
+/* ! */
+.equipped-item, .inventory-item {
+    height: clamp(24px, calc( var(--c-Pixel) * 1.25px ), 100px);
+    width: clamp(24px, calc( var(--c-Pixel) * 1.25px ), 100px);
+    image-rendering: pixelated;
+    background-size: cover;
+}
+.Weapon.equipped-item {
+    background-image: url(../images/UI/weapon.png);
+}
+.Armour.equipped-item {
+    background-image: url(../images/UI/armour.png);
+}
+
+.Armour.equipped-item:not([itemType="Unarmoured"]),
+.Weapon.equipped-item:not([itemType="Unarmed"]),
+.inventory-item {
+    background-image: url(../images/UI/blank.png);
+}
+.equipped-item:after,
+.inventory-item:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    background-size: cover;
+    display: block;
+}
+
+/* ! Weapons */
+.equipped-item[itemType="Leather"]:after,
+.inventory-item[itemType="Leather"]:after {
+    background-image: url(../images/Items/armour/leather.png);
+}
+.equipped-item[itemType="Plate"]:after,
+.inventory-item[itemType="Plate"]:after {
+    background-image: url(../images/Items/armour/plate.png);
+}
+.equipped-item[itemType="Spiked"]:after,
+.inventory-item[itemType="Spiked"]:after {
+    background-image: url(../images/Items/armour/spiked.png);
+}
+
+/* ! */
+.equipped-item[itemType="Dagger"]:after,
+.inventory-item[itemType="Dagger"]:after {
+    background-image: url(../images/Items/weapons/dagger.png);
+}
+.equipped-item[itemType="Short Sword"]:after,
+.inventory-item[itemType="Short Sword"]:after {
+    background-image: url(../images/Items/weapons/short-sword.png);
+}
+.equipped-item[itemType="Longsword"]:after,
+.inventory-item[itemType="Longsword"]:after {
+    background-image: url(../images/Items/weapons/longsword.png);
+}
+.equipped-item[itemType="Short Spear"]:after,
+.inventory-item[itemType="Short Spear"]:after {
+    background-image: url(../images/Items/weapons/short-spear.png);
+}
+.equipped-item[itemType="Mace"]:after,
+.inventory-item[itemType="Mace"]:after {
+    background-image: url(../images/Items/weapons/mace.png);
+}
+.equipped-item[itemType="Club"]:after,
+.inventory-item[itemType="Club"]:after {
+    background-image: url(../images/Items/weapons/club.png);
+}
+.equipped-item[itemType="Spear"]:after,
+.inventory-item[itemType="Spear"]:after {
+    background-image: url(../images/Items/weapons/spear.png);
+}
+.equipped-item[itemType="Greatsword"]:after,
+.inventory-item[itemType="Greatsword"]:after {
+    background-image: url(../images/Items/weapons/greatsword.png);
+}
+
+/* ! */
+.inventory-item[itemType="Potion of Lesser Healing"]:after {
+    background-image: url(../images/Items/potions/1-healing.png);
+}
+.inventory-item[itemType="Potion of Healing"]:after {
+    background-image: url(../images/Items/potions/2-healing.png);
+}
+.inventory-item[itemType="Potion of Greater Healing"]:after {
+    background-image: url(../images/Items/potions/3-healing.png);
+}
+.inventory-item[itemType="Potion of Power"]:after {
+    background-image: url(../images/Items/potions/power.png);
+}
+.inventory-item[itemType="Lesser Poison"]:after {
+    background-image: url(../images/Items/potions/1-poison.png);
+}
+.inventory-item[itemType="Poison"]:after {
+    background-image: url(../images/Items/potions/2-poison.png);
+}
+.inventory-item[itemType="Greater Poison"]:after {
+    background-image: url(../images/Items/potions/3-poison.png);
+}
