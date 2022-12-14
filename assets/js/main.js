@@ -680,6 +680,9 @@ function GameOver() {
 }
 
 document.onkeydown = function (e) {
+    if ($('aside').attr('active') == 'true') {
+        return;
+    }
     switch (e.which) {
         case 37: // left
             go(room, 'left', false);
