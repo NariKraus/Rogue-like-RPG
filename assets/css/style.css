@@ -293,8 +293,8 @@ aside > #aside-toggle {
     position: absolute;
     top: 0;
     left: 100%;
-    width: 2vw;
-    height: 2vw;
+    width: 2rem;
+    height: 2rem;
     padding: 0.1rem;
 }
 
